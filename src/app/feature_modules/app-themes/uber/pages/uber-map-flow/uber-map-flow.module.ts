@@ -13,21 +13,14 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withJsonpSupport } from '@angular/common/http';
 import { UberMapFlowPageRoutingModule } from './uber-map-flow-routing.module';
 
 import { UberMapFlowPage } from './uber-map-flow.page';
 
-@NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    GoogleMapsModule,
-    HttpClientModule,
-    HttpClientJsonpModule,
-    UberMapFlowPageRoutingModule
-  ],
-  declarations: [UberMapFlowPage]
-})
+@NgModule({ declarations: [UberMapFlowPage], imports: [CommonModule,
+        FormsModule,
+        IonicModule,
+        GoogleMapsModule,
+        UberMapFlowPageRoutingModule], providers: [provideHttpClient(withInterceptorsFromDi(), withJsonpSupport())] })
 export class UberMapFlowPageModule { }

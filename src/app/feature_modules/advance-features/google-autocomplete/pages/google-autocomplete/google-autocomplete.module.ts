@@ -18,18 +18,11 @@ import { GoogleAutocompletePageRoutingModule } from './google-autocomplete-routi
 
 import { GoogleAutocompletePage } from './google-autocomplete.page';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withJsonpSupport } from '@angular/common/http';
 
-@NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    GoogleMapsModule,
-    GoogleAutocompletePageRoutingModule,
-    HttpClientModule,
-    HttpClientJsonpModule
-  ],
-  declarations: [GoogleAutocompletePage]
-})
+@NgModule({ declarations: [GoogleAutocompletePage], imports: [CommonModule,
+        FormsModule,
+        IonicModule,
+        GoogleMapsModule,
+        GoogleAutocompletePageRoutingModule], providers: [provideHttpClient(withInterceptorsFromDi(), withJsonpSupport())] })
 export class GoogleAutocompletePageModule { }

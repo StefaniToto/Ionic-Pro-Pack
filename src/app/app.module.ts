@@ -12,7 +12,7 @@
 import { NgModule } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient,HttpClientJsonpModule, HttpClientModule, HttpBackend, HttpXhrBackend } from '@angular/common/http';
+import { HttpClient, HttpBackend, HttpXhrBackend, provideHttpClient, withInterceptorsFromDi, withJsonpSupport } from '@angular/common/http';
 import { NativeHttpModule, NativeHttpBackend, NativeHttpFallback } from 'ionic-native-http-connection-backend';
 import { RouteReuseStrategy } from '@angular/router';
 import { IonicStorageModule } from '@ionic/storage';
@@ -47,9 +47,8 @@ import { VersionCheckModule } from './feature_modules/version-check/version-chec
 
 export const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 
-@NgModule({
-    declarations: [AppComponent, ViewVideoPage, OrderinfoPage],
-    imports: [
+@NgModule({ declarations: [AppComponent, ViewVideoPage, OrderinfoPage],
+    bootstrap: [AppComponent], imports: [
         // Modular Component Module
         IonicComponentModule,
         LayoutComponentsModule,
@@ -63,8 +62,6 @@ export const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(h
         ThemeModuleModule,
         VersionCheckModule,
         BrowserModule,
-        HttpClientModule,
-        HttpClientJsonpModule,
         NativeHttpModule,
         IonicModule.forRoot(),
         TranslateModule.forRoot({
@@ -79,14 +76,11 @@ export const httpLoaderFactory = (http: HttpClient) => new TranslateHttpLoader(h
         AngularFireAuthModule,
         AngularFireStorageModule,
         IonicStorageModule.forRoot(),
-        AppRoutingModule
-    ],
-    providers: [
+        AppRoutingModule], providers: [
         ApplePay,
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
         { provide: SETTINGS, useValue: {} },
-        { provide: HttpBackend, useClass: NativeHttpFallback, deps: [Platform, NativeHttpBackend, HttpXhrBackend] }
-    ],
-    bootstrap: [AppComponent]
-})
+        { provide: HttpBackend, useClass: NativeHttpFallback, deps: [Platform, NativeHttpBackend, HttpXhrBackend] },
+        provideHttpClient(withInterceptorsFromDi(), withJsonpSupport())
+    ] })
 export class AppModule { }

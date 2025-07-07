@@ -16,16 +16,10 @@ import { IonicModule } from '@ionic/angular';
 import { WoocommerceProductsPageRoutingModule } from './woocommerce-products-routing.module';
 
 import { WoocommerceProductsPage } from './woocommerce-products.page';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-@NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    WoocommerceProductsPageRoutingModule,
-    HttpClientModule
-  ],
-  declarations: [WoocommerceProductsPage]
-})
+@NgModule({ declarations: [WoocommerceProductsPage], imports: [CommonModule,
+        FormsModule,
+        IonicModule,
+        WoocommerceProductsPageRoutingModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class WoocommerceProductsPageModule {}

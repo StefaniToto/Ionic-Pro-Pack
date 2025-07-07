@@ -14,18 +14,12 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { StripeWebPageRoutingModule } from './stripe-web-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { StripeWebPage } from './stripe-web.page';
 
-@NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    StripeWebPageRoutingModule,
-    HttpClientModule
-  ],
-  declarations: [StripeWebPage]
-})
+@NgModule({ declarations: [StripeWebPage], imports: [CommonModule,
+        FormsModule,
+        IonicModule,
+        StripeWebPageRoutingModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class StripeWebPageModule {}
