@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">social share</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-text>
+        <p>Capacitor Social Share API provides methods for sharing content in any sharing-enabled apps the user may have
+          installed.</p>
+        <p>You can share three types of data - Title, text message and URL. The URL can be a file URL as well. </p>
+      </ion-text>
+      <ion-grid class="ion-padding" *ngIf="socialShare">
+        <ion-row>
+          <ion-col *ngFor="let image of socialShare">
+            <ion-img [src]="image.headerImage"></ion-img>
+    
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-text>
+        <p>Different apps can behave different in terms of the data they allow to be pre-filled</p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item class="cordova-info">
+    <ion-icon slot="start" name="information-circle-outline" color="primary"></ion-icon>
+    <ion-label>
+      <ion-text>
+        <p>For extended functionality, check the <a class="link-no-decor" target="_system" href="https://store.enappd.com/product/ionic-full-app/">Cordova Social Sharing</a> implementation</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        Share Data
+      </ion-label>
+    </ion-list-header>
+    <ion-item lines="full">
+      <ion-label color="primary" position="stacked">Dialogue Title</ion-label>
+      <ion-input [(ngModel)]="shareData.dialogTitle"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="primary" position="stacked">Title</ion-label>
+      <ion-input [(ngModel)]="shareData.title"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="primary" position="stacked">Message</ion-label>
+      <ion-textarea [(ngModel)]="shareData.text"></ion-textarea>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label color="primary" position="stacked">Link</ion-label>
+      <ion-input [(ngModel)]="shareData.url"></ion-input>
+      <ion-button class="photo-button" slot="end" (click)="takePhoto()">Take Photo</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid class="share-button">
+    <ion-row>
+      <ion-col>
+        <ion-button color="primary" (click)="share()">Share</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <ion-item class="cordova-info">
+    <ion-icon slot="start" name="information-circle-outline" color="primary"></ion-icon>
+    <ion-label>
+      <ion-text>
+        <p>Check Capacitor's sharing capability and nuances in <a class="link-no-decor" href="https://enappd.gitbook.io/capacitor-full-app-ionic-angular/features/pro-features/pro-addons/social-sharing">our documentation </a></p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+
+  <!-- <ion-item class="cordova-info">
+    <ion-label>
+    <ion-text>
+      <p>
+        Current Status for Capacitor Sharing
+      </p>
+      <p>
+       - Whatsapp, Instagram - Image from Camera or gallery does not share. Only text with valid web URL works (non-image URL)
+      </p>
+      <p>- Facebook - Does not allow pre-filled text. Only image sharing is allowed, can take image from Camera / gallery as well</p>
+      <p>- Twitter - Takes image and text</p>
+      <p>- Email - Title, text and image (camera/gallery) all can be shared</p>
+    </ion-text>
+  </ion-label>
+  </ion-item> -->
+
+
+</ion-content>

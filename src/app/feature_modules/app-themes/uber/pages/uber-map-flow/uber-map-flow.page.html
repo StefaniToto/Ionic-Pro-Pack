@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title *ngIf="!driveStatus">
+      Offline
+    </ion-title>
+    <ion-title *ngIf="driveStatus">
+      Online
+    </ion-title>
+    <ion-toggle slot="end" [(ngModel)]="driveStatus" (ionChange)="driverStatusChange($event,true)" color="secondary">
+    </ion-toggle>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content slot="fixed">
+  <div *ngIf="!driveStatus">
+    <ion-item color="secondary">
+      <ion-avatar slot="start" class="nightModeIcon">
+        <img src="assets/map/nightMode.png">
+      </ion-avatar>
+      <ion-label class="textBold">You are Offline</ion-label>
+    </ion-item>
+    <div *ngIf="apiLoaded | async">
+      <google-map [center]="center" [zoom]="15" [width]="mapWidth" [height]="mapHeight"
+        [options]="{streetViewControl:false,zoomControl:false,fullscreenControl:false,disableDefaultUI: true}">
+        <map-marker [position]="center" [options]="{draggable:true}" (dragend)="markerDragEnd($event)">
+        </map-marker>
+        <map-circle [center]="center"
+          [options]="{draggable:false,fillColor:'#DFC033',editable:false, strokeColor:'#DFC033'}" [radius]="500">
+        </map-circle>
+      </google-map>
+    </div>
+  </div>
+
+  <div *ngIf="driveStatus">
+    <google-map #myMap="googleMap" [center]="center" [zoom]="15" [width]="mapWidth" [height]="mapHeight"
+      [options]="{streetViewControl:false,zoomControl:false,fullscreenControl:false,disableDefaultUI: true}">
+    </google-map>
+  </div>
+</ion-content>
+
+<ion-footer *ngIf="!driveStatus">
+  <div class="driverCardBottom">
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="driverlocationIcon" color="dark">
+      <ion-fab-button>
+        <ion-icon name="locate" class="locationIcon"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <ion-card slot="fixed" class="driverCard fixed ion-no-margin ion-no-padding">
+      <ion-item color="light">
+        <ion-avatar slot="start">
+          <img src="assets/map/driver.jpeg">
+        </ion-avatar>
+        <ion-label class="ion-text-capitalize"> <b>John Doe</b></ion-label>
+        <span fill="outline" slot="end"> <b>$325.00</b></span>
+      </ion-item>
+
+      <ion-card-content color="primary" class="ion-no-margin">
+        <div class="cardContent">
+          <div class="driverDetails">
+            <ion-icon name="time" class="driverStatusIcons"></ion-icon>
+            <ion-label class="textColor textBold detailsLabel">10.2</ion-label>
+            <p class="detailText ion-text-uppercase">Hours Online</p>
+          </div>
+          <div class="driverDetails">
+            <ion-icon name="speedometer" class="driverStatusIcons"></ion-icon>
+            <ion-label class="textColor textBold detailsLabel ion-text-uppercase">30 KM</ion-label>
+            <p class="detailText ion-text-uppercase">Total Distance</p>
+          </div>
+          <div class="driverDetails">
+            <ion-icon name="time" class="driverStatusIcons"></ion-icon>
+            <ion-label class="textColor textBold detailsLabel">20</ion-label>
+            <p class="detailText ion-text-uppercase">Total Jobs</p>
+          </div>
+        </div>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-footer>
+
+<ion-footer *ngIf="driveStatus && userCard">
+  <div class="relative">
+    <ion-fab color="light" vertical="bottom" horizontal="end" slot="fixed" class="userlocationIcon ion-padding-bottom"
+      color="dark">
+      <ion-fab-button color="light">
+        <ion-icon name="locate" class="locationIcon"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-card slot="fixed" class="userCard">
+      <ion-card-header color="light" class="userCardHeader dFlex">
+        <ion-thumbnail>
+          <img src="assets/map/user.jpeg" class="userIcon">
+        </ion-thumbnail>
+
+        <div class="ion-padding-horizontal">
+          <div>
+            <ion-label>Esther Berry</ion-label>
+          </div>
+          <div class="dFlex ion-align-items-center">
+            <ion-button size="small" color="primary" shape="round" class="card-Chip textBold boxShadow" text-capitalize>
+              Apple pay</ion-button>
+          </div>
+        </div>
+
+        <div class="ion-padding-start ion-float-right">
+          <div>
+            <ion-label class="textBold"> $25.00</ion-label>
+          </div>
+          <div>
+            <ion-label class="textBold lightTextColor">2.2 KM</ion-label>
+          </div>
+        </div>
+
+      </ion-card-header>
+
+      <ion-card-content color="light" class="userCard-content ion-no-margin">
+        <div class="borderBottom paddingVertical">
+          <div class="detailText fontSmall ion-text-uppercase">Pick Up</div>
+          <ion-label class="detailsLabel textBold">7958 Swift Village</ion-label>
+        </div>
+
+        <div class="borderBottom paddingVertical">
+          <div class="detailText fontSmall ion-text-uppercase">Drop Off</div>
+          <ion-label class="detailsLabel textBold">105 William, US</ion-label>
+        </div>
+
+        <div>
+          <div class="userCardFooter ion-padding-start">
+            <ion-button color="light" size="small" class="textBold boxShadow">Ignore</ion-button>
+            <ion-button color="firebase" size="small" class="textBold boxShadow">Accept</ion-button>
+          </div>
+
+          <div class="requestAll ion-no-padding">
+            <ion-label color="dark" class="textBold boxShadow">View All Requests</ion-label>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-footer>

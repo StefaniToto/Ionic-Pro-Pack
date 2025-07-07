@@ -1,0 +1,7 @@
+{
+  "name": "NgCapFullApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

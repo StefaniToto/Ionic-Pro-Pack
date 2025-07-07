@@ -1,0 +1,123 @@
+/**
+* Ionic Capacitor Full App in Angular  (https://store.enappd.com/product/capacitor-full-app-with-ionic-angular)
+
+*
+* Copyright © 2020-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+ion-content {
+  --background: var(--ion-color-step-50);
+}
+ion-header ion-toolbar {
+  --background: var(--ion-color-light);
+  ion-menu-button,
+  ion-button,
+  ion-title {
+      color: white;
+  }
+}
+@media (prefers-color-scheme: light) {
+  ion-header ion-toolbar {
+      --background: var(--ion-color-primary);
+  }
+}
+
+.card-item {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 2px auto;
+  width: calc(77% - 20px);
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 1px 1px 10px rgb(0 0 0 / 30%);
+}
+
+.card-item:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+}
+
+.bhk1 {
+  width: 100%;
+  height: auto;
+}
+
+.scrl {
+  white-space: nowrap;
+  height: 290px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.card-ios,
+.card-md {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 2px auto;
+  width: calc(77% - 20px);
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5490196078431373);
+}
+
+.list-header-title {
+  font-weight: bold;
+  padding-left: 16px;
+  position: relative;
+  border-bottom: 0.55px solid #c8c7cc;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+  color: #333;
+  background: transparent;
+  margin-bottom: 0px;
+}
+
+.bottom-content {
+  bottom: 20px;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(0deg, black, transparent);
+  padding: 10px;
+}
+
+.price {
+  margin: 1px 7px;
+  font-weight: lighter;
+  color: white;
+  text-align: left;
+}
+
+h4,
+h5,
+h6 {
+  margin: 1px 10px;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: white;
+}
+
+h2 {
+  margin: 1px 7px;
+  font-weight: lighter;
+  color: white;
+  text-align: left;
+}
+
+ion-icon {
+  padding-right: 10px;
+}

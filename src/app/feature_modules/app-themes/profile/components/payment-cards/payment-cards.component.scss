@@ -1,0 +1,81 @@
+/**
+* Ionic Capacitor Full App in Angular  (https://store.enappd.com/product/capacitor-full-app-with-ionic-angular)
+
+*
+* Copyright © 2020-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+
+
+.input {
+  border: 0.5px solid var(--ion-color-medium);
+  background-color: rgba(240, 240, 240, 0.5);
+  border-radius: 3px;
+  font-size: 0.9em !important;
+}
+
+.label {
+  font-size: 12px;
+}
+
+.small {
+  font-size: 9px;
+  color: rgb(120, 120, 120);
+}
+
+.icon {
+  font-size: 21px;
+}
+
+.add-payment-div {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.contentSection {
+  background: var(--ion-color-light);
+}
+
+.cardContentSection {
+  display: flex;
+  align-items: center;
+
+  ion-label {
+    width: 90%;
+  }
+}
+
+.cardImage {
+  width: 40px;
+}
+
+.lockSection {
+  display: flex;
+  align-items: flex-start;
+}
+
+.lockIcon {
+  font-size: 21px;
+  padding-right: 8px;
+}
+
+.secureTextSection {
+  padding-top: 5px;
+}
+@media (prefers-color-scheme: dark) {
+  ion-card {
+    --background: #222;
+  }
+}
+.add-new {
+  align-items: center;
+  display: flex;
+  ion-label {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}

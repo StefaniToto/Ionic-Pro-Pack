@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">QR & Bar code Scan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-card>
+    <ion-card-content>
+      <ion-text>
+        <p>Capacitor BarCode Scanner plugin can read several different types of Bar codes and QR codes.</p>
+        <p>Currently the plugin does not provide a method to encode any text or URL to QR code </p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item class="cordova-info">
+    <ion-icon slot="start" name="information-circle-outline" color="primary"></ion-icon>
+    <ion-label>
+      <ion-text>
+        <p>For extended functionality, check the <a class="link-no-decor" target="_system" href="https://store.enappd.com/product/ionic-full-app/">Cordova BarCode Scanner</a> implementation</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+  <ion-list-header lines="inset">
+    <ion-label>Scan a QR or Bar code</ion-label>
+  </ion-list-header>
+  <div class="scanSection" class="ion-padding">
+
+    <ion-button [disabled]="isWeb" expand="full" color="primary" (click)="didUserGrantPermission()">Scan Code</ion-button>
+    <ion-text *ngIf="isWeb">
+      <p class="ion-text-center">The plugin will not work on web</p>
+    </ion-text>
+    <div *ngIf="scannedData">
+      <p>Scanned Code Text : <b>{{scannedData}}</b></p>
+    </div>
+  </div>
+</ion-content>

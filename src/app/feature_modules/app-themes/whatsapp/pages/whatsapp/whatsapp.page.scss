@@ -1,0 +1,192 @@
+/**
+* Ionic Capacitor Full App in Angular  (https://store.enappd.com/product/capacitor-full-app-with-ionic-angular)
+
+*
+* Copyright © 2020-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+
+ion-content{
+  --background: var(--ion-color-light);
+}
+ion-header ion-toolbar {
+  ion-menu-button,
+  ion-button,
+  ion-title,
+  ion-icon {
+    color: white;
+  }
+}
+.chatImage {
+  width: 50px;
+  height: 50px;
+}
+
+.min-height {
+  min-height: 38px;
+}
+ion-header {
+  &:after {
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.5);
+    background-image: none;
+    left: 0;
+    bottom: 0px;
+    background-position: left 0 top 0;
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    content: "";
+  }
+}
+
+ion-header,
+ion-toolbar {
+  --background: #006257;
+}
+
+.contentCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-segment-button {
+  --color: #58938e !important;
+  --color-checked: var(--ion-color-tertiary-contrast);
+  border-bottom: 0px solid rgba(255, 255, 255, 0.3);
+}
+
+.header_image {
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0px 18px 0px 18px;
+}
+
+.tab-icon {
+  font-size: 20px;
+}
+
+.withcount {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.chatCount {
+  background: var(--ion-color-success);
+  width: 22px !important;
+  height: 22px !important;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--background);
+  padding-bottom: 2px;
+}
+
+.videocam {
+  width: 17px !important;
+  height: 17px !important;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 10px;
+  font-weight: bold;
+  color: #006257;
+  margin-left: 8px;
+}
+
+.segmentCount {
+  background: var(--ion-color-tertiary-contrast);
+  width: 17px !important;
+  height: 17px !important;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 10px;
+  font-weight: bold;
+  color: #006257;
+  margin-left: 8px;
+  padding: 3px;
+  box-sizing: content-box;
+}
+
+h2 {
+  font-size: 0.84em;
+  font-weight: bold;
+  color: var(--ion-color-medium);
+}
+
+.timeEnd {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 8px;
+}
+
+.widthHalf {
+  color: var(--ion-color-medium);
+  font-size: 14px;
+}
+
+.nameAvatar {
+  display: flex;
+  align-items: center;
+  width: 50%;
+
+  h2 {
+    font-size: 0.94em;
+    font-weight: bold;
+    color: var(--ion-color-dark);
+  }
+}
+
+ion-text {
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-text.segment_Text {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sc-ion-label-ios-h {
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.timeSlot {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+ion-searchbar {
+  --placeholder-color: white;
+  --color: white;
+  height: 35px !important;
+}
+
+.list-ios {
+  margin-bottom: 0 !important;
+}
+
+.sc-ion-label-ios-s p:last-child {
+  margin-top: 5px;
+}
+
+.title-ios {
+  height: 40px !important;
+  padding-top: 12px;
+  padding-left: 50px;
+  padding-bottom: 10px;
+}

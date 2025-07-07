@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-capitalize">map direction</ion-title>
+    <ion-buttons slot="end" (click)="dismiss()">
+      <ion-icon slot="icon-only" name="close-circle"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <google-map #myMap="googleMap" [center]="center" [zoom]="15" [width]="mapWidth" [height]="mapHeight"
+    [options]="{streetViewControl:false,zoomControl:false,fullscreenControl:false,disableDefaultUI: true}">
+  </google-map>
+</ion-content>

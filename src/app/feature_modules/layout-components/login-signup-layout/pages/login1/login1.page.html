@@ -1,0 +1,50 @@
+<ion-content class="ion-no-padding">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <div class="main ion-padding">
+
+    <ion-row class="row-section">
+      <div class="fire-logo">
+        <img src="assets/imgs/fire.png" class="img-logo">
+        <ion-text>
+          <h2 class="ion-no-margin ion-margin-vertical ion-text-center">Sign In</h2>
+        </ion-text>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input clearInput type="email" placeholder="Email" [(ngModel)]="email" class="input ion-padding-horizontal"
+          clear-input="true"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input clearInput type="password" placeholder="Password" [(ngModel)]="password"
+          class="input ion-padding-horizontal" clear-input="true"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text color="medium" class="ion-float-end">
+          <h6 class="small ion-no-margin ion-text-end" (click)="gotoMain()">Forgot Password?</h6>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" color="undefined" class="btn-transition" (click)="gotoMain()"><strong
+            class="white">Sign In</strong>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <div class="line"></div>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" fill="outline" color="undefined" class="btn-color" (click)="gotoMain()"><strong>New?
+            Create an
+            Account</strong></ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

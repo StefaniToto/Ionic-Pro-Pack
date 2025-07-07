@@ -1,0 +1,84 @@
+<ion-row class="ion-align-items-center ion-justify-content-center"  >
+  <ion-col size="6">
+    <ion-row  class="ion-margin-top ion-justify-content-center">
+      <ion-text>
+        <h6  class="small gray ion-text-center" color="light">
+          <strong>OVERALL</strong>
+        </h6>
+      </ion-text>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-text>
+        <span class="margin"><strong>{{ product.average_rating }}</strong></span>
+        <ion-icon name="star" color="mytheme" *ngFor="let i of productArray(product.rating)"></ion-icon>
+        <ion-icon name="star-outline" color="mytheme" *ngFor="let i of productArray(5 - product.rating)"></ion-icon>
+        <div class="margin rate-small">{{ product.ratingCount }} Ratings</div>
+      </ion-text>
+    </ion-row>
+  </ion-col>
+</ion-row>
+<div class="seprate"></div>
+<ion-row  class="rowSection ion-align-items-center">
+  <ion-button fill="outline ion-no-margin ion-no-padding" color="medium" class="btn">
+    <ion-text class="filter-btn">All</ion-text>
+  </ion-button>
+  <ion-button fill="outline ion-no-margin ion-no-padding" color="medium" class="btn">
+    <ion-text class="filter-btn">
+      <ion-icon name="image"></ion-icon>
+    </ion-text>
+  </ion-button>
+  <ion-button fill="outline ion-no-margin ion-no-padding" color="medium" class="btn">
+    <ion-text class="filter-btn">Top Rated</ion-text>
+  </ion-button>
+  <ion-button fill="outline ion-no-margin ion-no-padding" color="medium" class="btn">
+    <ion-text class="filter-btn">
+      <ion-icon name="star" *ngFor="let i of productArray(5)"></ion-icon>
+    </ion-text>
+  </ion-button>
+  <ion-button fill="outline ion-no-margin ion-no-padding" color="medium" class="btn">
+    <ion-text class="filter-btn">
+      <ion-icon name="star" *ngFor="let i of productArray(4)"></ion-icon>
+    </ion-text>
+  </ion-button>
+  <ion-button fill="outline" color="medium" class="btn ion-no-margin ion-no-padding">
+    <ion-text class="filter-btn">
+      <ion-icon name="star" *ngFor="let i of productArray(3)"></ion-icon>
+    </ion-text>
+  </ion-button>
+  <ion-button fill="outline" color="medium" class="btn ion-no-margin ion-no-padding">
+    <ion-text class="filter-btn">
+      <ion-icon name="star" *ngFor="let i of productArray(2)"></ion-icon>
+    </ion-text>
+  </ion-button>
+  <ion-button fill="outline" color="medium" class="btn ion-no-margin ion-no-padding">
+    <ion-text class="filter-btn">
+      <ion-icon name="star" *ngFor="let i of productArray(1)"></ion-icon>
+    </ion-text>
+  </ion-button>
+</ion-row>
+
+<div>
+  <ion-item *ngFor="let review of reviews">
+    <ion-row>
+      <ion-col size="2">
+        <ion-avatar class="avatar"><img [src]="" /></ion-avatar>
+      </ion-col>
+      <ion-col>
+        <ion-row class="full block">
+          <ion-icon  name="star" class="small-icon ion-float-right" color="mytheme" *ngFor="let i of productArray(review.rating)">
+          </ion-icon>
+          <ion-icon  name="star-outline" class="small-icon ion-float-right" color="mytheme"
+            *ngFor="let i of productArray(5 - review.rating)"></ion-icon>
+          <h6  class="ion-text-start ion-no-margin ion-float-left">
+            <strong>{{ review.name }}</strong>
+          </h6>
+          <br />
+        </ion-row>
+        <ion-row class="full block">
+          <h6  class="comment ion-no-margin ion-float-left">{{ review.review }}</h6>
+          <br />
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+</div>

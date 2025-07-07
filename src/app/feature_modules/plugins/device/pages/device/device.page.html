@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Device Info</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header color="light">
+    <ion-label>Get your device info</ion-label>
+  </ion-list-header>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="primary" (click)="getDeviceInfo()" expand="full">
+        Get Device Info
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-grid class="ion-padding" *ngIf="deviceInfo">
+
+    <ion-row>
+      <ion-col size="6">Platform</ion-col>
+      <ion-col size="6">{{deviceInfo.platform}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Operating System</ion-col>
+      <ion-col size="6">{{deviceInfo.osVersion}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Model</ion-col>
+      <ion-col size="6">{{deviceInfo.model}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Manufacturer</ion-col>
+      <ion-col size="6">{{deviceInfo.manufacturer}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">UUID</ion-col>
+      <ion-col size="6">{{deviceInfo.uuid}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Virtual</ion-col>
+      <ion-col size="6">{{deviceInfo.isVirtual}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Used Memory</ion-col>
+      <ion-col size="6">{{deviceInfo.memUsed}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Free Disk</ion-col>
+      <ion-col size="6">{{deviceInfo.diskFree}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Total Space</ion-col>
+      <ion-col size="6">{{deviceInfo.diskTotal}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">App Build</ion-col>
+      <ion-col size="6">{{deviceInfo.appBuild}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">App Version</ion-col>
+      <ion-col size="6">{{deviceInfo.appVersion}}</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">Battery</ion-col>
+      <ion-col size="6">{{deviceInfo.battery}}</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

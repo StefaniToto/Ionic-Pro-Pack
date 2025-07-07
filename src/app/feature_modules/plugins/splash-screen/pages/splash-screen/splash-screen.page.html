@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Splash Screen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-text>
+        <p>Splash Screen works at the beginning of the app. You can set extended splash screen if the app takes a long
+          time to load. You'll see similar animation at the beginning of this Full App.</p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+  <ion-item-divider>
+    <ion-label>
+      Set a Splash Screen ON
+    </ion-label>
+  </ion-item-divider>
+  <div class="code-area">
+    <ion-row>
+      <ion-col>
+        <code>
+          SplashScreen.show()
+        </code>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-item-divider>
+    <ion-label>
+      Set a Splash Screen ON with Timer
+    </ion-label>
+  </ion-item-divider>
+  <div class="code-area">
+    <ion-row>
+      <ion-col>
+        <pre>
+SplashScreen.show({{'{'}} 
+  showDuration: 2000 
+{{'}'}})
+        </pre>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-item class="cordova-info">
+    <ion-icon slot="start" name="information-circle-outline" color="primary"></ion-icon>
+    <ion-label>
+      <ion-text>
+        <p>You can show such splash in middle of the app to hide any processing etc. as well</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="primary" expand="full" (click)="showSplash()">Show Splash Screen for 2s</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-item-divider class="ion-margin-top">
+    <ion-label>
+      Set a Splash Screen OFF
+    </ion-label>
+  </ion-item-divider>
+  <div class="code-area">
+    <ion-row>
+      <ion-col>
+        <code>
+SplashScreen.hide()
+        </code>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-item class="cordova-info">
+    <ion-icon slot="start" name="information-circle-outline" color="primary"></ion-icon>
+    <ion-label>
+      <ion-text>
+        <p>You can find remaining Splash Screen options in documentation, which are also added in capacitor.config.ts in root folder</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+</ion-content>

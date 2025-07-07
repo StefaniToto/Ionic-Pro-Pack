@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Select payment method</ion-title>
+  </ion-toolbar>
+  <div *ngIf="!paymentGateways || placingOrder" class="spinner">
+    <ion-spinner name="lines"></ion-spinner>
+  </div>
+</ion-header>
+<ion-content>
+
+  <ion-list class="ion-no-margin">
+
+    <ion-item *ngFor="let payment of paymentGateways">
+      <ion-radio-group *ngIf="paymentGateways" (ionChange)="chooseGateway(payment)" class="radio-section">
+        <ion-radio slot="start"></ion-radio>
+        <ion-label>
+          <ion-row class="full" class="ion-align-items-center">
+            <ion-col size="10">
+              <ion-row class="ion-align-items-center">
+                <p class="ion-no-margin">
+                  <strong>{{ payment.title }}</strong>
+                </p>
+              </ion-row>
+              <ion-row class="ion-align-items-center">
+                <p>{{ payment.description }}</p>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-label>
+        
+      </ion-radio-group>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

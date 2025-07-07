@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">Apartment Listings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="overlay-content">
+    <div class="bhk1" *ngFor="let item of cardData">
+      <ion-list-header lines="inset">
+        <ion-label>{{item.name}} flats near you. </ion-label>
+      </ion-list-header>
+      <div class="scrl">
+        <ion-card *ngFor="let flat of item.data" class="card-item"
+          [ngStyle]="{'background-image': 'url('+flat.url+')','background-size': 'cover' ,'background-position': 'center' }">
+          <div class="overlay">
+            <div class="bottom-content">
+              <h2 class="price">{{flat.price}}</h2>
+              <h4>{{flat.name}}</h4>
+              <h5>
+                <ion-icon name="location-sharp"></ion-icon>{{flat.status}}
+              </h5>
+            </div>
+          </div>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</ion-content>

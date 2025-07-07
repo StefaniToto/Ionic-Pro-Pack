@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Content Loaders</ion-title>
+  </ion-toolbar>
+  <ion-toolbar [color]="toolbarColor">
+    <ion-segment  (ionChange)="segmentChanged($event)" value="api">
+      <ion-segment-button value="api" checked>API Example</ion-segment-button>
+      <ion-segment-button value="loaders" checked>Loaders</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content *ngIf="segmentTab === 'api'">
+      This data is loaded after a 5s delay in API response. The content loader hides when data is available.
+    </ion-card-content>
+    <ion-card-content *ngIf="segmentTab === 'loaders'">
+      Few different types of loaders
+    </ion-card-content>
+  </ion-card>
+  <div *ngIf="segmentTab === 'api'">
+    <div class="loaders" *ngIf="!loadedData">
+      <div class="loader">
+        <content-loader [baseUrl]="window.location.pathname">
+          <svg:rect x="15" y="15" rx="1" ry="1" width="60" height="60" />
+          <svg:rect x="90" y="25" rx="3" ry="3" width="260" height="15" />
+          <svg:rect x="90" y="45" rx="3" ry="3" width="150" height="15" />
+        </content-loader>
+      </div>
+      <div class="loader">
+        <content-loader primaryColor="#bbbbbb" [baseUrl]="window.location.pathname">
+          <svg:rect x="15" y="15" rx="1" ry="1" width="60" height="60" />
+          <svg:rect x="90" y="25" rx="3" ry="3" width="260" height="15" />
+          <svg:rect x="90" y="45" rx="3" ry="3" width="150" height="15" />
+        </content-loader>
+      </div>
+      <div class="loader">
+        <content-loader [baseUrl]="window.location.pathname">
+          <svg:rect x="15" y="15" rx="1" ry="1" width="60" height="60" />
+          <svg:rect x="90" y="25" rx="3" ry="3" width="260" height="15" />
+          <svg:rect x="90" y="45" rx="3" ry="3" width="150" height="15" />
+        </content-loader>
+      </div>
+      <div class="loader">
+        <content-loader primaryColor="#bbbbbb" [baseUrl]="window.location.pathname">
+          <svg:rect x="15" y="15" rx="1" ry="1" width="60" height="60" />
+          <svg:rect x="90" y="25" rx="3" ry="3" width="260" height="15" />
+          <svg:rect x="90" y="45" rx="3" ry="3" width="150" height="15" />
+        </content-loader>
+      </div>
+    </div>
+    <ion-list *ngIf="loadedData">
+      <ion-item *ngFor="let item of (loadedData && loadedData.result)">
+        <ion-thumbnail slot="start">
+          <ion-img [src]="item.image"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{item.title}}</h2>
+          <p>{{item.author}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="segmentTab === 'loaders'">
+    <ion-list-header lines="inset">
+      <ion-label>Facebook Loader</ion-label>
+    </ion-list-header>
+    <div class="ion-padding">
+      <content-loader [baseUrl]="window.location.pathname">
+        <svg:rect x="70" y="15" rx="4" ry="4" width="117" height="6.4" />
+        <svg:rect x="70" y="35" rx="3" ry="3" width="85" height="6.4" />
+        <svg:rect x="0" y="80" rx="3" ry="3" width="350" height="6.4" />
+        <svg:rect x="0" y="100" rx="3" ry="3" width="380" height="6.4" />
+        <svg:rect x="0" y="120" rx="3" ry="3" width="201" height="6.4" />
+        <svg:circle cx="30" cy="30" r="30" />
+      </content-loader>
+    </div>
+
+    <ion-list-header lines="inset">
+      <ion-label> List Loader</ion-label>
+    </ion-list-header>
+    <div class="ion-padding">
+      <content-loader [baseUrl]="window.location.pathname">
+        <svg:rect x="0" y="0" rx="3" ry="3" width="250" height="10" />
+        <svg:rect x="20" y="20" rx="3" ry="3" width="220" height="10" />
+        <svg:rect x="20" y="40" rx="3" ry="3" width="170" height="10" />
+        <svg:rect x="0" y="60" rx="3" ry="3" width="250" height="10" />
+        <svg:rect x="20" y="80" rx="3" ry="3" width="200" height="10" />
+        <svg:rect x="20" y="100" rx="3" ry="3" width="80" height="10" />
+      </content-loader>
+    </div>
+    <ion-list-header lines="inset">
+      <ion-label> Bullet List Loader</ion-label>
+    </ion-list-header>
+    <div class="ion-padding">
+      <content-loader [baseUrl]="window.location.pathname">
+        <svg:circle cx="10" cy="20" r="8" />
+        <svg:rect x="25" y="15" rx="5" ry="5" width="220" height="10" />
+        <svg:circle cx="10" cy="50" r="8" />
+        <svg:rect x="25" y="45" rx="5" ry="5" width="220" height="10" />
+        <svg:circle cx="10" cy="80" r="8" />
+        <svg:rect x="25" y="75" rx="5" ry="5" width="220" height="10" />
+        <svg:circle cx="10" cy="110" r="8" />
+        <svg:rect x="25" y="105" rx="5" ry="5" width="220" height="10" />
+      </content-loader>
+    </div>
+  </div>
+</ion-content>

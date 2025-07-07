@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">NgCapFullApp</string>
+    <string name="title_activity_main">NgCapFullApp</string>
+    <string name="package_name">com.enappd.ngcapfullapp</string>
+    <string name="custom_url_scheme">com.enappd.ngcapfullapp</string>
+    <string name="facebook_app_id">408937656335090</string>
+    <string name="facebook_client_token">30854ddbcbec4f5526eb4a3aecc1c7a2</string>
+    <string name="server_client_id">124018728460-sv8cqhnnmnf0jeqbnd0apqbnu6egkhug.apps.googleusercontent.com</string>
+    <string name="admob_app_id">ca-app-pub-1043113403880558~1230065315</string>
+</resources>

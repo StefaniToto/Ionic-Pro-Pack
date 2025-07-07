@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title text-capitalize>Place Near You</ion-title>
+    <ion-buttons slot="end">
+      <ion-select [interfaceOptions]="customAlertOptions" interface="alert" class="hide-filter" value="Filter"
+        name="tag" [(ngModel)]="filtertag" (ionChange)="headTagValue(filtertag)" id="placesFilterSelect">
+        <ion-icon name="funnel" class="person-icon"></ion-icon>
+        <ion-select-option value="all">All</ion-select-option>
+        <ion-select-option value="restaurant">Restaurant</ion-select-option>
+        <ion-select-option value="atm">ATM</ion-select-option>
+        <ion-select-option value="shopping_mall">Shopping</ion-select-option>
+        <ion-select-option value="point_of_interest">Place of interest</ion-select-option>
+        <ion-select-option value="hospital">Medical</ion-select-option>
+        <ion-select-option value="gas_station">Gas Station</ion-select-option>
+      </ion-select>
+      <ion-button (click)="alertFilter()">
+        <ion-icon name="funnel" class="person-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Search another location" (ionInput)="searchPlaces($event)" id="txtHome"
+      [(ngModel)]="query" mode="ios"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="apiLoaded | async">
+    <google-map #myMap="googleMap" [center]="center" [zoom]="15" [width]="mapWidth" [height]="mapHeight"
+      [options]="{streetViewControl:false,zoomControl:false,fullscreenControl:false,disableDefaultUI: true}"
+      class="chatDivMap">
+      <map-marker #marker="mapMarker" *ngFor="let m of displayMarkers; let i = index;" [position]="m.center"
+        [options]="{draggable:false}" (mapClick)="openInfoWindow(marker,i)">
+        <map-info-window>
+          <strong class="infoTitle">{{m.name}}</strong><br />
+          <p>{{m.vicinity}}</p>
+          <p class="info-open">{{m.opening_hours && m.opening_hours.isOpen() ? "Open now": "Closed"}}</p>
+          <div class="info-images">
+            <div class="info-image" *ngFor="let image of m.photos" [ngStyle]="{'background-image': 'url('+image+')'}">
+            </div>
+          </div>
+          <div class="info-buttons">
+            <ion-button (click)="getDirection(m.center)" fill="clear">Get Direction</ion-button>
+          </div>
+        </map-info-window>
+      </map-marker>
+      <map-circle [center]="circleCenter" [draggable]="false" [radius]="radius"></map-circle>
+    </google-map>
+  </div>
+
+
+
+</ion-content>

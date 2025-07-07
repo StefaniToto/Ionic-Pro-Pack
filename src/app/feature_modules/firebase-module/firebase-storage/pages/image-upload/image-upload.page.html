@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start" color="undefined" class="btn-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Firebase Storage
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-text color="medium">
+    This page demonstrates uploading images from your device to Firebase Storage, and making an entry in Firebase
+    Firestore. ( This page will work properly once you login using the Firebase login page )
+  </ion-text>
+  <div class="form-container">
+    <ion-button *ngIf="!isUpdate" color="firebase" (click)="chooseImage()" expand="block">Upload Image</ion-button>
+  </div>
+  <div *ngIf="!imageList" class="spinner">
+    <ion-spinner name="circles"></ion-spinner>
+  </div>
+
+  <div *ngIf="imageList" class="data-container ion-margin-top">
+    <ion-grid class="ion-no-padding">
+      <ion-row class="row-section">
+        <div *ngIf="imageList.length === 0" class="noContent">
+          <ion-text color="dark"><strong> No Images Present</strong></ion-text>
+        </div>
+        <ion-col size="3" *ngFor="let i of imageList" class="image-section">
+
+          <ion-badge class="badge">
+            <ion-icon name="close" class="close-icon" (click)="openAlert(i.id)"></ion-icon>
+          </ion-badge>
+          <img [src]=" i.downloadUrl" alt="">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

@@ -1,0 +1,52 @@
+/**
+* Ionic Capacitor Full App in Angular  (https://store.enappd.com/product/capacitor-full-app-with-ionic-angular)
+
+*
+* Copyright © 2020-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+.menu {
+  color: rgb(90, 90, 90) !important;
+}
+.card {
+  border-radius: 3px;
+}
+.title {
+  font-size: 15px;
+}
+.gray {
+  font-size: 15px;
+  color: rgb(120, 120, 120);
+}
+.sub {
+  font-size: 12px;
+}
+ion-content {
+  --background: var(--ion-color-step-50);
+}
+ion-header ion-toolbar {
+  --background: var(--ion-color-light);
+  ion-menu-button,
+  ion-button,
+  ion-title,
+  ion-icon,
+  ion-searchbar,
+  ion-back-button {
+    color: white;
+  }
+}
+@media (prefers-color-scheme: light) {
+  ion-header ion-toolbar {
+    --background: var(--ion-color-primary);
+  }
+  ion-item {
+    --background: var(--ion-color-step-100);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  ion-item {
+    --background: var(--ion-color-step-50);
+  }
+}

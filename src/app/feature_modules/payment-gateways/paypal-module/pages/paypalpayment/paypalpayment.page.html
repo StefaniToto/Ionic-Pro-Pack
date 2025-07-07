@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      BrainTree - PayPal
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item class="cordova-info">
+    <ion-icon slot="start" name="information-circle-outline" color="primary"></ion-icon>
+    <ion-label>
+      <ion-text>
+        <p>PayPal now recommends using BrainTree for app based payments in Ionic. BrainTree supports web, as well as several other payment methods.</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/paypal.jpg"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Get Started</ion-card-subtitle>
+      <ion-card-title>PayPal Sample</ion-card-title>
+      <ion-row>
+        <ion-col>
+          Total Payment
+        </ion-col>
+        <ion-col>
+          {{currencyIcon}}{{paymentAmount}}
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content class="paypalBtn">
+        <div class="paypalCss" id="paypal-container"></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

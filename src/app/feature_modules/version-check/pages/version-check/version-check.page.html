@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button menu="start"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>App Version</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item lines="none" class="hydrated1">
+      <ion-icon name="phone-portrait-outline" class="required"></ion-icon> 
+      App Version:       {{app_info["version"]}}
+  </ion-item>
+
+
+  <ion-item lines="none" class="hydrated1">
+      <ion-icon name="logo-angular" class="required"></ion-icon> 
+      Vue Version: {{app_info?.dependencies["@angular/core"]}}
+  </ion-item>
+
+
+   <ion-item lines="none" class="hydrated1">
+      <ion-icon name="logo-ionic" class="required"></ion-icon> 
+      Ionic Version: {{app_info?.dependencies["@ionic/core"]}}
+  </ion-item>
+
+
+   <ion-item lines="none" class="hydrated1">
+      <ion-icon name="logo-firebase" class="required"></ion-icon> 
+      Firebase Version: {{app_info?.dependencies["firebase"]}}
+  </ion-item>
+
+
+   <ion-item lines="none" class="hydrated1">
+      <ion-icon name="logo-capacitor" class="required"></ion-icon> 
+      Capacitor Version: {{app_info?.dependencies["@capacitor/core"]}}
+  </ion-item>
+
+
+   <ion-item lines="none" class="hydrated1">
+      <ion-icon name="logo-javascript" class="required"></ion-icon> 
+      Typescript Version: {{app_info?.devDependencies["typescript"]}}
+  </ion-item>
+</ion-content>

@@ -1,0 +1,157 @@
+<div *ngIf="product === undefined">
+  <ion-spinner name="lines"></ion-spinner>
+</div>
+
+<div *ngIf="!(product === undefined)">
+  <ion-row class="ion-no-padding">
+    <ion-col class="ion-no-padding">
+      <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide *ngFor="let image of product.images">
+          <img class="image" [src]="image.src" />
+          <div class="product-image-overlay"></div>
+        </ion-slide>
+      </ion-slides>
+      <ion-badge class="badge">
+        <ion-icon name="images"></ion-icon>{{ product.images.length }}
+      </ion-badge>
+      <ion-row class="hover-buttons ion-justify-content-end">
+        <ion-icon size="small" name="logo-instagram" class="fabIcon ion-float-right"
+          (click)="shareViaInstagram(product.image[0])"></ion-icon>
+        <ion-icon size="small" name="share" class="fabIcon ion-float-right" (click)="shareCommon(product.image[0])">
+        </ion-icon>
+        <ion-icon *ngIf="!liked" size="small" name="heart-outline" class="fabIcon ion-float-right" (click)="like()">
+        </ion-icon>
+        <ion-icon *ngIf="liked" size="small" name="heart" class="fabIcon ion-float-right red" (click)="like()">
+        </ion-icon>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <div class="ion-padding">
+    <ion-row lines="none" class="row">
+      <ion-text class="name">{{ product.name }}</ion-text>
+    </ion-row>
+    <ion-row>
+      <ion-icon name="star" color="mytheme" *ngFor="let i of array(product.rating)"></ion-icon>
+      <ion-icon name="star-outline" color="mytheme" *ngFor="let i of array(5 - product.rating)"></ion-icon>
+      <h6 class="rate ion-no-margin ion-padding-start" (click)="goToReviews()">
+        ({{ product.storeRating }} store ratings)
+      </h6>
+    </ion-row>
+    <div class="seprate"></div>
+    <div>
+      <ion-text><span class="ion-no-margin ion-float-left"><strong>Sold By</strong></span></ion-text><br />
+      <ion-row>
+        <!-- <ion-col size="2">
+            <ion-avatar class="avatar"><img [src]="product.image[0]"></ion-avatar>
+          </ion-col> -->
+        <ion-col>
+          <ion-text><span class="ion-no-margin ion-float-left">Shop Name</span></ion-text><br />
+          <ion-text>
+            <h6 class="ion-no-margin ion-float-left">Default ratings</h6>
+          </ion-text><br />
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="seprate"></div>
+    <ion-list lines="none">
+      <ion-row class="full info" (click)="toogle(0)">
+        <ion-col size="9">
+          <strong class="ion-float-left">Item Specification</strong>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="ion-float-right" name="chevron-down" *ngIf="!open[0]"></ion-icon>
+          <ion-icon class="ion-float-right" name="chevron-up" *ngIf="open[0]"></ion-icon>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row class="full ion-margin-top" *ngIf="open[0]">
+        <ion-col>
+          <span class="ion-float-left">
+            <span>Height: {{ product.dimensions.height }}</span>
+            <span>Length: {{ product.dimensions.length }}</span>
+          </span>
+        </ion-col>
+      </ion-row>
+      <div class="seprate"></div>
+      <ion-row class="full info" (click)="toogle(1)">
+        <ion-col size="9">
+          <strong class="ion-float-left">Description</strong>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="ion-float-right" name="chevron-down" *ngIf="!open[1]"></ion-icon>
+          <ion-icon class="ion-float-right" name="chevron-up" *ngIf="open[1]"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="full ion-margin-top" *ngIf="open[1]">
+        <ion-col>
+          <span class="ion-float-left" [innerHTML]="product.description"></span>
+        </ion-col>
+      </ion-row>
+      <div class="seprate"></div>
+      <ion-row class="full info" (click)="toogle(2)">
+        <ion-col size="9">
+          <strong class="ion-float-left">Buyer Guarantee</strong>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="ion-float-right " name="chevron-down" *ngIf="!open[2]"></ion-icon>
+          <ion-icon class="ion-float-right" name="chevron-up" *ngIf="open[2]"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-margin-top" *ngIf="open[2]">
+        <ion-col>
+          <span class="ion-float-left">The product can be returned under 30 days of receiving.</span>
+        </ion-col>
+      </ion-row>
+      <div class="seprate"></div>
+      <ion-row class="full info" (click)="toogle(3)">
+        <ion-col size="9">
+          <strong class="ion-float-left">Shipping Information</strong>
+        </ion-col>
+        <ion-col>
+          <ion-icon class="ion-float-right" name="chevron-down" *ngIf="!open[3]"></ion-icon>
+          <ion-icon class="ion-float-right" name="chevron-up" *ngIf="open[3]"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row class="full ion-margin-top" *ngIf="open[3]">
+        <ion-col>
+          <span class="ion-float-left"><strong>Standard Shipping</strong>
+            {{ product.shipping_required }}
+          </span>
+        </ion-col>
+      </ion-row>
+
+      <div class="seprate"></div>
+      <ion-row class="full info">
+        <ion-row>
+          <ion-col><strong>Recent Reviews</strong></ion-col>
+        </ion-row>
+        <div *ngFor="let review of reviews">
+          <ion-row>
+            <ion-col size="2">
+              <ion-avatar class="userAvatar"><img [src]="" /></ion-avatar>
+            </ion-col>
+            <ion-col>
+              <ion-row class="full">
+                <ion-icon name="star" class="small-icon ion-float-right" color="mytheme"
+                  *ngFor="let i of array(review.rating)"></ion-icon>
+                <ion-icon name="star-outline" class="small-icon ion-float-right" color="mytheme"
+                  *ngFor="let i of array(5 - review.rating)"></ion-icon>
+                <h6 class="comment ion-no-margin ion-text-start ion-float-left">
+                  <strong>{{ review.name }}</strong>
+                </h6>
+                <br />
+              </ion-row>
+              <ion-row class="full">
+                <h6 class="comment ion-no-margin ion-text-start ion-float-left">
+                  {{ review.review }}
+                </h6>
+                <br />
+                <!-- <img float-left *ngFor="let img of review.images" [src]="img" class="rev-img"> -->
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-row>
+    </ion-list>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div *ngIf="product === undefined" class="spinner">
+  <ion-spinner name="lines"></ion-spinner>
+</div>
+
+<ion-header class="mybg">
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+    <ion-buttons slot="end" (click)="cartPage()" class="cart-button">
+      <ion-icon name="cart" slot="icon-only" class="white top-btn ion-no-margin"></ion-icon>
+      <ion-badge id="cart-badge">{{ cartItems }}</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!(product === undefined)">
+  <ion-slides pager="false" #slider>
+    <ion-slide>
+      <!--app-innerhome Component-->
+      <app-product (notify)="onReviewClick($event)" [product]="product" [slider]="slider" class="slide"></app-product>
+    </ion-slide>
+    <ion-slide class="light-bg ion-padding" *ngIf="product">
+      <!--app-innerhome Component-->
+      <app-innerhome [recieved_data]="product['related_ids']" class="slide"></app-innerhome>
+    </ion-slide>
+    <ion-slide>
+      <!--app-innerhome Component-->
+      <app-review [product]="product" class="slide"></app-review>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-footer class="footer ion-align-items-center" *ngIf="segment === 'Overview' && !(product === undefined)">
+  <ion-row class="ion-align-items-center">
+    <ion-col class="ion-padding">
+      <ion-text>
+        <h6 class="foot-highlight ion-no-margin" [innerHTML]="product.price_html"></h6>
+      </ion-text>
+    </ion-col>
+    <ion-col size="4">
+      <ion-button (click)="goToCart()" class="white foot-btn ion-no-margin ion-float-right" color="orange"
+        expand="block">
+        <strong>Buy</strong></ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

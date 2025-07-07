@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">in app browser</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list-header lines="inset">
+    <ion-label>Open in In-app Browser</ion-label>
+  </ion-list-header>
+  <ion-row class="hrz-scroll ion-margin-top">
+    <ion-col size="5" *ngFor="let item of blankUrls" (click)="openBlankUrl(item.titleUrl)">
+      <ion-card class="cardSection">
+        <img [src]="item.imageUrl">
+        <ion-card-content>
+          <span class="contentText">{{item.title}}</span>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <ion-list-header lines="inset">
+    <ion-label>Open in System Browser</ion-label>
+  </ion-list-header>
+  <ion-row class="hrz-scroll ion-margin-top">
+    <ion-col size="5" *ngFor="let item of systemUrls" (click)="openSystemUrl(item.titleUrl)">
+      <ion-card class="cardSection">
+        <img [src]="item.imageUrl">
+        <ion-card-content>
+          <span class="contentText">{{item.title}}</span>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

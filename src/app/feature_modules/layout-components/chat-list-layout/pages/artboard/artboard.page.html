@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar class="headerToolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start" color="light"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar class="headerToolbar">
+    <div class="headerContentSection">
+      <div class="userCard ion-padding-start ion-padding-vertical">
+        <h5 class="userCardTitle">{{userDetails.name}}</h5>
+        <ion-note class="descText"> {{userDetails.tagline}}</ion-note>
+      </div>
+
+      <div class="segmentSection ion-padding-top">
+        <ion-segment mode="md" [(ngModel)]="chatSegmentType" value="person" class="mainSegment">
+          <ion-segment-button value="person">
+            <ion-icon name="person"></ion-icon>
+            <span class="onlineOffline_icon"></span>
+          </ion-segment-button>
+          <ion-segment-button value="people">
+            <ion-icon name="people"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="search">
+            <ion-icon name="search"></ion-icon>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-list class="chatList ion-no-padding">
+    <ion-item *ngFor="let chat of chatData" lines="none" class="chatList">
+      <div class="borderBottomLine"></div>
+      <div class="listSection">
+        <div class="UserimgSection">
+          <ion-avatar class="userAvatar" slot="start">
+            <ion-img [src]="chat.image"></ion-img>
+          </ion-avatar>
+        </div>
+        <div class="usernameSection ion-padding-start ion-padding">
+          <h6 class="userName">
+            {{chat.name}}
+          </h6>
+          <p class="descText ion-no-margin ion-no-padding">{{chat.description}}</p>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Admob </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header color="light">
+    <ion-label>Banner Ads</ion-label>
+  </ion-list-header>
+  <ion-card>
+    <ion-card-content>
+      Banner Ad is usually shown by default on bottom of the page. You can select the position as you like.
+      You can even display multiple banner ads per page.
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="success" expand="full" (click)="banner()">Show Banner Ad</ion-button>
+        <ion-button color="success" expand="full" (click)="hideBanner()">Hide Banner Ad</ion-button>
+        <ion-button color="danger" expand="full" (click)="hideBanner()">Remove Banner Ad</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-list-header color="light">
+    <ion-label>Interstitial Ads</ion-label>
+  </ion-list-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="success" expand="full" (click)="interstitial()">Show Interstitial Ad</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list-header color="light">
+    <ion-label>Reward Ads</ion-label>
+  </ion-list-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="success" expand="full" (click)="reward()">Show Reward Ad</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-radio-group color="profile" value="0">
+  <ion-item *ngFor="let add of address; let i = index;">
+    <ion-label>
+      <ion-row class="ion-align-items-center">
+        <p class="ion-no-margin"><strong>{{add.name}}</strong></p>
+        <h6 class="small mycolor ion-padding-start" *ngIf="i===0">PRIMARY</h6>
+      </ion-row>
+      <ion-row>
+        <p class="ion-no-margin">{{add.flat}}</p>
+      </ion-row>
+      <ion-row>
+        <p class="ion-no-margin">{{add.locality}}</p>
+      </ion-row>
+      <ion-row>
+        <p class="ion-no-margin">{{add.nickName}}</p>
+      </ion-row>
+    </ion-label>
+    <ion-radio slot="start" value="{{i}}" color="profile"></ion-radio>
+  </ion-item>
+
+</ion-radio-group>
+
+<ion-card class="contentSection">
+  <ion-card-content>
+    <div class="dFlexAlignItemCenter">
+      <ion-icon name="add-circle-outline" class="iconSize fontSize"></ion-icon>
+      <h5 class="fontSize ion-padding-start">Add New Address</h5>
+    </div>
+  </ion-card-content>
+</ion-card>

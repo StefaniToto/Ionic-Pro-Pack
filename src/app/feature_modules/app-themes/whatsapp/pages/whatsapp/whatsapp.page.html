@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start" ></ion-menu-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search" class="min-height" mode="ios" slot="icon-only"
+          (click)="toggleSearchTitl()">
+        </ion-icon>
+      </ion-button>
+      <ion-img src="assets/chat/chat/chat.png" slot="end" class="header_image min-height"></ion-img>
+      <ion-button>
+        <ion-icon name="ellipsis-vertical" slot="icon-only" class="min-height" mode="md" >
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title mode="md" class="ion-text-start" *ngIf="title"> Classic</ion-title>
+    <ion-searchbar mode="ios" placeholder="Search your friend" *ngIf="!title"></ion-searchbar>
+
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment mode="md" (ionChange)="segmentChanged($event)" [(ngModel)]="segmentTab">
+      <ion-segment-button value="Calls">
+        <div class="contentCenter">
+          <ion-text slot=end class="segment_Text">Calls</ion-text>
+        </div>
+      </ion-segment-button>
+
+      <ion-segment-button value="Chats" checked>
+        <div class="contentCenter">
+          <ion-text slot=end class="segment_Text">Chats<ion-avatar class="segmentCount">17</ion-avatar>
+          </ion-text>
+        </div>
+      </ion-segment-button>
+
+      <ion-segment-button value="group">
+        <div class="contentCenter">
+          <ion-text slot=end class="segment_Text">Contacts</ion-text>
+        </div>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list *ngIf="segmentTab === 'Chats' " class="ion-no-padding">
+    <ion-item color="light" *ngFor="let chat of chatData">
+      <ion-avatar class="chatImage" slot="start">
+        <ion-img [src]="chat.image"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <div class="withcount">
+          <div class="nameAvatar">
+            <h2>{{chat.name}}
+            </h2>
+          </div>
+        </div>
+        <p class="widthHalf">{{chat.description}}</p>
+      </ion-label>
+      <div slot="end" class="timeSlot">
+        <div class="timeEnd">
+          <ion-text slot="end" color="medium" *ngIf="chat.time" class="ion-text-uppercase">{{chat.time}}</ion-text>
+          <ion-text slot="end" color="medium" *ngIf="chat.past">{{chat.past}}</ion-text>
+        </div>
+        <ion-avatar class="chatCount" *ngIf="chat.count">{{chat.count}}</ion-avatar>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="segmentTab === 'Calls' " class="ion-no-padding">
+    <ion-item color="light" *ngFor="let chat of chatData">
+      <ion-avatar class="chatImage" slot="start">
+        <ion-img [src]="chat.image"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <div class="withcount">
+          <div class="nameAvatar">
+            <h2>{{chat.name}}
+            </h2>
+          </div>
+        </div>
+        <p class="widthHalf">{{chat.call}}</p>
+      </ion-label>
+      <div slot="end" class="timeSlot">
+        <div class="timeEnd">
+          <ion-icon class="videocam" name={{chat.video}} expand="icon-only" *ngIf="chat.video">{{chat.count}}
+          </ion-icon>
+          <ion-icon class="videocam" name={{chat.phone}} expand="icon-only" *ngIf="chat.phone">{{chat.count}}
+          </ion-icon>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

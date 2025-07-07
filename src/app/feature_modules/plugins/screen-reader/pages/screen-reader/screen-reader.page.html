@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Text to Speech</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-content>
+      <p>There are two plugins for text to speech functionality - <b>Capacitor ScreenReader and Text to Speech plugin</b></p>
+      <p> <b>Capacitor ScreenReader</b> plugin works with VoiceOver (iOS) and TalkBack (Android), which are accessibility features for
+        people who cannot easily read text in apps. You can enable these features in your device from Settings.
+      </p>
+      <p>
+        <b>Text to Speech plugin</b> can work without turning ON the VoiceOver (iOS) or TalkBack (Android)
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-list-header color="light">
+    <ion-label>Screen Reader</ion-label>
+  </ion-list-header>
+  <ion-item class="cordova-info">
+    <ion-icon slot="start" name="information-circle-outline" color="primary"></ion-icon>
+    <ion-label>
+      <ion-text>
+        <p>Once you turn the service ON, each 'tap' interaction will require a double tap</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="medium" (click)="check()" expand="full">
+        Check Availability
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-no-padding">
+    <ion-col size="12" class="button-info-text ">
+      <ion-text class="ion-text-small">The service will be available once you turn it ON from device settings</ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="primary" (click)="readText()" expand="full">
+        Read Text
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-label>
+        <ion-text>
+          <h3>Following text will be read</h3>
+          <p>{{text}}</p>
+        </ion-text>
+      </ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-list-header color="light">
+    <ion-label>Text to Speech</ion-label>
+  </ion-list-header>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="medium" (click)="checkLanguages()" expand="full">
+        Check supported languages
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="primary" (click)="speak()" expand="full">
+        Start Speech
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="danger" (click)="stop()" expand="full">
+        Stop Speech
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

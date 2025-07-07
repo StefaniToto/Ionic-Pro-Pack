@@ -1,0 +1,98 @@
+<ion-list color="light" class="ion-no-margin ion-margin-bottom">
+  <ion-radio-group color="profile" value="0">
+    <ion-card class="ion-margin" *ngFor="let add of USER_CARD_BILLING_DETAILS; let i = index;">
+      <ion-card-content>
+        <div class="cardContentSection">
+          <ion-radio slot="start" value="{{i}}" color="profile"></ion-radio>
+          <ion-label class="ion-padding-start">
+            <ion-row class="full ion-align-items-center">
+              <ion-col size="10">
+                <ion-row class="ion-align-items-center">
+                  <p class="ion-no-margin"><strong>XXXX-XXXX-XXXX-{{add.cardNumber}}</strong></p>
+                </ion-row>
+                <ion-row class="ion-align-items-center">
+                  <p class="small ion-no-margin">Expiry date: {{add.expiryDate}}</p>
+                  <h6 class="small mycolor ion-no-margin ion-padding-start" *ngIf="i===0">PRIMARY</h6>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-label>
+          <img [src]="add.image" class="cardImage">
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-radio-group>
+</ion-list>
+
+
+<div class="add-payment-div contentSection">
+  <ion-row>
+    <ion-col size="8" class="add-new">
+      <ion-label color="dark">Add New Card</ion-label>
+    </ion-col>
+    <ion-col>
+      <div>
+        <ion-button fill="outline" (click)="SaveCard()" class="saveBtn ion-float-right">Save</ion-button>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-text color="medium"><span class="label">Credit/Debit Number</span></ion-text>
+      <ion-input class="input ion-padding-horizontal" type="number" placeholder="Credit/Debit Number"
+        [(ngModel)]="cardDetails.cardNumber" ngDefaultControl></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-text color="medium"><span class="label">Card Type</span></ion-text>
+      <ion-select placeholder="Select Card Type" class="input" [(ngModel)]="cardDetails.cardType" ngDefaultControl>
+        <ion-select-option value="visa">VISA</ion-select-option>
+        <ion-select-option value="master">Master Card</ion-select-option>
+      </ion-select>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-text color="medium"><span class="label">Security Code(CVV)</span></ion-text>
+      <ion-input class="input ion-padding-horizontal" type="number" placeholder="CVV" [(ngModel)]="cardDetails.cardCvv"
+        ngDefaultControl>
+      </ion-input>
+    </ion-col>
+    <ion-col>
+      <ion-text color="medium"><span class="label">Expiry Date</span></ion-text>
+      <ion-input class="input ion-padding-horizontal" placeholder="MM/YY" [(ngModel)]="cardDetails.cardDate"
+        ngDefaultControl></ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-text color="medium">
+        <h5 class="label ion-no-margin">Billing Zip/Postal Code</h5>
+      </ion-text>
+      <ion-text color="medium">
+        <h6 class="small">The zip or postal code from the address registered for this card</h6>
+      </ion-text>
+    </ion-col>
+    <ion-col>
+      <ion-input class="input ion-padding-horizontal" placeholder="Zip Code" [(ngModel)]="cardDetails.zipCode"
+        ngDefaultControl>
+      </ion-input>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col class="lockSection">
+      <div>
+        <ion-icon name="lock-closed" class="icon" class="lockIcon"></ion-icon>
+      </div>
+      <div class="secureTextSection">
+        <ion-text color="dark">
+          <h5 class="label ion-no-margin">Secure Payment</h5>
+        </ion-text>
+        <ion-text color="medium">
+          <h6 class="small ion-no-margin">Trusted by over 500 million shoppers in 50 countries</h6>
+        </ion-text>
+      </div>
+    </ion-col>
+  </ion-row>
+</div>

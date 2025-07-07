@@ -1,0 +1,22 @@
+ion-header {
+    --background: linear-gradient(to top right, #ffa000 0%, #ffca28 100%);
+    background: linear-gradient(to top right, #ffa000 0%, #ffca28 100%);
+}
+
+ion-toolbar {
+    --background: linear-gradient(to top right, #ffa000 0%, #ffca28 100%);
+    background: linear-gradient(to top right, #ffa000 0%, #ffca28 100%);
+}
+
+ion-title {
+    text-align: center;
+    color: White;
+    margin-right: 48px;
+}
+
+.required {
+    margin-right: 10px;
+}
+.hydrated1 {
+    margin-top: 6px;
+}

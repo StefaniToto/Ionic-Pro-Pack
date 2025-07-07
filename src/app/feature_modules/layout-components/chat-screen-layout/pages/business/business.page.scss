@@ -1,0 +1,200 @@
+/**
+* Ionic Capacitor Full App in Angular  (https://store.enappd.com/product/capacitor-full-app-with-ionic-angular)
+
+*
+* Copyright © 2020-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+#chat-parent {
+  scroll-behavior: smooth;
+}
+.header {
+  --background: #224068;
+}
+ion-header ion-toolbar {
+  ion-menu-button,
+  ion-button,
+  ion-title,
+  .send-button-parent ion-icon {
+    color: white;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  ion-footer ion-toolbar {
+    --background: var(--ion-color-step-300);
+  }
+}
+.line-breaker {
+  white-space: pre-line;
+}
+
+.contentBg {
+  --background: #2f517c;
+  --background: -webkit-linear-gradient(to bottom, #2f517c, #56b4d3);
+  --background: linear-gradient(to bottom, #2f517c, #56b4d3);
+  padding-bottom: 0 !important;
+  --padding-bootm: 0 !important;
+  scroll-behavior: smooth;
+}
+.message-wrap {
+  .message {
+    position: relative;
+    padding: 7px 0;
+    .user-img {
+      position: absolute;
+      object-fit: cover;
+      border-radius: 45px;
+      width: 35px;
+      height: 35px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.36);
+    }
+    .msg-detail {
+      width: 100%;
+      display: inline-block;
+      position: relative;
+      p {
+        margin: 0;
+        font-size: 14px;
+      }
+      .msg-info {
+        p {
+          font-size: 0.8em;
+          color: #888;
+        }
+      }
+      .msg-content {
+        position: relative;
+        border-radius: 5px;
+        padding: 8px;
+        width: auto;
+        max-width: 80%;
+
+        .line-breaker {
+          white-space: pre-line;
+          padding-left: 7px;
+        }
+      }
+    }
+  }
+  .message-left {
+    .msg-content {
+      float: left;
+      position: relative;
+      background: rgba(37, 61, 99, 0.8);
+      color: #fff;
+      :before {
+        content: "";
+        position: absolute;
+        background: transparent;
+        width: 10px;
+        height: 8px;
+        left: -10px;
+        top: 9px;
+        box-sizing: border-box;
+        border-right: 10px solid rgba(37, 61, 99, 0.8);
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+      }
+    }
+    .msg-detail {
+      padding-left: 52px;
+    }
+    .user-img {
+      left: 0;
+      z-index: 9999;
+    }
+  }
+  .message-right {
+    .msg-detail {
+      .msg-info {
+        text-align: right;
+      }
+    }
+    .user-img {
+      right: 0;
+    }
+    .msg-content {
+      float: right;
+      color: var(--ion-color-dark);
+      background: var(--ion-color-light);
+    }
+  }
+}
+
+.containerFooter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.sendBtn-icon {
+  font-size: 30px;
+}
+.send-button-parent {
+  padding: 0 6px 0 8px;
+}
+
+.sendBtn {
+  opacity: 1 !important;
+  height: 40px;
+}
+.inputConatiner {
+  width: 80%;
+}
+
+.inputMessage {
+  border: 1px solid #d8d8e0;
+  border-radius: 10px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+span.line-style {
+  position: absolute;
+  border-left: 3px solid var(--ion-color-light);
+  margin-left: 16px;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+span.triangle {
+  border-radius: 2px;
+  height: 14px;
+  width: 14px;
+  top: 14px;
+  display: block;
+  border-style: solid;
+  border-color: rgba(37, 61, 99, 0.83);
+  border-width: 1px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  background: rgba(37, 61, 99, 0.83);
+  left: 53px;
+}
+
+.footerSections {
+  --background: #bdccd3;
+  background: #bdccd3;
+}
+.inputBg {
+  background: var(--ion-color-light);
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

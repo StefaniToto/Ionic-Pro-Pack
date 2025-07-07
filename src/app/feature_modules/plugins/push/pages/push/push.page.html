@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Push Notifications</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="reset()">
+        <ion-icon slot="icon-only" name="refresh-sharp"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goToLink()">
+        <ion-icon slot="icon-only" name="book"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header color="light">
+    <ion-label>Register for Push</ion-label>
+  </ion-list-header>
+  <ion-row class="ion-padding">
+    <ion-col size="12">
+      Ideally, Push should get registered on app start or page load. Registration on this button click is just for
+      demonstration purpose
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="success" (click)="checkPermission()" expand="full">Register for Push</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-item class="cordova-info">
+    <ion-icon slot="start" name="information-circle-outline" color="warning"></ion-icon>
+    <ion-label>
+      <ion-text>
+        <p>Push will not work without registration</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+  <ion-item class="cordova-info">
+    <ion-icon slot="start" name="information-circle-outline" color="primary"></ion-icon>
+    <ion-label>
+      <ion-text>
+        <p>This app is attached to default Firebase project. You need to attach the app to your own Firebase proejct
+          to be able
+          to send push notification. Details in documentation</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+  <ion-list-header color="light">
+    <ion-label>Push Notification List</ion-label>
+  </ion-list-header>
+  <ion-row class="ion-padding-vertical" *ngIf="!pushList.length">
+    <ion-col size="12" class="button-info-text ">
+      <ion-text class="ion-text-small">Notification received and their data will be shown here</ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-list>
+    <ion-item *ngFor="let push of pushList">
+      <ion-label>
+        <h3>{{push.title}}</h3>
+        <p>{{push.body}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="danger" (click)="reset()" expand="full">Remove All Notifications</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12" class="button-info-text">
+      <ion-text class="ion-text-small">Removes all notifications from notification tray</ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-list-header color="light">
+    <ion-label>Channel</ion-label>
+  </ion-list-header>
+
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="success" (click)="createChannel()" expand="full">Create 'Important' Channel</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="medium" (click)="listChannel()" expand="full">List Channels</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-padding-vertical" *ngIf="!channelList.length">
+    <ion-col size="12" class="button-info-text ">
+      <ion-text class="ion-text-small">Created channel list will be shown here</ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-list>
+    <ion-item *ngFor="let channel of channelList">
+      <ion-label>
+        <ion-text>
+          <h3>Name: {{channel.name}}</h3>
+          <p>Description : {{channel.description}}</p>
+          <p>Importance : {{channel.importance}}</p>
+
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="danger" (click)="removeChannel()" expand="full">Remove 'Important' Channel</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-no-padding">
+    <ion-col size="12" class="button-info-text">
+      <ion-text class="ion-text-small">You can create separate channels (android only) for separate notification
+        categories in the app i.e. marketing, security, auth etc. </ion-text>
+    </ion-col>
+  </ion-row>
+</ion-content>

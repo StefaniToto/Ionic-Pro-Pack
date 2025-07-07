@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title-ios ion-text-capitalize">Expandable List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let item of lists; let i = index" [value]="item.Name" toggle-icon="arrow-down-circle">
+      <ion-item slot="header">
+        <ion-label>{{ item.Name }}</ion-label>
+      </ion-item>
+  
+      <ion-list slot="content">
+        <ion-item color="light" *ngFor="let child of item.children; let j = index" lines="none">
+          <ion-avatar class="avatarImg">
+            <ion-img src="{{child.image}}"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <div class="titleCard ion-padding-horizontal">
+              <h4>
+                <b>{{child.Name}}</b>
+              </h4>
+              <h6>{{child.Equipment}}</h6>
+              <p> {{child.Set}}</p>
+            </div>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-accordion>
+  </ion-accordion-group>
+    <!-- <div *ngFor="let item of lists; let i = index">
+      <ion-list-header color="medium">
+        <ion-label>{{ item.Name }}</ion-label>
+        <ion-button color="light" (click)="toggleGroup(i)">
+          <ion-icon slot="icon-only" [name]="isGroupShown(i)?'lock-open-outline':'lock-closed-outline'"></ion-icon>
+        </ion-button>
+      </ion-list-header>
+      <ion-list class="expandable " [ngStyle]="{'height': isGroupShown(i) ? item.height: 0}"
+        [ngClass]="{'ion-padding': isGroupShown(i),'ion-no-padding':!isGroupShown(i)}">
+        <ion-item color="light" *ngFor="let child of item.children; let j = index" lines="none">
+          <ion-avatar class="avatarImg">
+            <ion-img src="{{child.image}}"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <div class="titleCard ion-padding-horizontal">
+              <h4>
+                <b>{{child.Name}}</b>
+              </h4>
+              <h6>{{child.Equipment}}</h6>
+              <p> {{child.Set}}</p>
+            </div>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div> -->
+
+</ion-content>

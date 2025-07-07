@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Status Bar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-text>
+        <p>With Capacitor, you can manage features of your device's status bar as well. This can help you theme the UI
+          as per the app's theme or the actions being implemented.</p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+  <ion-list-header color="light">
+    <ion-label>Show / Hide</ion-label>
+
+  </ion-list-header>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="success" (click)="showStatusBar()" expand="full">Show Status Bar</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="danger" (click)="hidetatusBar()" expand="full">Hide Status Bar</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-list-header color="light">
+    <ion-label>Set Style</ion-label>
+  </ion-list-header>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="medium" (click)="setStyleLight()" expand="full">Set Light Style</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-button color="dark" (click)="setStyleDark()" expand="full">Set Dark Style</ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-list-header color="light">
+    <ion-label>Current Status Bar</ion-label>
+  </ion-list-header>
+  <ion-grid *ngIf="statusBarInfo">
+    <ion-row *ngFor="let info of statusBarInfo|keyvalue">
+      <ion-col>
+        <b>{{info.key}} :</b>
+      </ion-col>
+      <ion-col>
+        {{info.value}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

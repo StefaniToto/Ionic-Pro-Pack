@@ -1,0 +1,147 @@
+/**
+* Ionic Capacitor Full App in Angular  (https://store.enappd.com/product/capacitor-full-app-with-ionic-angular)
+
+*
+* Copyright © 2020-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+ion-content {
+  --background: var(--ion-color-step-50);
+}
+ion-header ion-toolbar {
+  --background: var(--ion-color-light);
+  ion-menu-button,
+  ion-button,
+  ion-title,
+  ion-icon,
+  ion-searchbar,
+  ion-back-button {
+    color: white;
+  }
+}
+@media (prefers-color-scheme: light) {
+  ion-header ion-toolbar {
+    --background: var(--ion-color-primary);
+  }
+}
+.welcome-card ion-img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+.inputSection {
+  border: 1px solid #000;
+}
+
+/* Credit Card */
+.credit-card {
+  width: 360px;
+  --background: var(--ion-color-light);
+}
+
+.form-header {
+  height: 60px;
+  padding: 20px 30px 0;
+  border-bottom: 1px solid #e1e8ee;
+}
+
+.form-body {
+  height: 220px;
+  padding: 30px 30px 20px;
+}
+
+/* Common */
+.card-number,
+.cvv-input input,
+.month select,
+.year select {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 14px;
+  color: "#000";
+}
+
+.card-number,
+.month select,
+.year select {
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 14px;
+}
+
+.card-number,
+.cvv-details,
+.cvv-input input,
+.month select,
+.year select {
+  color: #86939e;
+}
+
+/* Card Number */
+.card-number {
+  width: 100%;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  border: 2px solid #e1e8ee;
+  border-radius: 6px;
+}
+
+/* Date Field */
+.month ion-select,
+.year ion-select {
+  width: 145px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  border: 2px solid #e1e8ee;
+  border-radius: 6px;
+  background: var(--ion-color-light);
+  background-position: 85% 50%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.month ion-select {
+  float: left;
+}
+
+.year ion-select {
+  float: right;
+}
+
+/* Card Verification Field */
+.cvv-input ion-input {
+  float: left;
+  width: 145px;
+  padding-left: 20px;
+  border: 2px solid #e1e8ee;
+  border-radius: 6px;
+  background: var(--ion-color-light);
+}
+
+.cvv-details {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 16px;
+  float: right;
+  margin-bottom: 20px;
+}
+
+.cvv-details p {
+  margin-top: 6px;
+}
+
+.PriceSection {
+  float: right;
+  padding-right: 11px;
+}
+.stripeBtn {
+  margin-bottom: 10px;
+}
+.listSection {
+  padding-top: 25px;
+}
+.cordova-info ion-text p{
+  white-space: normal;
+}

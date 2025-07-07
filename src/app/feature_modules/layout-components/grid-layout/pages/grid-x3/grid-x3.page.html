@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title-ios">Product Grid X3</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="ion-margin-top ion-margin-bottom">
+    <ion-col size="4" *ngFor="let item of electronics">
+      <ion-card class="cardSection ion-margin-top">
+        <img [src]="item.image">
+        <ion-card-content>
+          <span class="contentText">{{item.title}}</span>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

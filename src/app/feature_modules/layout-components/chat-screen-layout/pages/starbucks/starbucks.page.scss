@@ -1,0 +1,368 @@
+
+
+/**
+* Ionic Capacitor Full App in Angular  (https://store.enappd.com/product/capacitor-full-app-with-ionic-angular)
+
+*
+* Copyright © 2020-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+ion-content{
+  --background: var(--ion-color-light);
+}
+
+ion-header {
+    ion-toolbar {
+      --background: #006a43;
+    }
+  }
+  
+  .chatImage {
+    width: 40px;
+    height: 40px;
+    display: flex;
+  }
+  
+  .header-toolbar-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 8px;
+  
+    p {
+      font-size: 14px;
+      color: #ccc;
+    }
+  
+    h5 {
+      font-weight: bold;
+    }
+  }
+  
+  ion-icon {
+    font-size: 30px;
+  }
+  
+  ion-label {
+    padding-bottom: 10px;
+  }
+  
+  ion-select {
+    max-width: 100%;
+  }
+  
+  ion-list {
+    background: transparent;
+    margin-bottom: 0;
+  }
+  
+  .imageAvatarRight {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  
+    .avatar {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .chatDiv {
+      text-align: justify;
+      position: relative;
+      background: #8080806b;
+      border-radius: 30px;
+      border-bottom-left-radius: 0;
+      min-width: 72vw;
+      max-width: 72vw;
+      box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+      box-shadow: none;
+      color: var(--ion-color-dark);
+    }
+  
+    ion-img {
+      width: 35px;
+      height: 35px;
+    }
+  
+    .sharper {
+      &.chatDiv {
+        border-radius: 0 !important;
+      }
+    }
+  
+    .sharper-bottom {
+      &.chatDiv {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+    }
+  
+    .sharper-top {
+      &.chatDiv {
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+      }
+    }
+  }
+  
+  .imageAvatarLeft {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  
+    .avatar {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .chatDiv {
+      text-align: left;
+      position: relative;
+      background: #006a43;
+      border-radius: 30px;
+      border-bottom-right-radius: 0;
+      color: white;
+      max-width: 72vw;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+  
+    ion-img {
+      width: 35px;
+      height: 35px;
+    }
+  
+    ion-img.image-from-footer {
+      width: 72vw;
+      height: 140px;
+      object-fit: cover;
+      max-width: 72vw;
+    }
+  
+    .image-from-footer {
+      width: 72vw;
+      max-width: 72vw;
+      height: 146px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: black;
+      border: 1px solid #bbb;
+      border-radius: 30px;
+      border-bottom-right-radius: 0;
+    }
+  
+    .image-from-footerMap {
+      width: 72vw;
+      height: 41vw;
+    }
+  
+    .image-from-footerDiv {
+      width: 72vw;
+      border-bottom-left-radius: 38px;
+      border-top-right-radius: 38px;
+      border-top-left-radius: 38px;
+    }
+  
+    @media only screen and (min-width: 320px) {
+      .image-from-footerDiv {
+        width: 215px;
+        height: 132px;
+        border-bottom-left-radius: 38px;
+        border-top-right-radius: 38px;
+        border-top-left-radius: 38px;
+      }
+    }
+  
+  
+  
+    .sharper {
+      &.chatDiv {
+        border-radius: 0;
+      }
+    }
+  
+    .sharper-bottom {
+      &.chatDiv {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  
+    .sharper-top {
+      &.chatDiv {
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+      }
+    }
+  }
+  
+  ion-fab-button {
+    width: 47px !important;
+    height: 47px !important;
+  }
+  
+  ion-fab {
+    bottom: -22px !important;
+  }
+  
+  .footerIcon {
+    color: #006a43;
+    font-size: 2em;
+  }
+  
+  
+  ion-input {
+    --placeholder-color: var(--ion-color-medium-tint);
+  }
+  
+  .chatDivLoader {
+    position: relative;
+    background: #48aa86;
+    border-radius: 16px;
+    min-width: 80px;
+    max-width: 80px;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  ion-text {
+    font-size: 12px;
+    color: var(--ion-color-medium);
+  }
+  
+  ion-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .loading-col {
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+  
+  .right {
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+  
+  .left {
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+  
+  .footer-row {
+    background: transparent;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+  
+    .footer-col {
+      border-right: 1px solid #989aa24f;
+      border-bottom: 1px solid #989aa263;
+      padding: 10px;
+    }
+  
+    .footer-label {
+      padding-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+  
+  .topDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .timediv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 18px;
+  }
+  
+  h5 {
+    color: white;
+    margin: 0;
+  }
+  
+  ion-item.topTitle {
+    --padding-start: 0;
+  }
+  
+  .white {
+    color: white;
+  }
+  
+  .chatDivFooterContent {
+    text-align: left;
+    position: relative;
+    background: transparent;
+    border-radius: 30px;
+    border-bottom-right-radius: 0;
+    max-width: 72vw;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+
+  ion-footer ion-toolbar{
+    --background: var(--ion-color-light);
+    
+    ion-list{
+      --background: var(--ion-color-light);
+    }
+  }
+
+  ion-header ion-toolbar {
+    ion-menu-button,
+    ion-button,
+    ion-title {
+        color: white;
+    }
+  }
+
+  @media (prefers-color-scheme:dark){
+    .footerIcon {
+      color: var(--ion-color-dark);
+    }
+    ion-footer ion-toolbar{
+      ion-item{
+        --background: #444;
+        ion-input{
+          color: white;
+        }
+      }
+      ion-icon{
+        color: var(--ion-color-dark);
+      }
+    }
+  
+  }
+
+  ion-header ion-toolbar {
+    ion-menu-button,
+    ion-button,
+    ion-title,
+    ion-icon {
+      color: white;
+    }
+  }

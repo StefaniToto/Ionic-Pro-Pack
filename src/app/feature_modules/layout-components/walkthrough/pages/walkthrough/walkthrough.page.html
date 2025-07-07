@@ -1,0 +1,35 @@
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts" (ionSlideDidChange)="sliderChanges($event)">
+
+    <ion-slide *ngFor="let slide of slides; let i = index">
+      <div class="slide" [style.backgroundColor]="slide.slideBg">
+        <div class="skip-button">
+          <ion-button fill="clear" class="ion-color-light" (click)="skip()">Skip</ion-button>
+        </div>
+        <img [src]="slide.imageUrl">
+        <div>
+          <h1> {{slide.title}} </h1>
+          <span>{{slide.slideDesc}}</span>
+        </div>
+
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="slide0">
+        <div class="skip-button">
+          <ion-button fill="clear" color="dark" (click)="skip()">Skip</ion-button>
+        </div>
+        <img src="assets/imgs/enappd-dark-light.png">
+        <div>
+          <h1> DARK MODE </h1>
+          <span>Use every feature of Ionic 6 Full App in Dark or Light modes </span>
+          <div class="hint">(Try changing your display to Dark / Light)</div>
+        </div>
+        <div class="ion-padding ion-margin">
+          <ion-button color="primary" class="btnSubmit slideTitle ion-text-uppercase ion-padding-horizontal"
+            (click)="skip()">Get Started</ion-button>
+        </div>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

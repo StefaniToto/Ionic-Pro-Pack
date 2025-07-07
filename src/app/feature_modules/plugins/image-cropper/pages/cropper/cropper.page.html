@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Camera & Photos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header>
+    <ion-label>From Camera</ion-label>
+  </ion-list-header>
+  <ion-grid class="ion-padding-horizontal">
+    <ion-button expand="block" (click)="openCamera()">Take photo</ion-button>
+  </ion-grid>
+  <ion-grid *ngIf="cameraImage">
+    <ion-text>Camera Image:</ion-text>
+  </ion-grid>
+  <img [src]="cameraImage" *ngIf="cameraImage" />
+  <ion-list-header class="ion-margin-top">
+    <ion-label>From Gallery</ion-label>
+  </ion-list-header>
+  <ion-grid class="ion-padding-horizontal">
+    <ion-button expand="block" (click)="openGallery()">Pick from gallery</ion-button>
+  </ion-grid>
+  <ion-grid *ngIf="galleryImage">
+    <ion-text>Gallery Image:</ion-text>
+  </ion-grid>
+  <img class="ion-padding" [src]=" galleryImage" *ngIf="galleryImage" />
+
+  <ion-list-header class="ion-margin-top">
+    <ion-label>Edit after picking</ion-label>
+  </ion-list-header>
+  <ion-item>
+    <ion-label>
+      <ion-text>
+        <p>Works as per device image editing tools</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+  <ion-grid class="ion-padding-horizontal">
+    <ion-button expand="block" (click)="editPhoto()">Pick photo</ion-button>
+  </ion-grid>
+  <ion-grid *ngIf="galleryImage">
+    <ion-text>Edited Image:</ion-text>
+  </ion-grid>
+  <img class="ion-padding" [src]="editedImage" *ngIf="editedImage" />
+
+  <ion-list-header class="ion-margin-top">
+    <ion-label>Selfie</ion-label>
+  </ion-list-header>
+  <ion-item>
+    <ion-label>
+      <ion-text>
+        <p>Works for iOS and Web only</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+  <ion-grid class="ion-padding-horizontal">
+    <ion-button expand="block" (click)="takeSelfie()">Click a Selfie</ion-button>
+  </ion-grid>
+  <ion-grid *ngIf="selfie">
+    <ion-text>Selfie:</ion-text>
+  </ion-grid>
+  <img class="ion-padding" [src]="selfie" *ngIf="selfie" />
+</ion-content>

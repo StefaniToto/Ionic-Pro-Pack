@@ -1,0 +1,38 @@
+.full-screen{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-color:black;
+}
+.scan-area{
+    position:relative;
+    margin:20px auto;
+    width:80vw;
+    height: 200px;
+    padding-bottom:20%;
+    background-color:black;
+    border:1px solid white;
+}
+.scan-area:before {
+    content:'';
+    position:absolute;
+    top:-2px; left:-2px;
+    border:2px solid black;
+    height:100%;
+    width:100%;
+    border-radius: 10%;
+}
+.close-button{
+    width: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+}
+.scan-text{
+    color: white;
+    position: absolute;
+    bottom: -40px;
+}

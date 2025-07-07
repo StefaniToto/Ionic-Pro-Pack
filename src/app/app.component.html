@@ -1,0 +1,386 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay" class="left-menu" side="start">
+      <ion-header class="head">
+        <div class="enappd-header">
+          <div class="logo">
+            <img src="assets/logo-ionic-white.png" />
+          </div>
+          <div class="title">Ionic 6 Full App</div>
+          <div class="subtitle">Ionic {{ionic_v}} | Angular {{ang_v}} | Capacitor {{cap_v}}</div>
+        </div>
+      </ion-header>
+      <ion-content>
+        <!--Beginner Features-->
+        <ion-list class="list-padd ion-no-margin ion-no-padding" >
+          <ion-list-header color="light">
+            <ion-label>Beginner Features</ion-label>
+          </ion-list-header>
+          <div *ngFor="let p of beginnerMenu">
+            <div *ngIf="p.children && !p.module">
+              <ion-item color="light" detail (click)="expandMenu(p.title)">
+                <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                <ion-label>
+                  {{ p.title }}
+                </ion-label>
+              </ion-item>
+              <div class="zero-h" [ngClass]="{'animate-expand': (showChildren === p.title)}">
+                <ion-menu-toggle auto-hide="false" *ngFor="let option of p.children">
+                  <ion-item color="light" class="ion-padding-start" [ngClass]="{'disabled':option.disabled}"
+                    (click)="redirectPage(option)">
+                    <ion-icon slot="start" [name]="option.icon"></ion-icon>
+                    <ion-label>
+                      {{ option.title }}
+                    </ion-label>
+                  </ion-item>
+                </ion-menu-toggle>
+              </div>
+            </div>
+            <div *ngIf="p.children && p.module === 'sidemenu'">
+              <ion-item color="light" detail (click)="expandMenu(p.title)">
+                <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                <ion-label>
+                  {{ p.title }}
+                </ion-label>
+              </ion-item>
+              <div *ngIf="showChildren === p.title" class="zero-h"
+                [ngClass]="{'animate-expand': (showChildren === p.title)}">
+                <ion-menu-toggle auto-hide="false" *ngFor="let option of p.children;let i = index">
+                  <ion-menu-button autoHide="false" menu="end">
+                    <ion-item color="light" (click)="showSidemenu(i)" class="ion-padding-start" [routerLink]="[option.url]">
+                      <ion-icon slot="start" [name]="option.icon"></ion-icon>
+                      <ion-label>
+                        {{ option.title }}
+                      </ion-label>
+                    </ion-item>
+                  </ion-menu-button>
+                </ion-menu-toggle>
+              </div>
+            </div>
+            <div *ngIf="!p.children">
+              <ion-menu-toggle auto-hide="false">
+                <ion-item color="light" [routerLink]="[p.url]" detail>
+                  <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                  <ion-label>
+                    {{ p.title }}
+                  </ion-label>
+                </ion-item>
+              </ion-menu-toggle>
+            </div>
+          </div>
+        </ion-list>
+
+        <!--Startup Features-->
+        <ion-list class="list-padd ion-no-margin ion-no-padding">
+          <ion-list-header color="light">
+            <ion-label>Startup Features</ion-label>
+          </ion-list-header>
+          <div *ngFor="let p of startupMenu">
+            <div *ngIf="p.children && !p.module">
+              <ion-item color="light" detail (click)="expandMenu(p.title)">
+                <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                <ion-label>
+                  {{ p.title }}
+                </ion-label>
+              </ion-item>
+              <div class="zero-h" [ngClass]="{'animate-expand': (showChildren === p.title)}">
+                <ion-menu-toggle auto-hide="false" *ngFor="let option of p.children">
+                  <ion-item color="light" class="ion-padding-start" [ngClass]="{'disabled':option.disabled}"
+                    (click)="redirectPage(option)">
+                    <ion-icon slot="start" [name]="option.icon"></ion-icon>
+                    <ion-label>
+                      {{ option.title }}
+                    </ion-label>
+                  </ion-item>
+                </ion-menu-toggle>
+              </div>
+            </div>
+            <div *ngIf="p.children && p.module==='sidemenu'">
+              <ion-item color="light" detail (click)="expandMenu(p.title)">
+                <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                <ion-label>
+                  {{ p.title }}
+                </ion-label>
+              </ion-item>
+              <div *ngIf="showChildren === p.title">
+                <div class="option_menu-button" *ngFor="let option of p.children;let i = index">
+                  <ion-menu-button autoHide="false" menu="end">
+                    <ion-item color="light" (click)="showSidemenu(i)" class="ion-padding-start" [routerLink]="[option.url]">
+                      <ion-icon slot="start" [name]="option.icon"></ion-icon>
+                      <ion-label>
+                        {{ option.title }}
+                      </ion-label>
+                    </ion-item>
+                  </ion-menu-button>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="!p.children">
+              <ion-menu-toggle auto-hide="false">
+                <ion-item color="light" [routerLink]="[p.url]" detail>
+                  <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                  <ion-label>
+                    {{ p.title }}
+                  </ion-label>
+                </ion-item>
+              </ion-menu-toggle>
+            </div>
+          </div>
+        </ion-list>
+
+        <!--Pro Features-->
+        <ion-list class="list-padd ion-no-margin ion-no-padding">
+          <ion-list-header color="light">
+            <ion-label>Pro Features</ion-label>
+          </ion-list-header>
+          <div *ngFor="let p of proMenu">
+            <div *ngIf="p.children && !p.module">
+              <ion-item color="light" detail (click)="expandMenu(p.title)">
+                <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                <ion-label>
+                  {{ p.title }}
+                </ion-label>
+              </ion-item>
+              <div *ngIf="showChildren === p.title">
+                <ion-menu-toggle class="ion-menu-toggle" auto-hide="false" *ngFor="let option of p.children">
+                  <ion-item color="light" class="ion-padding-start" [ngClass]="{'disabled':option.disabled}"
+                    (click)="redirectPage(option)">
+                    <ion-icon slot="start" [name]="option.icon"></ion-icon>
+                    <ion-label class="menu-label">
+                      {{ option.title }} <ion-icon *ngIf="option.device" name="phone-portrait" color="primary">
+                      </ion-icon>
+                      <ion-icon *ngIf="option.apple" name="logo-apple" color="primary"></ion-icon>
+                    </ion-label>
+                  </ion-item>
+                </ion-menu-toggle>
+              </div>
+            </div>
+            <div *ngIf="!p.children">
+              <div auto-hide="false">
+                <ion-item color="light" detail [routerLink]="[p.url]">
+                  <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                  <ion-label>
+                    {{ p.title }}
+                  </ion-label>
+                </ion-item>
+              </div>
+            </div>
+          </div>
+          <ion-menu-toggle>
+            <ion-item color="light" detail (click)="gotoAppVerison()" class="ion-margin-top">
+              <ion-icon slot="start" name="person"></ion-icon>
+              <ion-label>
+                App Version
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          
+
+          <ion-item color="light" detail (click)="logout()" class="ion-margin-top">
+            <ion-icon slot="start" name="person"></ion-icon>
+            <ion-label>
+              Logout
+            </ion-label>
+          </ion-item>
+          <ion-text><p class="version">Version {{appVersion}} | &copy; Enappd 2022</p></ion-text>
+          <hr style="background: #f4f4f4" />
+        </ion-list>
+
+      </ion-content>
+    </ion-menu>
+
+    <!-- Profile -->
+    <ion-menu class="sidemenu-1" *ngIf="sidemenu===5" side="end" type="overlay" contentId="main-content">
+      <ion-content class="contentBg">
+        <div>
+          <ion-card slot="fixed" class="driverCard fixed ion-no-margin ion-no-padding" color="primary">
+            <ion-item lines="none" class="ion-padding-vertical">
+              <div class="driverProfileImage">
+                <ion-avatar slot="start" class="profile">
+                  <img src="assets/map/driver.jpeg">
+                </ion-avatar>
+                <div class="ion-margin-start">
+                  <h3 class="userName ion-no-margin">John Doe</h3>
+                  <span class="userDetails">
+                    <ion-icon name="star"></ion-icon>Premium Member
+                  </span>
+                </div>
+              </div>
+            </ion-item>
+
+            <ion-card-content class="ion-no-margin ion-no-padding">
+              <div class="cardContent">
+                <div class="driverDetails">
+                  <ion-icon name="time" class="driverStatusIcons"></ion-icon>
+                  <ion-label color="light" class=" textBold detailsLabel">10.2</ion-label>
+                  <p class="detailText ion-text-uppercase">Hours Online</p>
+                </div>
+                <div class="driverDetails">
+                  <ion-icon name="speedometer" class="driverStatusIcons"></ion-icon>
+                  <ion-label color="light" class=" textBold detailsLabel ion-text-uppercase">30 KM</ion-label>
+                  <p class="detailText">Total Distance</p>
+                </div>
+                <div class="driverDetails">
+                  <ion-icon name="time" class="driverStatusIcons"></ion-icon>
+                  <ion-label color="light" class=" textBold detailsLabel ">20</ion-label>
+                  <p class="detailText ion-text-uppercase">Total Jobs</p>
+                </div>
+              </div>
+
+            </ion-card-content>
+          </ion-card>
+        </div>
+        <ion-list lines="none" class="ion-padding-top">
+          <ion-menu-toggle auto-hide="false" *ngFor="let item of sidemenuLayout1" menu="end">
+            <ion-item>
+              <ion-icon slot="start" [name]="item.icon" [ngClass]="{'active':item.active}"></ion-icon>
+              <ion-label [ngClass]="{'active':item.active}">
+                {{item.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <!-- Small Grid -->
+    <ion-menu class="sidemenu-2" *ngIf="sidemenu===2" side="end" type="overlay" contentId="main-content">
+      <ion-content>
+        <div class="content">
+          <div class="profile-block">
+            <div class="profile-image">
+              <img src="../assets/chat/chat/chat1.jpg" />
+            </div>
+            <ion-text color="light">Jane Braun</ion-text>
+          </div>
+          <div class="menu">
+            <div class="menu-item" *ngFor="let item of sidemenuLayout1">
+              <div class="block" [ngClass]="{'active':item.active}">
+                <div class="icon">
+                  <ion-icon slot="start" [name]="item.icon" [ngClass]="{'active':item.active}"></ion-icon>
+                </div>
+                <div class="text" [ngClass]="{'active':item.active}">
+                  {{item.title}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-content>
+    </ion-menu>
+    <!-- Full Screen -->
+    <ion-menu class="sidemenu-3" *ngIf="sidemenu===3" side="end" type="overlay" contentId="main-content">
+
+      <ion-content>
+        <div class="close-button">
+          <ion-menu-toggle menu="end">
+            <ion-icon name="close" color="light"></ion-icon>
+          </ion-menu-toggle>
+        </div>
+        <div class="content">
+          <div class="left">
+            <div class="icon-div">
+              <img src="assets/map/Google-Car.png" />
+            </div>
+          </div>
+          <div class="right">
+            <div class="menu-item" *ngFor="let item of sidemenuLayout1" [ngClass]="{'active':item.active}">
+              {{item.title}}
+            </div>
+          </div>
+        </div>
+      </ion-content>
+    </ion-menu>
+    <!-- Small Grid 2 -->
+    <ion-menu class="sidemenu-4" *ngIf="sidemenu===4" side="end" type="overlay" contentId="main-content">
+      <ion-content>
+        <div class="content">
+          <div class="menu">
+            <div class="menu-item" *ngFor="let item of sidemenuLayout1">
+              <div class="block" [ngClass]="{'active':item.active}">
+                <div class="icon">
+                  <ion-icon slot="start" [name]="item.icon" [ngClass]="{'active':item.active}"></ion-icon>
+                </div>
+                <div class="text" [ngClass]="{'active':item.active}">
+                  {{item.title}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-content>
+    </ion-menu>
+    <!-- Overlay -->
+    <ion-menu class="sidemenu-5" *ngIf="sidemenu===1" side="end" type="overlay" contentId="main-content">
+      <ion-content>
+        <div class="content">
+        </div>
+        <div class="content-on-top">
+          <ion-card slot="fixed" class="driverCard fixed ion-no-margin ion-no-padding" color="primary">
+            <ion-item lines="none" class="ion-padding-vertical">
+              <div class="driverProfileImage">
+                <ion-avatar slot="start" class="profile">
+                  <img src="assets/map/driver.jpeg">
+                </ion-avatar>
+                <div>
+                  <h3 class="userName ion-no-margin">John Doe</h3>
+                </div>
+              </div>
+            </ion-item>
+
+            <ion-card-content class="ion-no-margin ion-no-padding">
+              <div class="cardContent">
+                <div class="driverDetails">
+                  <ion-label color="light" class=" textBold detailsLabel">15</ion-label>
+                  <p class="detailText ion-text-uppercase ">Posts</p>
+                </div>
+                <div class="driverDetails">
+                  <ion-label color="light" class=" textBold detailsLabel ion-text-uppercase">3000</ion-label>
+                  <p class="detailText ion-text-uppercase">Followers</p>
+                </div>
+                <div class="driverDetails">
+                  <ion-label color="light" class=" textBold detailsLabel">200</ion-label>
+                  <p class="detailText ion-text-uppercase">Following</p>
+                </div>
+              </div>
+
+            </ion-card-content>
+          </ion-card>
+          <ion-list lines="none" class="ion-padding-top">
+            <ion-menu-toggle auto-hide="false" *ngFor="let item of sidemenuLayout1" menu="end">
+              <ion-item>
+                <ion-icon slot="start" [name]="item.icon" [ngClass]="{'active':item.active}"></ion-icon>
+                <ion-label [ngClass]="{'active':item.active}">
+                  {{item.title}}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+        </div>
+
+      </ion-content>
+    </ion-menu>
+    <!-- Circular -->
+    <ion-menu class="sidemenu-6" *ngIf="sidemenu===6" side="end" type="overlay" contentId="main-content">
+      <ion-content>
+        <div class="content">
+          <div class="inner-circle">
+            <ion-menu-toggle menu="end">
+              <ion-icon name="close"></ion-icon>
+            </ion-menu-toggle>
+          </div>
+          <div class="outer-circle">
+            <div class="menu-item menu-item-{{i}}" *ngFor="let item of sidemenuLayout1;let i =index;">
+              <div class="icon" [ngClass]="{'active':item.active}">
+                <ion-icon [name]="item.icon" [ngClass]="{'active':item.active}"></ion-icon>
+              </div>
+              <div class="title" [ngClass]="{'active':item.active}">{{item.title}}</div>
+            </div>
+          </div>
+        </div>
+      </ion-content>
+    </ion-menu>
+
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

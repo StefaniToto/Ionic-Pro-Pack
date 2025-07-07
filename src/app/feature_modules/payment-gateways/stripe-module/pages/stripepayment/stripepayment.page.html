@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Stripe
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-text-center ">
+    <ion-row>
+      <ion-col>
+        Use this Pay button with the attached logic in your app's payment page.
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card class="welcome-card">
+    <ion-img src="/assets/stripe.png"></ion-img>
+    <ion-card-header>
+      <ion-card-subtitle>Get Started</ion-card-subtitle>
+      <ion-card-title>Stripe Sample</ion-card-title>
+      <ion-row>
+        <ion-col>
+          Total Payment
+        </ion-col>
+        <ion-col>
+          {{currencyIcon}}{{paymentAmount/100}}
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content class="stripeBtn">
+      <ion-button expand="full" color="success" (click)="createPaymentSheet()">Proceed</ion-button>
+      <ion-text class="ion-text-center ion-text-small">
+        <p>This is a sample payment</p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+  <ion-item class="cordova-info">
+    <ion-icon slot="start" name="information-circle-outline" color="primary"></ion-icon>
+    <ion-label>
+      <ion-text>
+        <p>After receiving the token, the payment request is made from server. 
+          A sample Firebase cloud function is given in attached 'index.js' file. For details, read documentation.</p>
+      </ion-text>
+    </ion-label>
+  </ion-item>
+</ion-content>

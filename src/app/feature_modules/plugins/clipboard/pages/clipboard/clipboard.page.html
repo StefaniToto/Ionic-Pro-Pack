@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Clipboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list-header color="light">
+    <ion-label>Copy to Clipboard</ion-label>
+  </ion-list-header>
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col>
+        Copy your Secret key
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="10" class="key">
+        {{secretKey}}
+      </ion-col>
+      <ion-col size="2">
+        <ion-button fill="clear" (click)="copyKey()">
+          <ion-icon slot="icon-only"  name="copy"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col>
+        Write and copy custom text
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-textarea rows="4" [(ngModel)]="custom" placeholder="Write and copy custom text"></ion-textarea>
+      </ion-col>
+      <ion-col size="12">
+        <ion-button color="primary" (click)="copyCustom()" expand="full">
+          Copy content
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list-header color="light" class="ion-margin-top">
+    <ion-label>Paste from Clipboard</ion-label>
+  </ion-list-header>
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col>
+        Paste the content here with your device's default functionality
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-textarea rows="4" [(ngModel)]="pastedContent" placeholder="Paste your content here"></ion-textarea>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        or use this button
+      </ion-col>
+    </ion-row>
+    <ion-col size="12">
+      <ion-button color="primary" (click)="paste()" expand="full">
+        Paste Content
+      </ion-button>
+    </ion-col>
+  </ion-grid>
+</ion-content>

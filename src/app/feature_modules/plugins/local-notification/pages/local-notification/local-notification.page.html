@@ -1,0 +1,317 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Local Notifications
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-toolbar>
+  <ion-list>
+    <ion-radio-group (ionChange)="changeGetMode()" [(ngModel)]="dataOn" mode="md">
+      <ion-item>
+        <ion-label>
+          <ion-text>
+            <p>Get data on Receive</p>
+          </ion-text>
+        </ion-label>
+        <ion-radio value="receive"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <ion-text>
+            <p>Get data on Tap</p>
+          </ion-text>
+        </ion-label>
+        <ion-radio value="tap"></ion-radio>
+      </ion-item>
+
+    </ion-radio-group>
+
+    <ion-item>
+      <ion-label>
+        <ion-text>
+          <p>Show data in this page</p>
+        </ion-text>
+      </ion-label>
+      <ion-toggle [(ngModel)]="showData"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-toolbar>
+
+<ion-content>
+
+
+
+  <ion-list-header lines="inset">
+    <ion-label>Single Local Notification</ion-label>
+  </ion-list-header>
+  <ion-card class="welcome-card">
+    <ion-card-content>
+      <ion-text>
+        <p>This will generate a simple Local Notification with a title and data object.</p>
+      </ion-text>
+      <ion-chip>
+        <ion-label>Web</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-label>Android</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-label>iOS</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" (click)="simpleNotif()">Generate</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list-header lines="inset">
+    <ion-label>
+      Foreground Local Notification
+    </ion-label>
+  </ion-list-header>
+  <ion-card class="welcome-card">
+    <ion-card-content>
+      <ion-text>
+        <p>This will generate a simple Local Notification that shows in app's foregorund</p>
+      </ion-text>
+      <ion-chip>
+        <ion-label>Android</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-label>iOS</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" (click)="foreNotif()">Generate</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list-header lines="inset">
+    <ion-label>
+      Local Notification with Sound
+    </ion-label>
+  </ion-list-header>
+  <ion-card class="welcome-card">
+    <ion-card-content>
+      <ion-text>
+        <p>This will generate a simple Local Notification with sound</p>
+      </ion-text>
+      <ion-chip>
+        <ion-label>Android</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-label>iOS</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" (click)="soundNotif()">Generate</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list-header lines="inset">
+    <ion-label>
+      Local Notification with Big Icon
+    </ion-label>
+  </ion-list-header>
+  <ion-card class="welcome-card">
+    <ion-card-content>
+      <ion-text>
+        <p>This will generate a simple Local Notification with big icon</p>
+      </ion-text>
+      <ion-chip>
+        <ion-label>Web</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-label>Android</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-label>iOS</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" (click)="bigIconNotif()">Generate</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <ion-list-header lines="inset">
+    <ion-label>Multiple Local Notifications
+    </ion-label>
+  </ion-list-header>
+  <ion-card class="welcome-card">
+    <ion-card-content>
+      <ion-text>
+        <p>This will generate multiple Local Notifications with a title, message, icon and data object.</p>
+      </ion-text>
+      <ion-chip>
+        <ion-label>Web</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-label>Android</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-label>iOS</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" (click)="multipleNotif()">Generate</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list-header lines="inset">
+    <ion-label>Repeated Local Notification
+    </ion-label>
+  </ion-list-header>
+  <ion-card class="welcome-card">
+    <ion-card-content>
+      <ion-text>
+        <p>This will generate a repeated Local Notification every minute.</p>
+      </ion-text>
+      <ion-chip>
+        <ion-label>Android</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-label>iOS</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" (click)="repeatNotif()">Generate</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="danger" expand="full" (click)="cancelRepeat()">Cancel Repeat Notifications</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list-header lines="inset">
+    <ion-label>Scheduled Local Notification
+    </ion-label>
+  </ion-list-header>
+  <ion-card class="welcome-card">
+    <ion-card-content>
+      <ion-text>
+        <p>This will generate a schedule Local Notification after 5 seconds</p>
+      </ion-text>
+      <ion-chip>
+        <ion-label>Web</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-label>Android</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-label>iOS</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" (click)="delayNotif()">Generate</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list-header lines="inset">
+    <ion-label>Local Notification with Multi-line message
+    </ion-label>
+  </ion-list-header>
+  <ion-card class="welcome-card">
+    <ion-card-content>
+      <ion-text>
+        <p>This will generate a Local Notifications with message split in multi-lines</p>
+      </ion-text>
+      <ion-chip>
+        <ion-label>Android</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" (click)="multiLineNotif()">Generate</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-list-header lines="inset">
+    <ion-label>Local Notification with Input
+    </ion-label>
+  </ion-list-header>
+  <ion-card class="welcome-card">
+    <ion-card-content>
+      <ion-text><p>This will generate a Local Notifications with text input.</p></ion-text>
+      <ion-chip>
+        <ion-label>Android</ion-label>
+      </ion-chip>
+      <ion-chip>
+        <ion-label>iOS</ion-label>
+      </ion-chip>
+    </ion-card-content>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" (click)="inputNotif()">Generate</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <div class="notif-data" *ngIf="showData && notifData.length">
+    <ion-row>
+      <ion-col>
+        <ion-label><b>Notification Data</b></ion-label>
+      </ion-col>
+      <ion-col class="ion-text-right">
+        <ion-icon name="close" (click)="notifData=[]"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <code>
+      <div *ngFor="let notif of notifData;let i = index">
+        <ion-chip color="primary" class="ion-margin-vertical"><ion-label>Notification {{i+1}}</ion-label></ion-chip>
+        <div class="data-row" *ngFor="let data of notif| keyvalue">
+          {{data.key}} - {{data.key !=='extra' ? data.value : ''}}
+          <div *ngIf="data.key==='extra'">
+            <div class="data-sub-row" *ngFor="let item of data.value| keyvalue">
+              {{item.key}} - {{item.value}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </code>
+  </div>
+</ion-content>

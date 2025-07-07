@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="start" color="light"></ion-menu-button>
+    </ion-buttons>
+    <div class="plusClass" slot="end">
+      <ion-icon name="add" expand="icon-only" color="success"> </ion-icon>
+    </div>
+    <ion-title color="light">
+      Chat Pages
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar mode="md" placeholder="Search your friend"></ion-searchbar>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment color="light" mode="md" (ionChange)="segmentChanged($event)" value="chat" [(ngModel)]="segmentTab">
+      <ion-segment-button value="chat">
+        <div class="contentCenter">
+          <ion-icon name="chatbox" slot="start" class="padding-right tab-icon"></ion-icon>
+          <ion-text color="light" slot=end>chat</ion-text>
+        </div>
+      </ion-segment-button>
+
+      <ion-segment-button value="friends">
+        <div class="contentCenter">
+          <ion-icon name="person" slot="start" class="padding-right tab-icon"></ion-icon>
+          <ion-text color="light" slot=end>Friends</ion-text>
+        </div>
+      </ion-segment-button>
+
+      <ion-segment-button value="group">
+        <div class="contentCenter">
+          <ion-icon name="people-sharp" slot="start" class="padding-right tab-icon"></ion-icon>
+          <ion-text color="light" slot=end>Group</ion-text>
+        </div>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list *ngIf="segmentTab === 'chat' " class="ion-no-padding">
+    <ion-item *ngFor="let chat of chatData" (click)="goforChat(chat)">
+      <ion-avatar class="chatImage" slot="start">
+        <ion-img [src]="chat.image"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <div class="withcount">
+          <div class="nameAvatar">
+            <h2 color="light">{{chat.name}}
+            </h2>
+            <ion-avatar class="chatCount" *ngIf="chat.count">{{chat.count}}</ion-avatar>
+          </div>
+
+          <div class="timeEnd">
+            <ion-text slot="end" color="light">{{chat.time}}</ion-text>
+          </div>
+        </div>
+        <p class="widthHalf">{{chat.description}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="segmentTab === 'friends' " class="ion-no-padding">
+    <ion-item *ngFor="let chat of chatData" (click)="goforChat(chat)">
+      <ion-avatar class="chatImage" slot="start">
+        <ion-img [src]="chat.image"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <div class="withcount">
+          <div class="nameAvatar">
+            <h2 color="light">{{chat.name}}
+            </h2>
+          </div>
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

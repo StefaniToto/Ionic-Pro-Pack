@@ -1,0 +1,11 @@
+<ion-content>
+  <ion-button (click)="dismiss()" fill="clear" class="ion-padding-top ion-padding-end">
+    <ion-icon slot="icon-only" name="close" ></ion-icon>
+  </ion-button>
+
+  <ion-row class="ion-align-items-center rowSection">
+    <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(videourl)" allow="autoplay;" frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ion-row>
+
+</ion-content>

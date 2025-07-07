@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title-ios ion-text-uppercase">Image Grid</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <div class="ion-no-padding" *ngFor="let grid of gridImages">
+        <div class="square-grid" [ngStyle]="{'background-image': 'url('+grid.image+')'}">
+          <div class="text">{{grid.name}}</div>
+        </div>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

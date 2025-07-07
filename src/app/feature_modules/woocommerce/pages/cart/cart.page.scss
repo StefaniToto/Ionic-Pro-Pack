@@ -1,0 +1,104 @@
+/**
+* Ionic Capacitor Full App in Angular  (https://store.enappd.com/product/capacitor-full-app-with-ionic-angular)
+
+*
+* Copyright © 2020-present Enappd. All rights reserved.
+*
+* This source code is licensed as per the terms found in the
+* LICENSE.md file in the root directory of this source tree.
+*/
+ion-content {
+  --background: var(--ion-color-step-50);
+}
+ion-header ion-toolbar {
+  --background: var(--ion-color-light);
+  ion-menu-button,
+  ion-button,
+  ion-title,
+  ion-icon,
+  ion-searchbar,
+  ion-back-button {
+    color: white;
+  }
+}
+@media (prefers-color-scheme: light) {
+  ion-header ion-toolbar {
+    --background: var(--ion-color-primary);
+  }
+}
+.circle {
+  border-radius: 40px;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+}
+.col-center {
+  display: flex;
+  justify-content: center;
+}
+.input {
+  background-color: rgba(240, 240, 240, 0.5);
+  border-radius: 3px;
+  border: 1px solid rgb(240, 240, 240);
+  font-size: 0.9em !important;
+  --padding-start: 10px !important;
+}
+
+.pad {
+  padding: 0 6px;
+}
+
+.mid {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translate(0, -50%);
+}
+
+.full {
+  width: 100%;
+}
+
+.sep {
+  height: 1px;
+  background-color: rgb(210, 210, 210);
+  width: 100vw;
+  margin: 6px 0;
+}
+
+.text {
+  font-size: 0.81em;
+}
+
+.select {
+  background-color: var(--ion-color-light);
+  border-radius: 3px;
+  border: 1px solid var(--ion-color-medium);
+  padding: 6px 12px;
+  min-width: 100%;
+}
+
+.card {
+  background-color: var(--ion-color-light);
+  margin-top: 9px;
+}
+
+div {
+  min-width: 100%;
+}
+
+.item-name {
+  font-size: 1em;
+  color: var(--ion-color-dark);
+}
+
+.small {
+  margin: 0;
+  font-size: 0.81em;
+}
+
+.item-def {
+  font-size: 0.81em;
+  color: rgb(120, 120, 120);
+}

@@ -1,0 +1,49 @@
+<ion-content class="ion-padding">
+  <div class="main-section">
+    <ion-row class="row-section">
+      <div class="fire-logo">
+        <img src="assets/imgs/fire.png" class="img-logo">
+        <ion-text color="dark">
+          <h2 class="ion-no-margin ion-text-center ion-margin-vertical">Sign Up</h2>
+        </ion-text>
+      </div>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input type="text" placeholder="First Name" [(ngModel)]="firstName"
+          class="input-field ion-padding-horizontal"></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-input type="text" placeholder="Last Name" [(ngModel)]="lastName"
+          class="input-field ion-padding-horizontal">
+        </ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input clearInput type="email" placeholder="Email" [(ngModel)]="email"
+          class="input-field ion-padding-horizontal"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input clearInput type="password" placeholder="Password" [(ngModel)]="password"
+          class="input-field ion-padding-horizontal"></ion-input>
+      </ion-col>
+    </ion-row>
+    <div class="ion-padding">
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" color="undefined" class="btn-transition" (click)="signup()"><strong>Create an
+              Account</strong></ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" fill="outline" color="undefined" (click)="util.navigate('login')"
+            class="btn-color"><strong>Have an account? Sign in</strong></ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

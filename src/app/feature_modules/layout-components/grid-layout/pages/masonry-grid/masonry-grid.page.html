@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button ></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="title-ios">Masonry Grid</ion-title>
+    <ion-buttons slot="end">
+      <ion-button clear  (click)="shuffleFullArray()">Reset</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="6">
+      <ion-card *ngFor="let item of leftArray" class="ion-no-margin">
+        <ion-card-header>
+          <ion-img [src]="item.image"></ion-img>
+          <p class="card-title">{{item.title}}</p>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+    <ion-col size="6">
+      <ion-card *ngFor="let item of rightArray" class="ion-no-margin">
+        <ion-card-header>
+          <ion-img [src]="item.image"></ion-img>
+          <p class="card-title">{{item.title}}</p>
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

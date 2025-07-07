@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">card 8</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-margin-top">
+  <div class="productCardSection ion-margin-top">
+    <ion-card class="productCard cardBorderRadius" *ngFor="let product of topSavers.products;let i = index">
+      <div class="productImage ion-padding-horizontal">
+        <div class="discountSection">
+          <ion-label class="ion-text-uppercase">{{product.off}}</ion-label>
+        </div>
+        <ion-img [src]="product.image" class="ion-margin-top image-section"></ion-img>
+      </div>
+
+      <ion-card-header>
+        <div class="dFlexAlignItemCenter">
+          <ion-card-title>{{product.salePrice}}</ion-card-title>
+          <span class="subTitle"> {{product.regularPrice}}</span>
+        </div>
+      </ion-card-header>
+      <ion-card-content>
+        <p class="textBold font18 productDesc">{{product.name}}</p>
+        <span class="productQty">{{product.qty}} </span>
+        <div class="addBtnSection">
+          <ion-button expand="full" color="danger" class="addBtn" *ngIf="product.units === 0">Add</ion-button>
+
+          <ion-segment *ngIf="product.units > 0" mode="md">
+            <ion-segment-button mode="md" color="undefined" class="segmentBtn ion-no-padding">
+              <ion-icon name="remove-circle-outline"></ion-icon>
+            </ion-segment-button>
+            <ion-text class="textUnits ion-padding-horizontal">{{product.units}}</ion-text>
+            <ion-segment-button mode="md" color="undefined" class="segmentBtn ion-no-padding">
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

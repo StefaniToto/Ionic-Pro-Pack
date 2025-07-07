@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">Woocommerce products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="getProducts === undefined || getProducts.length === 0 " class="spinner">
+    <ion-spinner name="lines"></ion-spinner>
+  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let data of getProducts;" size="6">
+        <ion-card class="card ion-no-margin" (click)="goToProducts(data)">
+          <ion-badge class="badge ion-text-capitalize">{{data.stock_status}}</ion-badge>
+          <img [src]="data.images[0].src" [alt]="data.name">
+          <ion-card-content>
+            <ion-card-title>
+              <ion-row>
+                <ion-col class="ion-no-padding">
+                  <ion-text class="ion-text-left"><span class="price"><span *ngIf="data.currency" class="inline">{{data.currency}}</span>
+                      <strong>${{data.regular_price}}</strong></span></ion-text>
+                </ion-col>
+                <ion-col *ngIf="!data.offer" class="ion-no-padding">
+                  <ion-text class="ion-text-left"><span
+                      class="price"><strong>{{data.currency}}{{data.costPrice}}</strong></span></ion-text>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="ion-no-padding ion-text-left">
+                  <h6 class="subtitle ion-text-left">{{data.name}}</h6>
+                </ion-col>
+              </ion-row>
+            </ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
