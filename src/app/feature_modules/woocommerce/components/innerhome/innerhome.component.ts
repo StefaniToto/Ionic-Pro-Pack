@@ -12,9 +12,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { WooCommerceService } from '../../services/woo-commerce.service';
 
 @Component({
-  selector: 'app-innerhome',
-  templateUrl: './innerhome.component.html',
-  styleUrls: ['./innerhome.component.scss'],
+    selector: 'app-innerhome',
+    templateUrl: './innerhome.component.html',
+    styleUrls: ['./innerhome.component.scss'],
+    standalone: false
 })
 export class InnerhomeComponent implements OnInit {
   @Input() recieved_data: any;

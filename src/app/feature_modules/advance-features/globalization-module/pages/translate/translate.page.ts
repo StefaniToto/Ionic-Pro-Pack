@@ -12,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Browser, OpenOptions } from '@capacitor/browser';
 @Component({
-  selector: 'app-translate',
-  templateUrl: './translate.page.html',
-  styleUrls: ['./translate.page.scss'],
+    selector: 'app-translate',
+    templateUrl: './translate.page.html',
+    styleUrls: ['./translate.page.scss'],
+    standalone: false
 })
 export class TranslatePage implements OnInit {
   public segmentTab = 'translation';

@@ -12,9 +12,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ModalController, NavParams } from '@ionic/angular';
 
 @Component({
-  selector: 'app-view-video',
-  templateUrl: './view-video.page.html',
-  styleUrls: ['./view-video.page.scss'],
+    selector: 'app-view-video',
+    templateUrl: './view-video.page.html',
+    styleUrls: ['./view-video.page.scss'],
+    standalone: false
 })
 export class ViewVideoPage implements OnInit {
   public videourl: any;

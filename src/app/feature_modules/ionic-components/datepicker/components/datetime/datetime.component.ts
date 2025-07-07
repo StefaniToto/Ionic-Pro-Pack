@@ -11,9 +11,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-datetime',
-  templateUrl: './datetime.component.html',
-  styleUrls: ['./datetime.component.scss'],
+    selector: 'app-datetime',
+    templateUrl: './datetime.component.html',
+    styleUrls: ['./datetime.component.scss'],
+    standalone: false
 })
 export class DatetimeComponent implements OnInit {
   public customYearValues: Array<any> = [];

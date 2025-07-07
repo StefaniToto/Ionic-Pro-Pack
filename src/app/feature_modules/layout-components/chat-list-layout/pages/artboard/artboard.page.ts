@@ -12,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 import { ARTBOARD_CHAT_LIST, ARTBOARD_USER_DETAILS } from '../../data/chat-list-data';
 
 @Component({
-  selector: 'app-artboard',
-  templateUrl: './artboard.page.html',
-  styleUrls: ['./artboard.page.scss'],
+    selector: 'app-artboard',
+    templateUrl: './artboard.page.html',
+    styleUrls: ['./artboard.page.scss'],
+    standalone: false
 })
 export class ArtboardPage implements OnInit {
   public chatSegmentType;

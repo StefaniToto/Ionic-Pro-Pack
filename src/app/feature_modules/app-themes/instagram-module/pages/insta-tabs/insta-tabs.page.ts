@@ -11,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 import { UtilService } from '../../services/util.service';
 
 @Component({
-  selector: 'app-insta-tabs',
-  templateUrl: './insta-tabs.page.html',
-  styleUrls: ['./insta-tabs.page.scss'],
+    selector: 'app-insta-tabs',
+    templateUrl: './insta-tabs.page.html',
+    styleUrls: ['./insta-tabs.page.scss'],
+    standalone: false
 })
 export class InstaTabsPage implements OnInit {
 

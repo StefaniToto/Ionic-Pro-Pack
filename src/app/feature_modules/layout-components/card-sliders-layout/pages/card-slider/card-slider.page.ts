@@ -12,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 import { CardService } from '../../services/card.service';
 
 @Component({
-  selector: 'app-card-slider',
-  templateUrl: './card-slider.page.html',
-  styleUrls: ['./card-slider.page.scss'],
+    selector: 'app-card-slider',
+    templateUrl: './card-slider.page.html',
+    styleUrls: ['./card-slider.page.scss'],
+    standalone: false
 })
 export class CardSliderPage implements OnInit {
   public cardData: Array<any>;

@@ -12,9 +12,10 @@ import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-register1',
-  templateUrl: './register1.page.html',
-  styleUrls: ['./register1.page.scss'],
+    selector: 'app-register1',
+    templateUrl: './register1.page.html',
+    styleUrls: ['./register1.page.scss'],
+    standalone: false
 })
 export class Register1Page implements OnInit {
   public fullname: string;

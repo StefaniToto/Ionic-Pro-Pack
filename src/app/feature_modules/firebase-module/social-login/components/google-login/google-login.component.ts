@@ -13,9 +13,10 @@ import { Platform } from '@ionic/angular';
 import { GoogleAuth } from '@codetrix-studio/capacitor-google-auth';
 
 @Component({
-  selector: 'google-login',
-  templateUrl: './google-login.component.html',
-  styleUrls: ['./google-login.component.scss'],
+    selector: 'google-login',
+    templateUrl: './google-login.component.html',
+    styleUrls: ['./google-login.component.scss'],
+    standalone: false
 })
 export class GoogleLoginComponent implements OnInit {
 

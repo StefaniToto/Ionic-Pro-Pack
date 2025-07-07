@@ -11,9 +11,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-datetime-pickers',
-  templateUrl: './datetime-pickers.page.html',
-  styleUrls: ['./datetime-pickers.page.scss'],
+    selector: 'app-datetime-pickers',
+    templateUrl: './datetime-pickers.page.html',
+    styleUrls: ['./datetime-pickers.page.scss'],
+    standalone: false
 })
 export class DatetimePickersPage implements OnInit {
 

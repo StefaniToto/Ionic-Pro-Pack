@@ -14,9 +14,10 @@ import { Browser, OpenOptions } from '@capacitor/browser';
 import { UtilService } from '../../services/util.service';
 
 @Component({
-  selector: 'app-in-app-browser',
-  templateUrl: './in-app-browser.page.html',
-  styleUrls: ['./in-app-browser.page.scss'],
+    selector: 'app-in-app-browser',
+    templateUrl: './in-app-browser.page.html',
+    styleUrls: ['./in-app-browser.page.scss'],
+    standalone: false
 })
 export class InAppBrowserPage implements OnInit {
 

@@ -12,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from '@env/environment';
 
 @Component({
-  selector: 'app-filtering-card',
-  templateUrl: './filtering-card.page.html',
-  styleUrls: ['./filtering-card.page.scss'],
+    selector: 'app-filtering-card',
+    templateUrl: './filtering-card.page.html',
+    styleUrls: ['./filtering-card.page.scss'],
+    standalone: false
 })
 export class FilteringCardPage implements OnInit {
   public dataLists: Array<any>;

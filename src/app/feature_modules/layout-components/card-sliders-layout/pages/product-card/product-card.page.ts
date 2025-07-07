@@ -12,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from '@env/environment';
 
 @Component({
-  selector: 'app-product-card',
-  templateUrl: './product-card.page.html',
-  styleUrls: ['./product-card.page.scss'],
+    selector: 'app-product-card',
+    templateUrl: './product-card.page.html',
+    styleUrls: ['./product-card.page.scss'],
+    standalone: false
 })
 export class ProductCardPage implements OnInit {
   public electronicsList: Array<any>;

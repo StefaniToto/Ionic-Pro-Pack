@@ -14,9 +14,10 @@ import { IonSlides } from '@ionic/angular';
 import { environment } from '@env/environment';
 
 @Component({
-  selector: 'app-slider1',
-  templateUrl: './slider1.component.html',
-  styleUrls: ['./slider1.component.scss'],
+    selector: 'app-slider1',
+    templateUrl: './slider1.component.html',
+    styleUrls: ['./slider1.component.scss'],
+    standalone: false
 })
 export class Slider1Component implements OnInit {
   @ViewChild('slideWithNav', { static: true }) slideWithNav: IonSlides;

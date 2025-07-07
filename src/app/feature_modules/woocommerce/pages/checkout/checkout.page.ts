@@ -17,9 +17,10 @@ import { Storage } from '@ionic/storage';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-checkout',
-  templateUrl: './checkout.page.html',
-  styleUrls: ['./checkout.page.scss'],
+    selector: 'app-checkout',
+    templateUrl: './checkout.page.html',
+    styleUrls: ['./checkout.page.scss'],
+    standalone: false
 })
 export class CheckoutPage implements OnInit {
   public addNewPayment: boolean;

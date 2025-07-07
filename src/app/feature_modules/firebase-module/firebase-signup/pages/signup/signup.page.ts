@@ -14,9 +14,10 @@ import { UtilService } from '../../services/util.service';
 import { MenuController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.page.html',
-  styleUrls: ['./signup.page.scss'],
+    selector: 'app-signup',
+    templateUrl: './signup.page.html',
+    styleUrls: ['./signup.page.scss'],
+    standalone: false
 })
 export class SignupPage implements OnInit {
   public firstName: string;

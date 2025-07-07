@@ -13,9 +13,10 @@ import { MenuController } from '@ionic/angular';
 import { Device } from '@capacitor/device';
 
 @Component({
-  selector: 'app-device',
-  templateUrl: './device.page.html',
-  styleUrls: ['./device.page.scss'],
+    selector: 'app-device',
+    templateUrl: './device.page.html',
+    styleUrls: ['./device.page.scss'],
+    standalone: false
 })
 export class DevicePage implements OnInit {
   deviceInfo: any;

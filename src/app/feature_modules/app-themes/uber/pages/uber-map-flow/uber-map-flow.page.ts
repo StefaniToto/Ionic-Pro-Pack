@@ -19,9 +19,10 @@ import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 import { UtilService } from '../../services/util.service';
 
 @Component({
-  selector: 'app-uber-map-flow',
-  templateUrl: './uber-map-flow.page.html',
-  styleUrls: ['./uber-map-flow.page.scss'],
+    selector: 'app-uber-map-flow',
+    templateUrl: './uber-map-flow.page.html',
+    styleUrls: ['./uber-map-flow.page.scss'],
+    standalone: false
 })
 export class UberMapFlowPage implements OnInit {
   @ViewChild('myMap') map: GoogleMap;

@@ -13,9 +13,10 @@ import { ApplePay } from '@ionic-native/apple-pay/ngx';
 import { APPLE_PAY_ITEM, APPLE_PAY_SHIPPING_METHOD } from '../../data/apple-pay-data';
 
 @Component({
-  selector: 'app-applepay',
-  templateUrl: './applepay.page.html',
-  styleUrls: ['./applepay.page.scss'],
+    selector: 'app-applepay',
+    templateUrl: './applepay.page.html',
+    styleUrls: ['./applepay.page.scss'],
+    standalone: false
 })
 export class ApplepayPage implements OnInit {
   public items: Array<any>;

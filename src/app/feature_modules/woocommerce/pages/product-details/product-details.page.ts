@@ -17,9 +17,10 @@ import { FunctionService } from '../../services/function.service';
 import { Storage } from '@ionic/storage';
 
 @Component({
-  selector: 'app-product-details',
-  templateUrl: './product-details.page.html',
-  styleUrls: ['./product-details.page.scss'],
+    selector: 'app-product-details',
+    templateUrl: './product-details.page.html',
+    styleUrls: ['./product-details.page.scss'],
+    standalone: false
 })
 export class ProductDetailsPage implements OnInit {
   @ViewChild('Slides', { static: true }) slides: IonSlides;

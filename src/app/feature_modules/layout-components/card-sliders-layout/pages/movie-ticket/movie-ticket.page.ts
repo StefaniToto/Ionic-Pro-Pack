@@ -13,9 +13,10 @@ import { ModalController } from '@ionic/angular';
 import { CardService } from '../../services/card.service';
 
 @Component({
-  selector: 'app-movie-ticket',
-  templateUrl: './movie-ticket.page.html',
-  styleUrls: ['./movie-ticket.page.scss'],
+    selector: 'app-movie-ticket',
+    templateUrl: './movie-ticket.page.html',
+    styleUrls: ['./movie-ticket.page.scss'],
+    standalone: false
 })
 export class MovieTicketPage implements OnInit {
   public image: any;

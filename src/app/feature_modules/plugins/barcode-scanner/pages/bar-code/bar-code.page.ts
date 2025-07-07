@@ -13,9 +13,10 @@ import { Platform, ModalController } from '@ionic/angular';
 import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 import { BarCodeModalComponent } from '../../components/bar-code-modal/bar-code-modal.component';
 @Component({
-  selector: 'app-bar-code',
-  templateUrl: './bar-code.page.html',
-  styleUrls: ['./bar-code.page.scss'],
+    selector: 'app-bar-code',
+    templateUrl: './bar-code.page.html',
+    styleUrls: ['./bar-code.page.scss'],
+    standalone: false
 })
 export class BarCodePage implements OnInit {
   public scannedData= {};

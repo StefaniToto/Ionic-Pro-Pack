@@ -20,9 +20,10 @@ import { MovieTicketPage } from './feature_modules/layout-components/card-slider
 import package_info from '../../package.json';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+    selector: 'app-root',
+    templateUrl: 'app.component.html',
+    styleUrls: ['app.component.scss'],
+    standalone: false
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;

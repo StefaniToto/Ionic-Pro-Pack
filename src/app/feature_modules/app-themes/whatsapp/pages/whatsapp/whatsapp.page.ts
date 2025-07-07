@@ -12,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 import { WHATSAPP_CHAT_DATA } from '../../data/whatsapp-data';
 
 @Component({
-  selector: 'app-whatsapp',
-  templateUrl: './whatsapp.page.html',
-  styleUrls: ['./whatsapp.page.scss'],
+    selector: 'app-whatsapp',
+    templateUrl: './whatsapp.page.html',
+    styleUrls: ['./whatsapp.page.scss'],
+    standalone: false
 })
 export class WhatsappPage implements OnInit {
   public segmentTab: any;

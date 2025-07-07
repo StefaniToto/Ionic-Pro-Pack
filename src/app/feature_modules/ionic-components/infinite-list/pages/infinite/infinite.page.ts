@@ -14,9 +14,10 @@ import { InfiniteListService } from '../../services/infinite-list.service';
 import { INFINITY_SCROLL_DATA } from '../../data/constant-data';
 
 @Component({
-  selector: 'app-infinite',
-  templateUrl: './infinite.page.html',
-  styleUrls: ['./infinite.page.scss'],
+    selector: 'app-infinite',
+    templateUrl: './infinite.page.html',
+    styleUrls: ['./infinite.page.scss'],
+    standalone: false
 })
 export class InfinitePage implements OnInit {
   @ViewChild(IonInfiniteScroll, { static: true }) infiniteScroll: IonInfiniteScroll;

@@ -12,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 import { ItemReorderEventDetail } from '@ionic/core';
 
 @Component({
-  selector: 'app-reorder',
-  templateUrl: './reorder.page.html',
-  styleUrls: ['./reorder.page.scss'],
+    selector: 'app-reorder',
+    templateUrl: './reorder.page.html',
+    styleUrls: ['./reorder.page.scss'],
+    standalone: false
 })
 export class ReorderPage implements OnInit {
   public items: Array<any> = [];

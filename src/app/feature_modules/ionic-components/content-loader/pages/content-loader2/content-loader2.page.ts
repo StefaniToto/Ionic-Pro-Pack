@@ -11,9 +11,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-content-loader2',
-  templateUrl: './content-loader2.page.html',
-  styleUrls: ['./content-loader2.page.scss'],
+    selector: 'app-content-loader2',
+    templateUrl: './content-loader2.page.html',
+    styleUrls: ['./content-loader2.page.scss'],
+    standalone: false
 })
 export class ContentLoader2Page implements OnInit {
   public itemData: any;

@@ -12,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 import { SQUARE_GRID } from '../../data/grid-data';
 
 @Component({
-  selector: 'app-square-grid',
-  templateUrl: './square-grid.page.html',
-  styleUrls: ['./square-grid.page.scss'],
+    selector: 'app-square-grid',
+    templateUrl: './square-grid.page.html',
+    styleUrls: ['./square-grid.page.scss'],
+    standalone: false
 })
 export class SquareGridPage implements OnInit {
   public gridImages: Array<any>;

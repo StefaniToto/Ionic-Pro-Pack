@@ -15,9 +15,10 @@ import { Observable, of } from 'rxjs';
 import { MapService } from '@app/map-service';
 
 @Component({
-  selector: 'app-blocks',
-  templateUrl: './blocks.page.html',
-  styleUrls: ['./blocks.page.scss'],
+    selector: 'app-blocks',
+    templateUrl: './blocks.page.html',
+    styleUrls: ['./blocks.page.scss'],
+    standalone: false
 })
 export class BlocksPage implements OnInit {
   @ViewChild('IonContent', { static: true }) content: IonContent;

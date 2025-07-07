@@ -11,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 import { INSTA_GRID_GALLERY } from '../../data/instagram-data';
 
 @Component({
-  selector: 'app-instaprofile',
-  templateUrl: './instaprofile.page.html',
-  styleUrls: ['./instaprofile.page.scss'],
+    selector: 'app-instaprofile',
+    templateUrl: './instaprofile.page.html',
+    styleUrls: ['./instaprofile.page.scss'],
+    standalone: false
 })
 export class InstaprofilePage implements OnInit {
 

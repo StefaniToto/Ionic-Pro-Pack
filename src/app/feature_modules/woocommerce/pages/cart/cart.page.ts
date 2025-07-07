@@ -15,9 +15,10 @@ import { DataServicesService } from '../../services/data-services.service';
 import { Storage } from '@ionic/storage';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.page.html',
-  styleUrls: ['./cart.page.scss'],
+    selector: 'app-cart',
+    templateUrl: './cart.page.html',
+    styleUrls: ['./cart.page.scss'],
+    standalone: false
 })
 export class CartPage implements OnInit {
   public customAlertOptions: any = {

@@ -15,9 +15,10 @@ import { Twitter } from '@capacitor-community/twitter';
 const twitter = new Twitter();
 
 @Component({
-  selector: 'twitter-login',
-  templateUrl: './twitter-login.component.html',
-  styleUrls: ['./twitter-login.component.scss'],
+    selector: 'twitter-login',
+    templateUrl: './twitter-login.component.html',
+    styleUrls: ['./twitter-login.component.scss'],
+    standalone: false
 })
 export class TwitterLoginComponent implements OnInit {
 

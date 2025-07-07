@@ -17,9 +17,10 @@ import { UUID } from 'angular2-uuid';
 import { Camera, CameraDirection, CameraResultType, CameraSource, ImageOptions } from '@capacitor/camera';
 
 @Component({
-  selector: 'app-image-upload',
-  templateUrl: './image-upload.page.html',
-  styleUrls: ['./image-upload.page.scss'],
+    selector: 'app-image-upload',
+    templateUrl: './image-upload.page.html',
+    styleUrls: ['./image-upload.page.scss'],
+    standalone: false
 })
 export class ImageUploadPage implements OnInit {
   public imageList: any;

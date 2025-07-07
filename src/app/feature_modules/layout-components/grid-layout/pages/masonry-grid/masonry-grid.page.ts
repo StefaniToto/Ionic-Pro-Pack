@@ -12,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 import { MASONRY } from '../../data/grid-data';
 
 @Component({
-  selector: 'app-masonry-grid',
-  templateUrl: './masonry-grid.page.html',
-  styleUrls: ['./masonry-grid.page.scss'],
+    selector: 'app-masonry-grid',
+    templateUrl: './masonry-grid.page.html',
+    styleUrls: ['./masonry-grid.page.scss'],
+    standalone: false
 })
 export class MasonryGridPage implements OnInit {
   public data: Array<any>;

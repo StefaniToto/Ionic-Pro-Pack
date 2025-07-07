@@ -14,9 +14,10 @@ import { Component, OnInit } from '@angular/core';
 import { USER_ADDRESS } from '../../data/profile-data';
 
 @Component({
-  selector: 'my-address',
-  templateUrl: './my-address.component.html',
-  styleUrls: ['./my-address.component.scss'],
+    selector: 'my-address',
+    templateUrl: './my-address.component.html',
+    styleUrls: ['./my-address.component.scss'],
+    standalone: false
 })
 export class MyAddressComponent implements OnInit {
   public address: Array<any>;

@@ -17,9 +17,10 @@ import { UUID } from 'angular2-uuid';
 import { SplashScreen } from '@capacitor/splash-screen';
 
 @Component({
-  selector: 'app-firebase-home',
-  templateUrl: './firebase-home.page.html',
-  styleUrls: ['./firebase-home.page.scss'],
+    selector: 'app-firebase-home',
+    templateUrl: './firebase-home.page.html',
+    styleUrls: ['./firebase-home.page.scss'],
+    standalone: false
 })
 export class FirebaseHomePage implements OnInit {
   @ViewChild('content', { static: true }) content: IonContent;

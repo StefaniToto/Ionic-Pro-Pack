@@ -12,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 import { CardService } from '../../services/card.service';
 
 @Component({
-  selector: 'app-large-card',
-  templateUrl: './large-card.page.html',
-  styleUrls: ['./large-card.page.scss'],
+    selector: 'app-large-card',
+    templateUrl: './large-card.page.html',
+    styleUrls: ['./large-card.page.scss'],
+    standalone: false
 })
 export class LargeCardPage implements OnInit {
   public events: Array<any>;

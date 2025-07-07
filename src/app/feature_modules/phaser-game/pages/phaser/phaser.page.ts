@@ -37,9 +37,10 @@ let stateText;
 const livingEnemies = [];
 
 @Component({
-  selector: 'app-phaser',
-  templateUrl: './phaser.page.html',
-  styleUrls: ['./phaser.page.scss'],
+    selector: 'app-phaser',
+    templateUrl: './phaser.page.html',
+    styleUrls: ['./phaser.page.scss'],
+    standalone: false
 })
 export class PhaserPage implements OnInit {
 

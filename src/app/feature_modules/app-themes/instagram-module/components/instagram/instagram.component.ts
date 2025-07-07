@@ -13,9 +13,10 @@ import { Component, OnInit } from '@angular/core';
 import { INSTAGRAM_DATA } from '../../data/instagram-data';
 
 @Component({
-  selector: 'instagram',
-  templateUrl: './instagram.component.html',
-  styleUrls: ['./instagram.component.scss'],
+    selector: 'instagram',
+    templateUrl: './instagram.component.html',
+    styleUrls: ['./instagram.component.scss'],
+    standalone: false
 })
 export class InstagramComponent implements OnInit {
   public instaData: Array<any>;

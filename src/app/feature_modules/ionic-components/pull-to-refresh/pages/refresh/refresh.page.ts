@@ -13,9 +13,10 @@ import { PullRefreshService } from '../../services/pull-refresh.service';
 import { REFRESH_DATA } from '../../data/refresh-data';
 
 @Component({
-  selector: 'app-refresh',
-  templateUrl: './refresh.page.html',
-  styleUrls: ['./refresh.page.scss'],
+    selector: 'app-refresh',
+    templateUrl: './refresh.page.html',
+    styleUrls: ['./refresh.page.scss'],
+    standalone: false
 })
 export class RefreshPage implements OnInit {
   public initialData: Array<any>;

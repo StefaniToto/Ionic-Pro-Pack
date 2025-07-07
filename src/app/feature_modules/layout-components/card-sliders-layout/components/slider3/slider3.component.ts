@@ -14,9 +14,10 @@ import { IonSlides } from '@ionic/angular';
 import { CardService } from '../../services/card.service';
 
 @Component({
-  selector: 'app-slider3',
-  templateUrl: './slider3.component.html',
-  styleUrls: ['./slider3.component.scss'],
+    selector: 'app-slider3',
+    templateUrl: './slider3.component.html',
+    styleUrls: ['./slider3.component.scss'],
+    standalone: false
 })
 export class Slider3Component implements OnInit {
   @ViewChild('slides', { static: true }) slides: IonSlides;

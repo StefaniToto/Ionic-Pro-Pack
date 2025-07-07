@@ -15,9 +15,10 @@ import { DataService, HomeTab, footerIcon } from '../../services/data.service';
 import { IonContent, IonSlides } from '@ionic/angular';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.page.html',
-  styleUrls: ['./home.page.scss'],
+    selector: 'app-home',
+    templateUrl: './home.page.html',
+    styleUrls: ['./home.page.scss'],
+    standalone: false
 })
 export class HomePage {
   @ViewChild('IonContent', { static: true }) content: IonContent;

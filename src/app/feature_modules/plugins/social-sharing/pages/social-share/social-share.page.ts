@@ -15,9 +15,10 @@ import { Share } from '@capacitor/share';
 import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
-  selector: 'app-social-share',
-  templateUrl: './social-share.page.html',
-  styleUrls: ['./social-share.page.scss'],
+    selector: 'app-social-share',
+    templateUrl: './social-share.page.html',
+    styleUrls: ['./social-share.page.scss'],
+    standalone: false
 })
 export class SocialSharePage {
   public socialShare: Array<any>;

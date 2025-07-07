@@ -11,9 +11,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-paypal-web',
-  templateUrl: './paypal-web.page.html',
-  styleUrls: ['./paypal-web.page.scss'],
+    selector: 'app-paypal-web',
+    templateUrl: './paypal-web.page.html',
+    styleUrls: ['./paypal-web.page.scss'],
+    standalone: false
 })
 export class PaypalWebPage {
   public paymentAmount: string;

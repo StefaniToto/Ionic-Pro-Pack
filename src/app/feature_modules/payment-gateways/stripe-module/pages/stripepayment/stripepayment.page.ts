@@ -14,9 +14,10 @@ import { UtilService } from '../../services/util.service';
 import { environment } from '@env/environment';
 import { Stripe, PaymentSheetEventsEnum } from '@capacitor-community/stripe';
 @Component({
-  selector: 'app-stripepayment',
-  templateUrl: './stripepayment.page.html',
-  styleUrls: ['./stripepayment.page.scss'],
+    selector: 'app-stripepayment',
+    templateUrl: './stripepayment.page.html',
+    styleUrls: ['./stripepayment.page.scss'],
+    standalone: false
 })
 export class StripepaymentPage {
   public paymentAmount: number;

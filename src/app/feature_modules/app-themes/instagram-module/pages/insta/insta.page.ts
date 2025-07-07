@@ -10,9 +10,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-insta',
-  templateUrl: './insta.page.html',
-  styleUrls: ['./insta.page.scss'],
+    selector: 'app-insta',
+    templateUrl: './insta.page.html',
+    styleUrls: ['./insta.page.scss'],
+    standalone: false
 })
 export class InstaPage implements OnInit {
 

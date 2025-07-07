@@ -17,9 +17,10 @@ import { ModalController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 
 @Component({
-  selector: 'app-orders',
-  templateUrl: './orders.page.html',
-  styleUrls: ['./orders.page.scss'],
+    selector: 'app-orders',
+    templateUrl: './orders.page.html',
+    styleUrls: ['./orders.page.scss'],
+    standalone: false
 })
 export class OrdersPage implements OnInit {
   public orders: any;

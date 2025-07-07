@@ -13,9 +13,10 @@ import { IonContent } from '@ionic/angular';
 import { Observable, of } from 'rxjs';
 import { MapService } from '@app/map-service';
 @Component({
-  selector: 'app-rose',
-  templateUrl: './rose.page.html',
-  styleUrls: ['./rose.page.scss'],
+    selector: 'app-rose',
+    templateUrl: './rose.page.html',
+    styleUrls: ['./rose.page.scss'],
+    standalone: false
 })
 export class RosePage implements OnInit {
 

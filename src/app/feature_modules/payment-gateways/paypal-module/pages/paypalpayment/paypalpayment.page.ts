@@ -13,9 +13,10 @@ import { AlertController } from '@ionic/angular';
 declare const braintree;
 
 @Component({
-  selector: 'app-paypalpayment',
-  templateUrl: './paypalpayment.page.html',
-  styleUrls: ['./paypalpayment.page.scss'],
+    selector: 'app-paypalpayment',
+    templateUrl: './paypalpayment.page.html',
+    styleUrls: ['./paypalpayment.page.scss'],
+    standalone: false
 })
 export class PaypalpaymentPage implements OnInit {
   public paymentAmount: string;

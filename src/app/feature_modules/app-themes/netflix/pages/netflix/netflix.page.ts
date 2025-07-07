@@ -12,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 import { NETFLIX_MOVIE_DATA, NETFLIX_SERIES_DATA } from '../../data/netflix-data';
 
 @Component({
-  selector: 'app-netflix',
-  templateUrl: './netflix.page.html',
-  styleUrls: ['./netflix.page.scss'],
+    selector: 'app-netflix',
+    templateUrl: './netflix.page.html',
+    styleUrls: ['./netflix.page.scss'],
+    standalone: false
 })
 export class NetflixPage implements OnInit {
   public netflixSeriesData: any;

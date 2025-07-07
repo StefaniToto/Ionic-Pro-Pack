@@ -12,9 +12,10 @@ import { BUSINESS_CHAT_DATA, BUSINESS_SENDER_CHAT_DATA } from '../../data/chat-s
 import { IonContent } from '@ionic/angular';
 
 @Component({
-  selector: 'app-business',
-  templateUrl: './business.page.html',
-  styleUrls: ['./business.page.scss'],
+    selector: 'app-business',
+    templateUrl: './business.page.html',
+    styleUrls: ['./business.page.scss'],
+    standalone: false
 })
 export class BusinessPage implements OnInit {
   @ViewChild('content', { static: true }) content: IonContent;

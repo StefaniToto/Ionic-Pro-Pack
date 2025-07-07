@@ -11,8 +11,9 @@ import { StackConfig, ThrowEvent, DragEvent } from '../interfaces/swing';
 import Stack from '../swing/stack';
 
 @Directive({
-  // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[swingStack]'
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    selector: '[swingStack]',
+    standalone: false
 })
 export class SwingStackDirective implements AfterContentInit {
 

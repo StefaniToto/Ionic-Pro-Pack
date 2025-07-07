@@ -12,9 +12,10 @@ import { Router } from '@angular/router';
 import { PASTRY_CHAT_LIST } from '../../data/chat-list-data';
 
 @Component({
-  selector: 'app-pastry',
-  templateUrl: './pastry.page.html',
-  styleUrls: ['./pastry.page.scss'],
+    selector: 'app-pastry',
+    templateUrl: './pastry.page.html',
+    styleUrls: ['./pastry.page.scss'],
+    standalone: false
 })
 export class PastryPage implements OnInit {
   public segmentTab: any;

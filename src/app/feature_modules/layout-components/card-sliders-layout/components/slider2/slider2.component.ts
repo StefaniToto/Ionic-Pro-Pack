@@ -13,9 +13,10 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from '@env/environment';
 
 @Component({
-  selector: 'app-slider2',
-  templateUrl: './slider2.component.html',
-  styleUrls: ['./slider2.component.scss'],
+    selector: 'app-slider2',
+    templateUrl: './slider2.component.html',
+    styleUrls: ['./slider2.component.scss'],
+    standalone: false
 })
 export class Slider2Component implements OnInit {
   public gridImages: Array<any>;

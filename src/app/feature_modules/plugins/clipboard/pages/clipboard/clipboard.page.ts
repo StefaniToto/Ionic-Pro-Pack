@@ -14,9 +14,10 @@ import { Clipboard } from '@capacitor/clipboard';
 
 
 @Component({
-  selector: 'app-clipboard',
-  templateUrl: './clipboard.page.html',
-  styleUrls: ['./clipboard.page.scss'],
+    selector: 'app-clipboard',
+    templateUrl: './clipboard.page.html',
+    styleUrls: ['./clipboard.page.scss'],
+    standalone: false
 })
 export class ClipboardPage implements OnInit {
   secretKey = 'asnsdUdf83-sdf#DFD-ahGwCOZxpcdi-19238';

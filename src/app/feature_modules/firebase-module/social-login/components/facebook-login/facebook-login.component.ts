@@ -13,9 +13,10 @@ import { Platform, AlertController } from '@ionic/angular';
 import { FacebookLogin, FacebookLoginResponse } from '@capacitor-community/facebook-login';
 
 @Component({
-  selector: 'facebook-login',
-  templateUrl: './facebook-login.component.html',
-  styleUrls: ['./facebook-login.component.scss'],
+    selector: 'facebook-login',
+    templateUrl: './facebook-login.component.html',
+    styleUrls: ['./facebook-login.component.scss'],
+    standalone: false
 })
 export class FacebookLoginComponent implements OnInit {
   @Output() accessToken = new EventEmitter<string>();

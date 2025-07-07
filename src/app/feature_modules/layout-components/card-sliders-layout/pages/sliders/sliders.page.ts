@@ -11,9 +11,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-sliders',
-  templateUrl: './sliders.page.html',
-  styleUrls: ['./sliders.page.scss'],
+    selector: 'app-sliders',
+    templateUrl: './sliders.page.html',
+    styleUrls: ['./sliders.page.scss'],
+    standalone: false
 })
 export class SlidersPage implements OnInit {
 

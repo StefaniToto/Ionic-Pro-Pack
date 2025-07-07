@@ -13,9 +13,10 @@ import { SWEET_ALERT_DATA } from '../../data/sweet-alert';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-sweet-alert',
-  templateUrl: './sweet-alert.page.html',
-  styleUrls: ['./sweet-alert.page.scss'],
+    selector: 'app-sweet-alert',
+    templateUrl: './sweet-alert.page.html',
+    styleUrls: ['./sweet-alert.page.scss'],
+    standalone: false
 })
 export class SweetAlertPage {
   public showAlertData: Array<any>;

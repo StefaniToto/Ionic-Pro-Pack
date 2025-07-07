@@ -11,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 import { ELEGANCE_CHAT_LIST } from '../../data/chat-list-data';
 
 @Component({
-  selector: 'app-elegance',
-  templateUrl: './elegance.page.html',
-  styleUrls: ['./elegance.page.scss'],
+    selector: 'app-elegance',
+    templateUrl: './elegance.page.html',
+    styleUrls: ['./elegance.page.scss'],
+    standalone: false
 })
 export class ElegancePage implements OnInit {
   public chatData: Array<any>;

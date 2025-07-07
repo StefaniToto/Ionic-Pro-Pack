@@ -15,9 +15,10 @@ import { environment } from '@env/environment';
 declare let Stripe;
 
 @Component({
-  selector: 'app-stripe-web',
-  templateUrl: './stripe-web.page.html',
-  styleUrls: ['./stripe-web.page.scss'],
+    selector: 'app-stripe-web',
+    templateUrl: './stripe-web.page.html',
+    styleUrls: ['./stripe-web.page.scss'],
+    standalone: false
 })
 export class StripeWebPage implements OnInit {
   public stripe = Stripe(environment.STRIPE_PK);

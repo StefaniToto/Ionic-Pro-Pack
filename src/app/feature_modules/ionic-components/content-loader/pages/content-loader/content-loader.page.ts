@@ -12,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 import { ContentLoaderService } from '../../services/content-loader.service';
 
 @Component({
-  selector: 'app-content-loader',
-  templateUrl: './content-loader.page.html',
-  styleUrls: ['./content-loader.page.scss'],
+    selector: 'app-content-loader',
+    templateUrl: './content-loader.page.html',
+    styleUrls: ['./content-loader.page.scss'],
+    standalone: false
 })
 export class ContentLoaderPage implements OnInit {
   public segmentTab = 'api';

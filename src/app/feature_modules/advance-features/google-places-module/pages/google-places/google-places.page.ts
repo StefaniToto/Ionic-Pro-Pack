@@ -28,9 +28,10 @@ import { GooglePlacesUtilService } from '../../services/util.service';
 import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
-  selector: 'app-google-places',
-  templateUrl: './google-places.page.html',
-  styleUrls: ['./google-places.page.scss'],
+    selector: 'app-google-places',
+    templateUrl: './google-places.page.html',
+    styleUrls: ['./google-places.page.scss'],
+    standalone: false
 })
 export class GooglePlacesPage implements OnInit {
   @ViewChild('search', { static: true }) public searchElementRef: ElementRef;

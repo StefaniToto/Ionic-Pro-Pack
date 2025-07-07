@@ -13,9 +13,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { YOUTUBE_HOME_PLAYLIST } from '../../data/youtube-data';
 
 @Component({
-  selector: 'app-youtube-playlist',
-  templateUrl: './youtube-playlist.page.html',
-  styleUrls: ['./youtube-playlist.page.scss'],
+    selector: 'app-youtube-playlist',
+    templateUrl: './youtube-playlist.page.html',
+    styleUrls: ['./youtube-playlist.page.scss'],
+    standalone: false
 })
 export class YoutubePlaylistPage implements OnInit {
   public currentVideo: any;

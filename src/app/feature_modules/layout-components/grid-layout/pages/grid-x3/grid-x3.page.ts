@@ -11,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 import { ELECTRONICS } from '../../data/grid-data';
 
 @Component({
-  selector: 'app-grid-x3',
-  templateUrl: './grid-x3.page.html',
-  styleUrls: ['./grid-x3.page.scss'],
+    selector: 'app-grid-x3',
+    templateUrl: './grid-x3.page.html',
+    styleUrls: ['./grid-x3.page.scss'],
+    standalone: false
 })
 export class GridX3Page implements OnInit {
   public electronics: Array<any>;

@@ -11,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 import { NavParams, ModalController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-orderinfo',
-  templateUrl: './orderinfo.page.html',
-  styleUrls: ['./orderinfo.page.scss'],
+    selector: 'app-orderinfo',
+    templateUrl: './orderinfo.page.html',
+    styleUrls: ['./orderinfo.page.scss'],
+    standalone: false
 })
 export class OrderinfoPage implements OnInit {
   public order: any;

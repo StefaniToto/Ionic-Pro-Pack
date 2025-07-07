@@ -13,9 +13,10 @@ import { MenuController } from '@ionic/angular';
 import { SplashScreen } from '@capacitor/splash-screen';
 
 @Component({
-  selector: 'app-splash-screen',
-  templateUrl: './splash-screen.page.html',
-  styleUrls: ['./splash-screen.page.scss'],
+    selector: 'app-splash-screen',
+    templateUrl: './splash-screen.page.html',
+    styleUrls: ['./splash-screen.page.scss'],
+    standalone: false
 })
 export class SplashScreenPage implements OnInit {
   constructor(

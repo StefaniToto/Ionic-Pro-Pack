@@ -13,9 +13,10 @@ import { WordpressService } from '../../services/wordpress.service';
 import { WordpressUtilService } from '../../services/wordpress-util.service';
 
 @Component({
-  selector: 'app-blogpage',
-  templateUrl: './blogpage.page.html',
-  styleUrls: ['./blogpage.page.scss'],
+    selector: 'app-blogpage',
+    templateUrl: './blogpage.page.html',
+    styleUrls: ['./blogpage.page.scss'],
+    standalone: false
 })
 export class BlogpagePage implements OnInit {
   public blogDetail: any;

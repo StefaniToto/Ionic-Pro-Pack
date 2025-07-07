@@ -11,9 +11,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-ripple',
-  templateUrl: './ripple.component.html',
-  styleUrls: ['./ripple.component.scss'],
+    selector: 'app-ripple',
+    templateUrl: './ripple.component.html',
+    styleUrls: ['./ripple.component.scss'],
+    standalone: false
 })
 export class RippleComponent implements OnInit {
   public response: string;

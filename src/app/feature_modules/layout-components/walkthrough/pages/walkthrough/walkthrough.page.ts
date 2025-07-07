@@ -14,9 +14,10 @@ import { Router } from '@angular/router';
 import { APP_SLIDES } from '../../data/walkthrough-data';
 
 @Component({
-  selector: 'app-walkthrough',
-  templateUrl: './walkthrough.page.html',
-  styleUrls: ['./walkthrough.page.scss'],
+    selector: 'app-walkthrough',
+    templateUrl: './walkthrough.page.html',
+    styleUrls: ['./walkthrough.page.scss'],
+    standalone: false
 })
 export class WalkthroughPage implements OnInit {
   public slideOpts= {

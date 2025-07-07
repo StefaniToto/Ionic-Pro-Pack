@@ -13,9 +13,10 @@ import { Platform, AlertController, MenuController } from '@ionic/angular';
 import { FLUID_CHAT_DATA } from '../../data/chat-screen-data';
 
 @Component({
-  selector: 'app-fluid',
-  templateUrl: './fluid.page.html',
-  styleUrls: ['./fluid.page.scss'],
+    selector: 'app-fluid',
+    templateUrl: './fluid.page.html',
+    styleUrls: ['./fluid.page.scss'],
+    standalone: false
 })
 export class FluidPage implements OnInit {
   public conversation: Array<any>;

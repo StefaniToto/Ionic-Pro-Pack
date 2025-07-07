@@ -4,8 +4,9 @@ import { SwingStackDirective } from './swing-stack.directive';
 import { Card } from '../interfaces/swing';
 
 @Directive({
-  // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[swingCard]'
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    selector: '[swingCard]',
+    standalone: false
 })
 export class SwingCardDirective implements OnInit {
   public card: Card;

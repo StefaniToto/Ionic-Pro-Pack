@@ -13,9 +13,10 @@ import { Component, OnInit } from '@angular/core';
 import { CardService } from '../../services/card.service';
 
 @Component({
-  selector: 'app-card8',
-  templateUrl: './card8.page.html',
-  styleUrls: ['./card8.page.scss'],
+    selector: 'app-card8',
+    templateUrl: './card8.page.html',
+    styleUrls: ['./card8.page.scss'],
+    standalone: false
 })
 export class Card8Page implements OnInit {
   public topSavers: any;

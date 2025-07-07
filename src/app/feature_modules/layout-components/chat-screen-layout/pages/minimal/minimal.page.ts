@@ -12,9 +12,10 @@ import { IonContent } from '@ionic/angular';
 import { MINIMAL_CHAT_DATA } from '../../data/chat-screen-data';
 
 @Component({
-  selector: 'app-minimal',
-  templateUrl: './minimal.page.html',
-  styleUrls: ['./minimal.page.scss'],
+    selector: 'app-minimal',
+    templateUrl: './minimal.page.html',
+    styleUrls: ['./minimal.page.scss'],
+    standalone: false
 })
 export class MinimalPage implements OnInit {
   @ViewChild('IonContent', { static: true }) content: IonContent;

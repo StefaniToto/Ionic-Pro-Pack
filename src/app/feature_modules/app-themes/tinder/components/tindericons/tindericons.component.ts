@@ -13,9 +13,10 @@ import { ModalController, NavParams, Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-tindericons',
-  templateUrl: './tindericons.component.html',
-  styleUrls: ['./tindericons.component.scss'],
+    selector: 'app-tindericons',
+    templateUrl: './tindericons.component.html',
+    styleUrls: ['./tindericons.component.scss'],
+    standalone: false
 })
 export class TindericonsComponent implements OnInit {
   @Input() value: any;public data: any;

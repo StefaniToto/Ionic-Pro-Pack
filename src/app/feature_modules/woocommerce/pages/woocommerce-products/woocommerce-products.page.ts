@@ -13,9 +13,10 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-woocommerce-products',
-  templateUrl: './woocommerce-products.page.html',
-  styleUrls: ['./woocommerce-products.page.scss'],
+    selector: 'app-woocommerce-products',
+    templateUrl: './woocommerce-products.page.html',
+    styleUrls: ['./woocommerce-products.page.scss'],
+    standalone: false
 })
 export class WoocommerceProductsPage implements OnInit {
   public getProducts: Array<any>;

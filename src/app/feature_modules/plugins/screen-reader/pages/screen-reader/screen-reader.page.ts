@@ -14,9 +14,10 @@ import { ScreenReader } from '@capacitor/screen-reader';
 import { UtilService } from '../../services/util.service';
 import { TextToSpeech } from '@capacitor-community/text-to-speech';
 @Component({
-  selector: 'app-screen-reader',
-  templateUrl: './screen-reader.page.html',
-  styleUrls: ['./screen-reader.page.scss'],
+    selector: 'app-screen-reader',
+    templateUrl: './screen-reader.page.html',
+    styleUrls: ['./screen-reader.page.scss'],
+    standalone: false
 })
 export class ScreenReaderPage implements OnInit {
   text = 'Screen Reader is helpful when you want to give extra information to a user, other than the text written on the screen. For example, when double clicking a button, you can tell the user what the button does.';

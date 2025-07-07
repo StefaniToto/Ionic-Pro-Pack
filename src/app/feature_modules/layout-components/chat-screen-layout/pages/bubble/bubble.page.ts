@@ -13,9 +13,10 @@ import { IonContent } from '@ionic/angular';
 import { BUBBLE_CHAT_DATA } from '../../data/chat-screen-data';
 
 @Component({
-  selector: 'app-bubble',
-  templateUrl: './bubble.page.html',
-  styleUrls: ['./bubble.page.scss'],
+    selector: 'app-bubble',
+    templateUrl: './bubble.page.html',
+    styleUrls: ['./bubble.page.scss'],
+    standalone: false
 })
 export class BubblePage implements OnInit {
   @ViewChild('IonContent', { static: true }) content: IonContent;

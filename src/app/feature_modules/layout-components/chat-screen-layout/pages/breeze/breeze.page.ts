@@ -13,9 +13,10 @@ import { IonContent } from '@ionic/angular';
 import { BREEZE_CHAT_DATA, BREEZE_SHARE_LIST, BREEZE_USER_DETAILS, BREEZE_GALLERY_DATA } from '../../data/chat-screen-data';
 
 @Component({
-  selector: 'app-breeze',
-  templateUrl: './breeze.page.html',
-  styleUrls: ['./breeze.page.scss'],
+    selector: 'app-breeze',
+    templateUrl: './breeze.page.html',
+    styleUrls: ['./breeze.page.scss'],
+    standalone: false
 })
 export class BreezePage implements OnInit {
   @ViewChild('content', { static: true }) content: IonContent;

@@ -14,9 +14,10 @@ import { Observable, of } from 'rxjs';
 import { MapService } from '@app/map-service';
 
 @Component({
-  selector: 'app-classic',
-  templateUrl: './classic.page.html',
-  styleUrls: ['./classic.page.scss'],
+    selector: 'app-classic',
+    templateUrl: './classic.page.html',
+    styleUrls: ['./classic.page.scss'],
+    standalone: false
 })
 export class ClassicPage implements OnInit {
   @ViewChild('IonContent', { static: true }) content: IonContent;

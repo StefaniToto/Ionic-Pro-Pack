@@ -15,9 +15,10 @@ import { Platform } from '@ionic/angular';
 import { Camera, CameraDirection, CameraResultType, CameraSource, ImageOptions } from '@capacitor/camera';
 
 @Component({
-  selector: 'app-cropper',
-  templateUrl: './cropper.page.html',
-  styleUrls: ['./cropper.page.scss'],
+    selector: 'app-cropper',
+    templateUrl: './cropper.page.html',
+    styleUrls: ['./cropper.page.scss'],
+    standalone: false
 })
 export class CropperPage {
   public galleryImage: any;

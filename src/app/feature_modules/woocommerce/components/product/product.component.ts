@@ -13,9 +13,10 @@ import { IonSlides, AlertController } from '@ionic/angular';
 import { WooCommerceService } from '../../services/woo-commerce.service';
 
 @Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss'],
+    selector: 'app-product',
+    templateUrl: './product.component.html',
+    styleUrls: ['./product.component.scss'],
+    standalone: false
 })
 export class ProductComponent implements OnInit {
   @Input() product: any;

@@ -13,9 +13,10 @@ import { MenuController } from '@ionic/angular';
 import { YOUTUBE_LARGE_CARD } from '../../data/youtube-data';
 
 @Component({
-  selector: 'app-largecard',
-  templateUrl: './largecard.page.html',
-  styleUrls: ['./largecard.page.scss'],
+    selector: 'app-largecard',
+    templateUrl: './largecard.page.html',
+    styleUrls: ['./largecard.page.scss'],
+    standalone: false
 })
 export class LargecardPage implements OnInit {
   public gridImages: Array<any>;

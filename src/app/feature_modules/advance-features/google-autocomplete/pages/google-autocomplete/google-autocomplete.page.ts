@@ -17,9 +17,10 @@ import { Geolocation } from '@capacitor/geolocation';
 import { UtilService } from '../../services/util.service';
 
 @Component({
-  selector: 'app-google-autocomplete',
-  templateUrl: './google-autocomplete.page.html',
-  styleUrls: ['./google-autocomplete.page.scss'],
+    selector: 'app-google-autocomplete',
+    templateUrl: './google-autocomplete.page.html',
+    styleUrls: ['./google-autocomplete.page.scss'],
+    standalone: false
 })
 export class GoogleAutocompletePage implements OnInit {
   public zoom: number;

@@ -11,9 +11,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-customfonts',
-  templateUrl: './customfonts.page.html',
-  styleUrls: ['./customfonts.page.scss'],
+    selector: 'app-customfonts',
+    templateUrl: './customfonts.page.html',
+    styleUrls: ['./customfonts.page.scss'],
+    standalone: false
 })
 export class CustomfontsPage implements OnInit {
   public segmentTab: string;

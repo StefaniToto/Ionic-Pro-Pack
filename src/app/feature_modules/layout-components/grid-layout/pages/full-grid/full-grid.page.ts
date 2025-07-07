@@ -13,9 +13,10 @@ import { FULL_WIDTH_IMAGES } from '../../data/grid-data';
 // import { environment } from '@env/environment';
 
 @Component({
-  selector: 'app-full-grid',
-  templateUrl: './full-grid.page.html',
-  styleUrls: ['./full-grid.page.scss'],
+    selector: 'app-full-grid',
+    templateUrl: './full-grid.page.html',
+    styleUrls: ['./full-grid.page.scss'],
+    standalone: false
 })
 export class FullGridPage implements OnInit {
   public gridImages: Array<any>;

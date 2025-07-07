@@ -13,9 +13,10 @@ import { WordpressService } from '../../services/wordpress.service';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-blogs',
-  templateUrl: './blogs.page.html',
-  styleUrls: ['./blogs.page.scss'],
+    selector: 'app-blogs',
+    templateUrl: './blogs.page.html',
+    styleUrls: ['./blogs.page.scss'],
+    standalone: false
 })
 export class BlogsPage implements OnInit {
   public blogPosts: any;

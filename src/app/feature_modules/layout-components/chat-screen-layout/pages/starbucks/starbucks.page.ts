@@ -14,9 +14,10 @@ import { Observable, of } from 'rxjs';
 import { MapService } from '@app/map-service';
 
 @Component({
-  selector: 'app-starbucks',
-  templateUrl: './starbucks.page.html',
-  styleUrls: ['./starbucks.page.scss'],
+    selector: 'app-starbucks',
+    templateUrl: './starbucks.page.html',
+    styleUrls: ['./starbucks.page.scss'],
+    standalone: false
 })
 export class StarbucksPage implements OnInit {
 

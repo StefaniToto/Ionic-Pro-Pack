@@ -13,9 +13,10 @@ import { Router } from '@angular/router';
 import { ROSE_CHAT_LIST } from '../../data/chat-list-data';
 
 @Component({
-  selector: 'app-rose-list',
-  templateUrl: './rose-list.page.html',
-  styleUrls: ['./rose-list.page.scss'],
+    selector: 'app-rose-list',
+    templateUrl: './rose-list.page.html',
+    styleUrls: ['./rose-list.page.scss'],
+    standalone: false
 })
 export class RoseListPage implements OnInit {
   public segmentTab: any;

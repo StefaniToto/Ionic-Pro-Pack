@@ -13,9 +13,10 @@ import { Component, OnInit } from '@angular/core';
 import { USER_CARD_BILLING_DETAILS } from '../../data/profile-data';
 
 @Component({
-  selector: 'payment-cards',
-  templateUrl: './payment-cards.component.html',
-  styleUrls: ['./payment-cards.component.scss'],
+    selector: 'payment-cards',
+    templateUrl: './payment-cards.component.html',
+    styleUrls: ['./payment-cards.component.scss'],
+    standalone: false
 })
 export class PaymentCardsComponent implements OnInit {
   public cardDetails: any;

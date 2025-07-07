@@ -13,9 +13,10 @@ import { ACCORDION_LIST } from '../../data/card-slider-data';
 import {  Platform } from '@ionic/angular';
 
 @Component({
-  selector: 'app-expandable-list',
-  templateUrl: './expandable-list.page.html',
-  styleUrls: ['./expandable-list.page.scss'],
+    selector: 'app-expandable-list',
+    templateUrl: './expandable-list.page.html',
+    styleUrls: ['./expandable-list.page.scss'],
+    standalone: false
 })
 export class ExpandableListPage implements OnInit {
   public lists: Array<any>;

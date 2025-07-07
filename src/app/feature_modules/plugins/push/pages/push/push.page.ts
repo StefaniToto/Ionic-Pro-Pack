@@ -16,9 +16,10 @@ import { PushNotifications, Token, PushNotificationSchema, ActionPerformed, Impo
 import { Browser, OpenOptions } from '@capacitor/browser';
 
 @Component({
-  selector: 'app-push',
-  templateUrl: './push.page.html',
-  styleUrls: ['./push.page.scss'],
+    selector: 'app-push',
+    templateUrl: './push.page.html',
+    styleUrls: ['./push.page.scss'],
+    standalone: false
 })
 export class PushPage {
   pushList = [];

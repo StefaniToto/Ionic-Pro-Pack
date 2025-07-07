@@ -27,9 +27,10 @@ import {
 } from '@capacitor-community/admob';
 
 @Component({
-  selector: 'app-admob',
-  templateUrl: './admob.page.html',
-  styleUrls: ['./admob.page.scss'],
+    selector: 'app-admob',
+    templateUrl: './admob.page.html',
+    styleUrls: ['./admob.page.scss'],
+    standalone: false
 })
 export class AdMobPage implements OnInit {
   private bannerAd: any = null;

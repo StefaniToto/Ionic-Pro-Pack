@@ -12,9 +12,10 @@ import { Component, OnInit } from '@angular/core';
 import { CardService } from '../../services/card.service';
 
 @Component({
-  selector: 'app-event-card',
-  templateUrl: './event-card.page.html',
-  styleUrls: ['./event-card.page.scss'],
+    selector: 'app-event-card',
+    templateUrl: './event-card.page.html',
+    styleUrls: ['./event-card.page.scss'],
+    standalone: false
 })
 export class EventCardPage implements OnInit {
   public events: Array<any>;

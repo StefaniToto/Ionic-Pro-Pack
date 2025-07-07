@@ -13,9 +13,10 @@ import { FunctionService } from '../../services/function.service';
 import { PRODUCTS_1 } from '../../data/grid-data';
 
 @Component({
-  selector: 'app-shop-grid',
-  templateUrl: './shop-grid.page.html',
-  styleUrls: ['./shop-grid.page.scss'],
+    selector: 'app-shop-grid',
+    templateUrl: './shop-grid.page.html',
+    styleUrls: ['./shop-grid.page.scss'],
+    standalone: false
 })
 export class ShopGridPage implements OnInit {
   @ViewChild('slides', { static: true }) slides: IonSlides;

@@ -13,9 +13,10 @@ import { AlertController, Platform } from '@ionic/angular';
 import { Importance, LocalNotifications, ScheduleEvery, Visibility } from '@capacitor/local-notifications';
 import { UtilService } from '../../services/util.service';
 @Component({
-  selector: 'app-local-notification',
-  templateUrl: './local-notification.page.html',
-  styleUrls: ['./local-notification.page.scss'],
+    selector: 'app-local-notification',
+    templateUrl: './local-notification.page.html',
+    styleUrls: ['./local-notification.page.scss'],
+    standalone: false
 })
 export class LocalNotificationPage {
   public clickSub: any;

@@ -14,9 +14,10 @@ import { IonSlides } from '@ionic/angular';
 import { environment } from '@env/environment';
 
 @Component({
-  selector: 'app-slider4',
-  templateUrl: './slider4.component.html',
-  styleUrls: ['./slider4.component.scss'],
+    selector: 'app-slider4',
+    templateUrl: './slider4.component.html',
+    styleUrls: ['./slider4.component.scss'],
+    standalone: false
 })
 export class Slider4Component implements OnInit {
   @ViewChild('slides', { static: true }) slides: IonSlides;

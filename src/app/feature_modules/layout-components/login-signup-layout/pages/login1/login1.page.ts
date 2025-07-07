@@ -12,9 +12,10 @@ import { MenuController } from '@ionic/angular';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login1',
-  templateUrl: './login1.page.html',
-  styleUrls: ['./login1.page.scss'],
+    selector: 'app-login1',
+    templateUrl: './login1.page.html',
+    styleUrls: ['./login1.page.scss'],
+    standalone: false
 })
 export class Login1Page implements OnInit {
   public email: string;

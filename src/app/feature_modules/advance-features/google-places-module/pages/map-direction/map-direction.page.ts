@@ -15,9 +15,10 @@ import { MapService } from '@app/map-service';
 import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 
 @Component({
-  selector: 'app-map-direction',
-  templateUrl: './map-direction.page.html',
-  styleUrls: ['./map-direction.page.scss'],
+    selector: 'app-map-direction',
+    templateUrl: './map-direction.page.html',
+    styleUrls: ['./map-direction.page.scss'],
+    standalone: false
 })
 export class MapDirectionPage implements OnInit {
   @ViewChild('myMap') map: GoogleMap;
