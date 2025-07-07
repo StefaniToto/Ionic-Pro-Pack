@@ -15,7 +15,7 @@ import { environment } from '@env/environment';
 import { Router } from '@angular/router';
 import { UtilService } from '@app/feature_modules/firebase-module/firebase-signup/services/util.service';
 import { AuthenticationService } from '@app/feature_modules/firebase-module/firebase-signup/services/firebase-authentication.service';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { MovieTicketPage } from './feature_modules/layout-components/card-sliders-layout/pages/movie-ticket/movie-ticket.page';
 import package_info from '../../package.json';
 

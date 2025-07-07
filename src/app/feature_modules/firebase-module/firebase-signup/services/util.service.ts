@@ -3,7 +3,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { LoadingController, AlertController, NavController, ToastController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Injectable({
   providedIn: 'root'
