@@ -8,7 +8,6 @@
  * LICENSE.md file in the root directory of this source tree.
  */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
 import { FunctionService } from '../../services/function.service';
 import { PRODUCTS_1 } from '../../data/grid-data';
 
@@ -19,7 +18,7 @@ import { PRODUCTS_1 } from '../../data/grid-data';
     standalone: false
 })
 export class ShopGridPage implements OnInit {
-  @ViewChild('slides', { static: true }) slides: IonSlides;
+  @ViewChild('slides', { static: true }) slides: any;
 
   public products: Array<any>;
 

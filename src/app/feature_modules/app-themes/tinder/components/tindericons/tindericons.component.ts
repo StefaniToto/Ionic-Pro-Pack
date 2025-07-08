@@ -42,6 +42,7 @@ export class TindericonsComponent implements OnInit {
 
   closeModal(id: any) {
     this.modalCtrl.dismiss();
+    // @ts-ignore
     if (id === 'star' || 'refresh' && id !== 'flash') {
     }
   }

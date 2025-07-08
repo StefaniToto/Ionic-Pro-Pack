@@ -3,7 +3,13 @@ import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { MapDirectionPage } from './pages/map-direction/map-direction.page';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { provideHttpClient, withInterceptorsFromDi, withJsonpSupport } from '@angular/common/http';
+import {
+  HttpClientJsonpModule,
+  HttpClientModule,
+  provideHttpClient,
+  withInterceptorsFromDi,
+  withJsonpSupport
+} from '@angular/common/http';
 @NgModule({ declarations: [MapDirectionPage],
     exports: [MapDirectionPage, GoogleMapsModule, HttpClientModule, HttpClientJsonpModule], imports: [CommonModule,
         IonicModule,

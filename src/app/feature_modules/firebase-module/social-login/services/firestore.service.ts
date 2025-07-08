@@ -4,6 +4,7 @@ import { BaseDatabaseModel } from '../models/base-dto.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { LoginUtilService } from './util.service';
+import { WhereFilterOp } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -60,6 +61,6 @@ export class FirestoreService {
 
 export interface FirestoreQuery {
   field: string;
-  operation: firebase.firestore.WhereFilterOp;
+  operation: WhereFilterOp;
   searchKey: string;
 }

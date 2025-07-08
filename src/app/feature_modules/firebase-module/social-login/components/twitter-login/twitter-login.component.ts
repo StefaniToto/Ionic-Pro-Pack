@@ -11,8 +11,7 @@
 
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Platform } from '@ionic/angular';
-import { Twitter } from '@capacitor-community/twitter';
-const twitter = new Twitter();
+import {Twitter} from "@capacitor-community/twitter";
 
 @Component({
     selector: 'twitter-login',
@@ -30,7 +29,7 @@ export class TwitterLoginComponent implements OnInit {
 
   doLogin() {
     if (this.platform.is('capacitor')) {
-      twitter
+      Twitter
         .login()
         .then(result => {
           console.log('result', result);

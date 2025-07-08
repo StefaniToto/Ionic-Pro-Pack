@@ -1,15 +1,6 @@
-/**
- * Ionic Capacitor Full App in Angular  (https://store.enappd.com/product/capacitor-full-app-with-ionic-angular)
-
- *
- * Copyright © 2020-present Enappd. All rights reserved.
- *
- * This source code is licensed as per the terms found in the
- * LICENSE.md file in the root directory of this source tree.
- */
 import { Component, OnInit } from '@angular/core';
 import { Platform, AlertController } from '@ionic/angular';
-import { ApplePay } from '@ionic-native/apple-pay/ngx';
+import { Stripe } from '@capacitor-community/stripe';
 import { APPLE_PAY_ITEM, APPLE_PAY_SHIPPING_METHOD } from '../../data/apple-pay-data';
 
 @Component({
@@ -32,7 +23,6 @@ export class ApplepayPage implements OnInit {
   public disabledButton = true;
 
   constructor(
-    public applePay: ApplePay,
     public pltform: Platform,
     public alertController: AlertController
   ) {
@@ -47,17 +37,17 @@ export class ApplepayPage implements OnInit {
     this.shippingMethods = APPLE_PAY_SHIPPING_METHOD;
   }
   async checkApplePayValid() {
-    await this.applePay.canMakePayments().then((message) => {
-      this.presentAlert(message);
-      // Apple Pay is enabled. Expect:
-      // 'This device can make payments.'
-    }).catch((error) => {
-      console.log(error);
-      this.presentAlert(error);
-      // There is an issue, examine the message to see the details, will be:
-      // 'This device cannot make payments.''
-      // 'This device can make payments but has no supported cards'
-    });
+    // await this.applePay.canMakePayments().then((message) => {
+    //   this.presentAlert(message);
+    //   // Apple Pay is enabled. Expect:
+    //   // 'This device can make payments.'
+    // }).catch((error) => {
+    //   console.log(error);
+    //   this.presentAlert(error);
+    //   // There is an issue, examine the message to see the details, will be:
+    //   // 'This device cannot make payments.''
+    //   // 'This device can make payments but has no supported cards'
+    // });
   }
 
   async payWithApplePay() {
@@ -74,11 +64,11 @@ export class ApplepayPage implements OnInit {
         merchantCapabilities: this.merchantCapabilities,
         supportedNetworks: this.supportedNetworks
       };
-      this.applePay.makePaymentRequest(order).then(message => {
-        this.applePay.completeLastTransaction('success');
+      Stripe.createApplePay(order).then(message => {
+        Stripe.confirmPaymentFlow();
       }).catch((error) => {
         console.log(error);
-        this.applePay.completeLastTransaction('failure');
+        Stripe.confirmPaymentFlow();
         this.presentAlert(error);
       });
 

@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 import { Direction, DragEvent, StackConfig, SwingCardDirective, SwingStackDirective, ThrowEvent } from '../../components/ionic-swing/ionic-swing.module';
 import { TindericonsComponent } from '../../components/tindericons/tindericons.component';
 import { DataService, HomeTab, footerIcon } from '../../services/data.service';
-import { IonContent, IonSlides } from '@ionic/angular';
+import { IonContent } from '@ionic/angular';
 
 @Component({
     selector: 'app-home',
@@ -22,7 +22,7 @@ import { IonContent, IonSlides } from '@ionic/angular';
 })
 export class HomePage {
   @ViewChild('IonContent', { static: true }) content: IonContent;
-  @ViewChild('Slides', { static: true }) slides: IonSlides;
+  @ViewChild('Slides', { static: true }) slides: any;
   @ViewChild('swingStack', { static: true, read: SwingStackDirective }) swingStack: SwingStackDirective;
   @ViewChildren('swingCards', { read: SwingCardDirective }) swingCards: QueryList<SwingCardDirective>;
 

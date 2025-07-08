@@ -1,16 +1,6 @@
-/**
- * Ionic Capacitor Full App in Angular  (https://store.enappd.com/product/capacitor-full-app-with-ionic-angular)
-
- *
- * Copyright © 2020-present Enappd. All rights reserved.
- *
- * This source code is licensed as per the terms found in the
- * LICENSE.md file in the root directory of this source tree.
- */
-
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Platform } from '@ionic/angular';
-import { GoogleAuth } from '@codetrix-studio/capacitor-google-auth';
+import {SocialLogin} from "@capgo/capacitor-social-login";
 
 @Component({
     selector: 'google-login',
@@ -27,14 +17,28 @@ export class GoogleLoginComponent implements OnInit {
   ngOnInit() { }
 
   async doLogin() {
-    GoogleAuth.initialize();
-    if (this.platform.is('capacitor')) {
-      const user = await GoogleAuth.signIn();
 
+
+    await SocialLogin.initialize({
+      google: {
+        webClientId: 'YOUR_WEB_CLIENT_ID.apps.googleusercontent.com',
+        mode: 'offline',
+      },
+    })
+
+
+    if (this.platform.is('capacitor')) {
+      const user = await SocialLogin.login({
+        provider: 'google',
+        options: {
+          scopes: ['email', 'profile'],
+          forceRefreshToken: true,
+        },
+      });
       if (user) {
         console.log(user);
-        const idToken = user.authentication.idToken;
-        const accessToken = user.authentication.accessToken;
+        const idToken = user.result['idToken'];
+        const accessToken = user.result['accessToken'];
         this.accessToken.next({ idToken, accessToken });
       }
     } else {

@@ -4,7 +4,6 @@ const config: CapacitorConfig = {
   appId: 'com.enappd.ngcapfullapp',
   appName: 'Capacitor-Enappd',
   webDir: 'www',
-  bundledWebRuntime: false,
   server: {
     cleartext: true
   },

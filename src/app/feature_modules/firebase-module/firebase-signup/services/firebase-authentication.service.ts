@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
-import * as firebase from 'firebase/compat';
 import { BehaviorSubject } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { UserDataService } from './user-data.service';
 import { UtilService } from './util.service';
 import { take } from 'rxjs/operators';
+import firebase from "firebase/compat/app";
+import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
+import TwitterAuthProvider = firebase.auth.TwitterAuthProvider;
+import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 
 export class AuthInfo {
   constructor(public $uid: string) { }
@@ -101,30 +104,30 @@ export class AuthenticationService {
     });
   }
   public loginWithFacebook(accessToken) {
-    const credential = firebase.auth.FacebookAuthProvider
+    const credential =FacebookAuthProvider
       .credential(accessToken);
     return this.fireAuth.signInWithCredential(credential);
   }
   public fbLogin(): Promise<any> {
-    return this.fireAuth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+    return this.fireAuth.signInWithPopup(new FacebookAuthProvider());
   }
   public loginWithTwitter(accessToken, accessSecret) {
-    const credential = firebase.auth.TwitterAuthProvider
+    const credential = TwitterAuthProvider
       .credential(accessToken, accessSecret);
     return this.fireAuth.signInWithCredential(credential);
   }
   public twitterLogin(): Promise<any> {
-    return this.fireAuth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+    return this.fireAuth.signInWithPopup(new TwitterAuthProvider());
   }
   public loginWithGoogle(accessToken, accessSecret) {
     // eslint-disable-next-line multiline-ternary
-    const credential = accessSecret ? firebase.auth.GoogleAuthProvider
+    const credential = accessSecret ? GoogleAuthProvider
       .credential(accessToken, accessSecret) : firebase.auth.GoogleAuthProvider
       .credential(accessToken);
     return this.fireAuth.signInWithCredential(credential);
   }
   public googleLogin(): Promise<any> {
-    return this.fireAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    return this.fireAuth.signInWithPopup(new GoogleAuthProvider());
   }
   public createSocialLoginUser(user): Promise<any> {
     this.authInfo$.next(new AuthInfo(user.uid));

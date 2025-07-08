@@ -10,7 +10,6 @@
 
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
 import { environment } from '@env/environment';
 
 @Component({
@@ -20,9 +19,9 @@ import { environment } from '@env/environment';
     standalone: false
 })
 export class Slider1Component implements OnInit {
-  @ViewChild('slideWithNav', { static: true }) slideWithNav: IonSlides;
-  @ViewChild('slideWithNav2', { static: true }) slideWithNav2: IonSlides;
-  @ViewChild('slideWithNav3', { static: true }) slideWithNav3: IonSlides;
+  @ViewChild('slideWithNav', { static: true }) slideWithNav: any;
+  @ViewChild('slideWithNav2', { static: true }) slideWithNav2: any;
+  @ViewChild('slideWithNav3', { static: true }) slideWithNav3: any;
 
   public electronicsList: Array<any>;
   public slideOptsOne = {

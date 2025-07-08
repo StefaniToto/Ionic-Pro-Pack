@@ -9,7 +9,7 @@
  */
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides, IonContent, ToastController } from '@ionic/angular';
+import { IonContent, ToastController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 import { WooCommerceService } from '../../services/woo-commerce.service';
 import { DataServicesService } from '../../services/data-services.service';
@@ -23,9 +23,9 @@ import { Storage } from '@ionic/storage';
     standalone: false
 })
 export class ProductDetailsPage implements OnInit {
-  @ViewChild('Slides', { static: true }) slides: IonSlides;
+  // @ViewChild('Slides', { static: true }) slides: IonSlides;
   @ViewChild('Content', { static: true }) content: IonContent;
-  @ViewChild('slider', { static: true }) slider: IonSlides;
+  // @ViewChild('slider', { static: true }) slider: IonSlides;
   public index: number;
   public segment: string;
   public productData: Array<any> = [];
@@ -64,7 +64,7 @@ export class ProductDetailsPage implements OnInit {
     });
   }
   async change() {
-    await this.slides.getActiveIndex().then(d => this.index = d);
+    // await this.slides.getActiveIndex().then(d => this.index = d);
     this.segment = this.productData[this.index].title;
     this.drag();
   }
@@ -72,7 +72,7 @@ export class ProductDetailsPage implements OnInit {
   onReviewClick(index) {
     this.segment = this.productData[index].title;
     this.index = index;
-    this.slides.slideTo(index);
+    // this.slides.slideTo(index);
     this.content.scrollToTop();
     this.drag();
   }
@@ -101,7 +101,7 @@ export class ProductDetailsPage implements OnInit {
   }
 
   update(i) {
-    this.slides.slideTo(i);
+    // this.slides.slideTo(i);
   }
 
   drag() {

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ApplePay } from '@ionic-native/apple-pay/ngx';
 import { ApplePayRouting } from './apple-pay-routing.module';
 
 
@@ -10,6 +9,6 @@ import { ApplePayRouting } from './apple-pay-routing.module';
     CommonModule,
     ApplePayRouting
   ],
-  providers: [ApplePay]
+  providers: []
 })
 export class ApplePayModuleModule { }

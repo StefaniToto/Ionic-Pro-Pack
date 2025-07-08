@@ -10,7 +10,6 @@
 
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
 import { environment } from '@env/environment';
 
 @Component({
@@ -20,7 +19,7 @@ import { environment } from '@env/environment';
     standalone: false
 })
 export class Slider5Component implements OnInit {
-  @ViewChild('slides', { static: true }) slides: IonSlides;
+  @ViewChild('slides', { static: true }) slides: any;
   public electronicsList: Array<any>;
   public numbers;
   slideOpts = {

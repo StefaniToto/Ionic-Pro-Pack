@@ -9,7 +9,7 @@
  */
 
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { IonSlides, AlertController } from '@ionic/angular';
+import {  AlertController } from '@ionic/angular';
 import { WooCommerceService } from '../../services/woo-commerce.service';
 
 @Component({
@@ -20,7 +20,7 @@ import { WooCommerceService } from '../../services/woo-commerce.service';
 })
 export class ProductComponent implements OnInit {
   @Input() product: any;
-  @Input() slider: IonSlides;
+  // @Input() slider: IonSlides;
   @Output() notify: EventEmitter<number> = new EventEmitter<number>();
   public slideOpts = {
     effect: 'flip'
@@ -55,11 +55,11 @@ export class ProductComponent implements OnInit {
   }
 
   remove() {
-    this.slider.lockSwipes(true);
+    // this.slider.lockSwipes(true);
   }
 
   gainback() {
-    this.slider.lockSwipes(false);
+    // this.slider.lockSwipes(false);
   }
 
   like() {

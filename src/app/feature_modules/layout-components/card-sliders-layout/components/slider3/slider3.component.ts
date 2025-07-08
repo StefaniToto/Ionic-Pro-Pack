@@ -10,7 +10,6 @@
 
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonSlides } from '@ionic/angular';
 import { CardService } from '../../services/card.service';
 
 @Component({
@@ -20,7 +19,7 @@ import { CardService } from '../../services/card.service';
     standalone: false
 })
 export class Slider3Component implements OnInit {
-  @ViewChild('slides', { static: true }) slides: IonSlides;
+  // @ViewChild('slides', { static: true }) slides: IonSlides;
   public pages: Array<any> = [];
 
   constructor(public cardServ: CardService) {
@@ -28,9 +27,9 @@ export class Slider3Component implements OnInit {
   }
 
   ngOnInit() {
-    this.slides.options = {
-      effect: 'fade'
-    };
+    // this.slides.options = {
+    //   effect: 'fade'
+    // };
   }
 
 }
