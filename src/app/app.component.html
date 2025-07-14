@@ -43,6 +43,7 @@
                       color="light"
                       class="ion-padding-start"
                       [ngClass]="{ disabled: option.disabled }"
+                      routerLink="{{ option.url }}"
                       (click)="redirectPage(option)"
                     >
                       <ion-icon slot="start" [name]="option.icon"></ion-icon>
