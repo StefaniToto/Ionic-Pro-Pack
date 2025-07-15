@@ -43,13 +43,12 @@
     "@angular/compiler-cli": "^20.1.0",
     "@angular/language-service": "^20.1.0",
     "@capacitor/cli": "^7.0.0",
-    "@ionic/angular-toolkit": "^11.0.1",
+    "@ionic/angular-toolkit": "^12.2.0",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.18.0",
     "eslint": "^9.16.0",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsdoc": "^48.2.1",
-    "eslint-plugin-prefer-arrow": "1.2.2",
+    "eslint-plugin-prefer-arrow": "1.2.3",
     "typescript": "~5.8.0"
   },
   "description": "An Ionic project"
