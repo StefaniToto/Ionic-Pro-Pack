@@ -420,13 +420,9 @@ ion-item {
   text-decoration: none;
 }
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
-
-/* @import "@ionic/angular/css/palettes/dark.always.css"; */
-/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+/* Dark Theme */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+.input-wrapper.sc-ion-input-ios input.sc-ion-input-ios{
+  padding-left: 1rem ;
+}
