@@ -66,6 +66,72 @@ ion-card {
   color: #ffa000;
 }
 
+.error-text {
+  font-size: 12px;
+  margin: 5px 0;
+  padding-left: 16px;
+}
+
+.input-field.error {
+  border-color: var(--ion-color-danger) !important;
+}
+
+.terms-item {
+  --background: transparent;
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
+
+.terms-label {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.terms-link {
+  color: var(--ion-color-primary);
+  text-decoration: none;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+.anonymous-btn {
+  margin-top: 20px;
+}
+
+.line {
+  height: 1px;
+  background: var(--ion-color-medium);
+  margin: 20px 0;
+  opacity: 0.3;
+}
+
+.error-text {
+  font-size: 12px;
+  margin: 5px 0 0 10px;
+}
+
+.input-field.error {
+  border-color: var(--ion-color-danger) !important;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.clickable:hover {
+  opacity: 0.7;
+}
+
+.line {
+  height: 1px;
+  background: var(--ion-color-medium);
+  margin: 20px 0;
+  opacity: 0.3;
+}
+
 @media screen and (min-width: 767px) {
   ion-card {
     width: 600px;
