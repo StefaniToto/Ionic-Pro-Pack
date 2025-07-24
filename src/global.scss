@@ -174,16 +174,17 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root{
+  :root {
     .alert-wrapper {
       background: #333;
-      .alert-head .alert-title, .alert-input-group .alert-input-wrapper input{
+      .alert-head .alert-title,
+      .alert-input-group .alert-input-wrapper input {
         color: var(--ion-color-dark);
       }
-      .alert-message{
+      .alert-message {
         color: var(--ion-color-medium);
       }
-      .alert-radio-label{
+      .alert-radio-label {
         color: var(--ion-color-dark) !important;
       }
     }
@@ -416,13 +417,15 @@ ion-item {
   --border-width: 0 0 0 !important;
 }
 
-.link-no-decor{
+.link-no-decor {
   text-decoration: none;
 }
 
 /* Dark Theme */
-@import '@ionic/angular/css/palettes/dark.system.css';
+@import "@ionic/angular/css/palettes/dark.system.css";
 
-.input-wrapper.sc-ion-input-ios input.sc-ion-input-ios{
-  padding-left: 1rem ;
+//padding for the placeholder text
+.input-wrapper.sc-ion-input-ios input.sc-ion-input-ios,
+.input-wrapper.sc-ion-input-md input.sc-ion-input-md {
+  padding-left: 1rem;
 }

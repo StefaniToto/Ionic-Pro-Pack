@@ -2,64 +2,94 @@
   <div class="main-section">
     <ion-row class="row-section">
       <div class="fire-logo">
-        <img src="assets/imgs/angularjs.png" class="img-logo">
+        <img src="assets/imgs/angularjs.png" class="img-logo" />
         <ion-text color="dark">
-          <h2 class="ion-no-margin ion-margin-vertical ion-text-center">Sign In</h2>
+          <h2 class="ion-no-margin ion-margin-vertical ion-text-center">
+            Sign In
+          </h2>
         </ion-text>
       </div>
     </ion-row>
     <div class="ion-padding">
       <ion-row>
         <ion-col>
-          <ion-input clearInput type="email" placeholder="Email" [(ngModel)]="email"
-                     class="input-field ion-padding-horizontal" clear-input="true"></ion-input>
+          <ion-input
+            clearInput
+            type="email"
+            placeholder="Email"
+            [(ngModel)]="email"
+            class="input-field ion-padding-horizontal"
+            clear-input="true"
+          ></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-input clearInput type="password" placeholder="Password" [(ngModel)]="password"
-                     class="input-field ion-padding-horizontal" clear-input="true"></ion-input>
+          <ion-input
+            clearInput
+            type="password"
+            placeholder="Password"
+            [(ngModel)]="password"
+            class="input-field ion-padding-horizontal"
+            clear-input="true"
+          ></ion-input>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-text color="medium" (click)="forgotPassword()" class="ion-float-end">
-            <h6 class="small-text ion-no-margin ion-text-end">Forgot Password?</h6>
+          <ion-text
+            color="medium"
+            (click)="forgotPassword()"
+            class="ion-float-end"
+          >
+            <h6 class="small-text ion-no-margin ion-text-end">
+              Forgot Password?
+            </h6>
           </ion-text>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-button expand="block" (click)="signin()" color="undefined" class="btn-transition"><strong
-            class="ion-color-light">Sign In</strong></ion-button>
+          <ion-button
+            expand="block"
+            (click)="signin()"
+            color="undefined"
+            class="btn-transition"
+            ><strong class="ion-color-light">Sign In</strong></ion-button
+          >
         </ion-col>
       </ion-row>
       <div class="line"></div>
       <ion-row>
         <ion-col>
-<!--          <ion-button expand="block" fill="outline" color="undefined" (click)="util.navigate('signup')"-->
-<!--                      class="btn-color"><strong>New? Create an Account</strong></ion-button>-->
+          <!--          <ion-button expand="block" fill="outline" color="undefined" (click)="util.navigate('signup')"-->
+          <!--                      class="btn-color"><strong>New? Create an Account</strong></ion-button>-->
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-<!--          <facebook-login (accessToken)="facebookLogin($event)"></facebook-login>-->
+          <!--          <facebook-login (accessToken)="facebookLogin($event)"></facebook-login>-->
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-<!--          <twitter-login (accessToken)="twitterLogin($event)"></twitter-login>-->
+          <!--          <twitter-login (accessToken)="twitterLogin($event)"></twitter-login>-->
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-<!--          <google-login (accessToken)="googleLogin($event)"></google-login>-->
+          <!--          <google-login (accessToken)="googleLogin($event)"></google-login>-->
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-button expand="block" (click)="signInAnonymously()" color="undefined" class="btn-transition"><strong
-            class="white">Anonymously Sign In</strong></ion-button>
+          <ion-button
+            expand="block"
+            (click)="signInAnonymously()"
+            color="undefined"
+            class="btn-transition"
+            ><strong class="white">Anonymously Sign In</strong></ion-button
+          >
         </ion-col>
       </ion-row>
     </div>
