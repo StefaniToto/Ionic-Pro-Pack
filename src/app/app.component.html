@@ -11,20 +11,13 @@
       <ion-header class="head">
         <div class="enappd-header">
           <div class="logo">
-            <img src="assets/logo-ionic-white.png" alt="" />
-          </div>
-          <div class="title">Ionic 7 Full App</div>
-          <div class="subtitle">
-            Ionic {{ "ionic_v" }} | Angular {{ ang_v }} | Capacitor {{ cap_v }}
+            <img src="assets/moka-cartoon.png" alt="Moka icon" />
           </div>
         </div>
       </ion-header>
       <ion-content>
         <!--Beginner Features-->
         <ion-list class="list-padd ion-no-margin ion-no-padding">
-          <ion-list-header color="light">
-            <ion-label>Beginner Features</ion-label>
-          </ion-list-header>
           @for (p of beginnerMenu; track p.title) {
             @if (p.children && !p.module) {
               <ion-item color="light" detail (click)="expandMenu(p.title)">

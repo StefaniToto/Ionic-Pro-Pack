@@ -8,6 +8,7 @@ import { BeginnerMenu } from '../models/menu';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
   imports: [IonicModule, NgClass, RouterLink, NgForOf, NgIf],
 })
 export class AppComponent {
