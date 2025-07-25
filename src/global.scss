@@ -424,8 +424,3 @@ ion-item {
 /* Dark Theme */
 @import "@ionic/angular/css/palettes/dark.system.css";
 
-//padding for the placeholder text
-.input-wrapper.sc-ion-input-ios input.sc-ion-input-ios,
-.input-wrapper.sc-ion-input-md input.sc-ion-input-md {
-  padding-left: 1rem;
-}
