@@ -424,3 +424,17 @@ ion-item {
 /* Dark Theme */
 @import "@ionic/angular/css/palettes/dark.system.css";
 
+.responsive-container {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .responsive-container {
+    padding: 4rem 2rem;
+  }
+}
