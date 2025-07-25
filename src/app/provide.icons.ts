@@ -130,5 +130,6 @@ export function provideAppIcons() {
     'logo-youtube': logoYoutube,
     'logo-google': 'assets/icon/google.png',
     'apps-outline': 'assets/socialShare/apps-outline.svg',
+    'call-outline': 'assets/socialShare/call-outline.svg',
   });
 }
