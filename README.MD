@@ -1,22 +1,32 @@
 # Ionic 7 Angular Capacitor Full App 7.4.1, Angular 20
 
-This app is made with Ionic and Angular Frameworks. Capacitor is used for building the app to browser or Android/iOS devices.
-A variety of layouts, functionalities are available in this pro app.
+A modern Ionic 7 + Angular 20 + Capacitor 7 starter kit packed with pre-built layouts and UI components. Ideal for launching hybrid mobile (iOS/Android) and web apps with best-in-class practices.
 
 For Android builds, you'll need latest Android Studio.
 For iOS builds, you'll need an Apple system with (latest) Xcode.
 
 
 ### Tech Stack
-* Capacitor - ^7
-* Angular - ^20
-* Ionic - ^7
-* Node - ^22.x
-* TypeScript - ^5
+| Layer      | Version |
+| ---------- | ------- |
+| Ionic      | 7.x     |
+| Angular    | 20.x    |
+| Capacitor  | 7.x     |
+| NodeJS     | 22.x    |
+| TypeScript | 5.x     |
 
-### Features
-* Login/Signup
-* Dashboard
+
+🚀 Features
+
+    Built with Ionic 7, Angular 20, and Capacitor 7
+
+    Fully responsive UI templates: login screens, dashboards, profiles, forms & more
+
+    Ionic-native integrations setup (e.g. Camera, Geolocation, Push Notifications) — ready for service logic
+
+    Browser, Android & iOS deployment with single codebase
+
+    Modern frontend tooling: SCSS theming, Angular CLI, ESLint
 
 ### On Progress Features
 * Profile
