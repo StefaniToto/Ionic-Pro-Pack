@@ -128,7 +128,7 @@ export function provideAppIcons() {
     'logo-tinder': 'assets/socialShare/tinder.svg',
     'logo-boo': 'assets/socialShare/boo.svg',
     'logo-youtube': logoYoutube,
-    'logo-google': 'assets/icon/google.png',
+    'logo-google': 'assets/socialShare/logo-google.svg',
     'apps-outline': 'assets/socialShare/apps-outline.svg',
     'call-outline': 'assets/socialShare/call-outline.svg',
   });

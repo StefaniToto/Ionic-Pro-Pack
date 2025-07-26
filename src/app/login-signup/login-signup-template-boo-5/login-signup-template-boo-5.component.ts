@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -7,8 +7,4 @@ import { IonicModule } from '@ionic/angular';
   styleUrls: ['./login-signup-template-boo-5.component.scss'],
   imports: [IonicModule],
 })
-export class LoginSignupTemplateBoo5Component implements OnInit {
-  constructor() {}
-
-  ngOnInit() {}
-}
+export class LoginSignupTemplateBoo5Component {}
